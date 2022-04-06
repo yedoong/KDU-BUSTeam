@@ -6,10 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class UserDAO {
-	private Connection conn;
+	private Connection conn; // 데이터베이스 접근하기 위한 객체
 	private PreparedStatement pstmt;
-	private ResultSet rs;
+	private ResultSet rs; // 정보 담을 수 있는 객체
 	
+	// 데이터베이스 커넥션을 위함
 	public UserDAO() {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/user_database";
@@ -18,11 +19,14 @@ public class UserDAO {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(); //오류발생시 오류출력
 		}
 	}
 	
+	// 실제 로그인 시도하는 함수
 	public int login(String user_id, String user_name) { //로그인 정보(user_id)
+		
+		//실제 SQL에서 사용할 명령어 작성
 		String SQL = "SELECT user_name FROM user_data WHERE user_id = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
