@@ -16,11 +16,6 @@
 			<input type="radio" name="bus_day" autocomplete="off" value="수" checked>수
 			<input type="radio" name="bus_day" autocomplete="off" value="목" checked>목
 			<input type="radio" name="bus_day" autocomplete="off" value="금" checked>금
-		</div> 
-		<div class="bus_inout">
-			등하교 :
-			<input type="radio" name="bus_inout" autocomplete="off" value="등교" checked>등교
-			<input type="radio" name="bus_inout" autocomplete="off" value="하교" checked>하교
 		</div>
 		<div class="bus_time_start">
 			출발시간 :
@@ -38,14 +33,8 @@
 			<input type="radio" name="bus_number" autocomplete="off" value="3호차" checked>3호차
 			<input type="radio" name="bus_number" autocomplete="off" value="4호차" checked>4호차
 		</div>
-		<div class="bus_state">
-			호차 :
-			<input type="radio" name="bus_state" autocomplete="off" value="정차중" checked>정차중
-			<input type="radio" name="bus_state" autocomplete="off" value="운행중" checked>출발
-			<input type="radio" name="bus_state" autocomplete="off" value="운행끝" checked>도착
-		</div>
-		<div class="bus_ifmt_btn">
-			<button id="BusIfmtBtn">갱신</button>
+		<div class="bus_btn">
+			<button id="bus_btn">승차시작</button>
 		</div>
     </form>
 </body>
