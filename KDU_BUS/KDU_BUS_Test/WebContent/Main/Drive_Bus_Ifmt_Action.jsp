@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="java.sql.ResultSet" %>
+<%@ page import="bus.Bus" %>
+<%@ page import="bus.BusDAO" %>
 <% request.setCharacterEncoding("UTF-8"); %>
+<jsp:useBean id="bus" class="bus.Bus" scope="page"/>
+<jsp:setProperty name="bus" property="bus_day"/>
+<jsp:setProperty name="bus" property="bus_time_start"/>
+<jsp:setProperty name="bus" property="bus_number"/>
+<jsp:setProperty name="bus" property="bus_state"/>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,34 +19,21 @@
 </head>
 <body>
 	<%
-		String bus_day = request.getParameter("bus_day");
-		String bus_inout = request.getParameter("bus_inout");
-		String bus_time_start = request.getParameter("bus_time_start");
-		String bus_number = request.getParameter("bus_number");
-		String bus_state = request.getParameter("bus_state");
-		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		Class.forName("com.mysql.jdbc.Driver");
-		
-		String jdbcUrl = "jdbc:mysql://localhost:3306/bus_database";
-		String dbId = "root";
-		String dbPass = "alswkdSQL1213_";
-		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
-		
-		pstmt = conn.prepareStatement(
-				"UPDATE bus_data SET bus_state=? WHERE bus_day=? AND bus_inout=? AND bus_time_start=? AND bus_number=?");	
-		pstmt.setString(1, bus_day);
-		pstmt.setString(2, bus_inout);
-		pstmt.setString(3, bus_time_start);
-		pstmt.setString(4, bus_number);
-		pstmt.setString(5, bus_state);
-		
-		pstmt.executeUpdate();
-		
-		pstmt.close();
-		conn.close();
+	BusDAO busDAO = new BusDAO();
+	int result = busDAO.update1(bus.getBus_state(), bus.getBus_day(), bus.getBus_time_start(), bus.getBus_number());
+	if (result == -1) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('데이터베이스 오류가 발생했습니다.')");
+		script.println("history.back()");
+		script.println("</script>");
+	}
+	else {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("location.href = 'Drive_Bus_Start.jsp'");
+		script.println("</script>");
+	}
 	%>
 </body>
 </html>
