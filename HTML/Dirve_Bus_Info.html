@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDU 셔틀버스</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./css/Dirve_Bus_Info.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div id="wrapper">
+     <header> <!-- s: header -->
+        <h1>경동대 셔틀버스</h1> 
+     </header> <!-- e: header -->
+
+     <nav> <!-- s: nav -->
+        <div id="nav_today"> <!-- window 오늘 날짜값 가져오기 -->
+            <h2>월/일 먼요일</h2>
+        </div>
+        <div id="nav_input_data"> 
+            <h2>승차정보입력</h2>
+        </div>
+     </nav> <!-- e: nav -->
+
+     <div id="bus_time"> <!-- s: bus_time / 버스 시간 선택 -->
+        <div class="main_title">
+            <p>시간</p> 
+        </div>
+         <div id="sel_time"> <!-- 버스 각각 시간 -->
+             <div id="sel_time_top"> <!-- 버스 시간 선택 첫 라인 -->
+                <ul>
+                    <li>
+                      <a href="#"> 8:50 </a>
+                    </li>
+                    <li>
+                        <a href="#"> 9:50 </a>
+                    </li>
+                    <li>
+                        <a href="#"> 10:50 </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="sel_time_bot">
+                <ul>
+                    <li>
+                        <a href="#"> 16:30 </a>
+                    </li>
+                    <li>
+                        <a href="#"> 17:30 </a>
+                    </li>
+                    <li>
+                        <a href="#"> 18:30 </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+     </div> <!-- e: bus_time / 버스 시간 선택 -->
+
+     <div id="bus_num"> <!-- s: bus_num  / 버스 호차 선택-->
+        <div class="main_title">
+            <p>호차</p> 
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        
+     </div> <!-- e: bus_num / 버스 호차 선택 -->
+
+     <div id="start_btn"> <!-- s: start_btn -->
+        <button id="signUpBtn">승차 시작</button>
+     </div> <!-- e: start_btn -->
+ </div>
+</body>
+</html>
