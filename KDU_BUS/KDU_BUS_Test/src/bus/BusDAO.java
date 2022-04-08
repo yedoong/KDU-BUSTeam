@@ -21,19 +21,30 @@ public class BusDAO {
 			e.printStackTrace();
 		}
 	}
-	public int Update(String bus_day, String bus_inout, String bus_time_start, String bus_number, String bus_state) {
-		String SQL = "UPDATE bus_data SET bus_state=? WHERE bus_day=? AND bus_inout=? AND bus_time_start=? AND bus_number=?";
+	public int update1(String bus_state, String bus_day, String bus_time_start, String bus_number) {
+		String SQL = "UPDATE bus_data SET bus_state='승차시작' WHERE bus_day=? AND bus_time_start=? AND bus_number=?";
 		try {
-			pstmt = conn.prepareStatement(SQL);
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, bus_day);
-			pstmt.setString(2, bus_inout);
-			pstmt.setString(3, bus_time_start);
-			pstmt.setString(4, bus_number);
-			pstmt.setString(5, bus_state);
-			pstmt.executeUpdate();
+			pstmt.setString(2, bus_time_start);
+			pstmt.setString(3, bus_number);
+			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return 1;
+		return -1;
+	}
+	public int update2(String bus_state, String bus_day, String bus_time_start, String bus_number) {
+		String SQL = "UPDATE bus_data SET bus_state='출발' WHERE bus_day=? AND bus_time_start=? AND bus_number=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, bus_day);
+			pstmt.setString(2, bus_time_start);
+			pstmt.setString(3, bus_number);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 }
