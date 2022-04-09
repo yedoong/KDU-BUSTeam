@@ -13,9 +13,9 @@ public class UserDAO {
 	// 데이터베이스 커넥션을 위함
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/user_database";
-			String dbID = "root";
-			String dbPassword = "alswkdSQL1213_";
+			String dbURL = "jdbc:mysql://javajo.cbked3d387nj.ap-northeast-2.rds.amazonaws.com:3306/user_database";
+			String dbID = "admin";
+			String dbPassword = "kdubus1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
