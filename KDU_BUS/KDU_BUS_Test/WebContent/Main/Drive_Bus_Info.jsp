@@ -1,41 +1,119 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.io.*" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%
+	Date today = new Date();
+	SimpleDateFormat sf = new SimpleDateFormat("MM월 dd일");
+	
+	Calendar cal = Calendar.getInstance();
+	cal.setTime(today);
+	int day_of_week = cal.get(Calendar.DAY_OF_WEEK);
+	String get_day_of_week = "";
+	switch(day_of_week){
+	case 1:
+		get_day_of_week = "일요일";
+		break;
+	case 2:
+		get_day_of_week = "월요일";
+		break;
+	case 3:
+		get_day_of_week = "화요일";
+		break;
+	case 4:
+		get_day_of_week = "수요일";
+		break;
+	case 5:
+		get_day_of_week = "목요일";
+		break;
+	case 6:
+		get_day_of_week = "금요일";
+		break;
+	case 7:
+		get_day_of_week = "토요일";
+		break;
+	}
+	
+%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>KDU 셔틀버스</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDU 셔틀버스</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="Drive_Bus_Info.css">
+    <link rel="stylesheet" href="Reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<form action="Drive_Bus_Info_Action.jsp" method="post">
-		<div class="title">버스 정보</div>
-		<div class="bus_day">
-			요일 :
-			<input type="radio" name="bus_day" autocomplete="off" value="월" checked>월
-			<input type="radio" name="bus_day" autocomplete="off" value="화" checked>화
-			<input type="radio" name="bus_day" autocomplete="off" value="수" checked>수
-			<input type="radio" name="bus_day" autocomplete="off" value="목" checked>목
-			<input type="radio" name="bus_day" autocomplete="off" value="금" checked>금
-		</div>
-		<div class="bus_time_start">
-			출발시간 :
-			<input type="radio" name="bus_time_start" autocomplete="off" value="8:50" checked>8:50
-			<input type="radio" name="bus_time_start" autocomplete="off" value="9:50" checked>9:50
-			<input type="radio" name="bus_time_start" autocomplete="off" value="10:50" checked>10:50
-			<input type="radio" name="bus_time_start" autocomplete="off" value="16:30" checked>16:30
-			<input type="radio" name="bus_time_start" autocomplete="off" value="17:30" checked>17:30
-			<input type="radio" name="bus_time_start" autocomplete="off" value="18:30" checked>18:30
-		</div>
-		<div class="bus_number">
-			호차 :
-			<input type="radio" name="bus_number" autocomplete="off" value="1호차" checked>1호차
-			<input type="radio" name="bus_number" autocomplete="off" value="2호차" checked>2호차
-			<input type="radio" name="bus_number" autocomplete="off" value="3호차" checked>3호차
-			<input type="radio" name="bus_number" autocomplete="off" value="4호차" checked>4호차
-		</div>
-		<div class="bus_btn">
-			<button id="bus_btn">승차시작</button>
-		</div>
+		<div id="wrapper">
+     		<header> <!-- s: header -->
+        		<div id="header_main">
+            		<h1>경동대 셔틀버스</h1> 
+        		</div>
+     		</header> <!-- e: header -->
+
+     		<nav> <!-- s: nav -->
+        		<div id="nav_today">
+            		<h2> <%= sf.format(today)  %> <%= get_day_of_week %> </h2>
+        		</div>
+        		<div id="nav_input_data"> 
+            		<h2>승차정보입력</h2>
+        		</div>
+     		</nav> <!-- e: nav -->
+
+    		<div id="line"> <!-- line -->
+        
+    		</div>
+     	
+     		<div id="bus_time"> <!-- s: bus_time / 버스 시간 선택 -->
+        		<div class="main_title">
+            		<i class="fa fa-clock-o" style="font-size:48px;color:#070f4e"></i>
+        		</div>
+         		<div id="sel_time"> <!-- 버스 각각 시간 -->
+            		<div id="sel_time_top"> <!-- 버스 시간 선택 첫 라인 -->
+                		<ul>
+                    		<li><input type="radio" id="sel1" name="bus_time_start"><label for="sel1">08:50</label></li>
+                    		<li><input type="radio" id="sel2" name="bus_time_start"><label for="sel2">09:50</label></li>
+                    		<li><input type="radio" id="sel3" name="bus_time_start"><label for="sel3">10:50</label></li>
+                		</ul>
+            		</div>
+            		<div id="sel_time_bot">
+                		<ul>
+                    		<li><input type="radio" id="sel4" name="bus_time_start"><label for="sel4">16:30</label></li>
+                    		<li><input type="radio" id="sel5" name="bus_time_start"><label for="sel5">17:30</label></li>
+                    		<li><input type="radio" id="sel6" name="bus_time_start"><label for="sel6">18:30</label></li>
+                		</ul>
+            		</div>
+        		</div>
+     		</div> <!-- e: bus_time / 버스 시간 선택 -->
+
+     		<div id="bus_num"> <!-- s: bus_num  / 버스 호차 선택-->
+        		<div class="main_title">
+            		<i class="fa fa-bus" style="font-size:48px;color:#070f4e"></i>
+        		</div>
+        		<div class="sel_bus_num">
+            		<ul>
+                		<li><input type="radio" id="select" name="bus_number"><label for="select">1호차</label></li>
+                		<li><input type="radio" id="select2" name="bus_number"><label for="select2">2호차</label></li>
+                		<li><input type="radio" id="select3" name="bus_number"><label for="select3">3호차</label></li>
+                		<li><input type="radio" id="select4" name="bus_number"><label for="select4">4호차</label></li>
+            		</ul>      
+        		</div>
+     		</div> <!-- e: bus_num / 버스 호차 선택 -->
+
+     		<div id="start_btn"> <!-- s: start_btn -->
+        		<button id="StartBtn">승차 시작</button>
+     		</div> <!-- e: start_btn -->
+ 		</div>
     </form>
 </body>
 </html>
