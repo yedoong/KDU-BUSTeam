@@ -7,7 +7,12 @@
 <title>KDU 셔틀버스</title>
 </head>
 <body>
-	<form action="Drive_Bus__Action.jsp" method="post">
+	<% 
+		String bus_day = (String) session.getAttribute("bus_day");
+		String bus_time_start = (String) session.getAttribute("bus_time_start");
+		String bus_number = (String) session.getAttribute("bus_number");
+	%>
+	<form action="Drive_Bus_Start_Action.jsp" method="post">
 		<div class="bus_btn">
 			<button id="bus_btn">출발</button>
 		</div>
