@@ -47,4 +47,17 @@ public class BusDAO {
 		}
 		return -1;
 	}
+	public int update3(String bus_state, String bus_day, String bus_time_start, String bus_number) {
+		String SQL = "UPDATE bus_data SET bus_state='도착' WHERE bus_day=? AND bus_time_start=? AND bus_number=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, bus_day);
+			pstmt.setString(2, bus_time_start);
+			pstmt.setString(3, bus_number);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }
