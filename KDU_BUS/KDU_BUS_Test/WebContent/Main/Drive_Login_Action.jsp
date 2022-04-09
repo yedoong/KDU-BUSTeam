@@ -23,7 +23,7 @@
 		if (result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href = 'Drive_Bus_Ifmt.jsp'"); //로그인성공시 페이지 이동
+			script.println("location.href = 'Drive_Bus_Info.jsp'"); //로그인성공시 페이지 이동
 			script.println("</script>");
 		}
 		
