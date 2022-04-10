@@ -32,25 +32,25 @@
 		String get_day_of_week = "";
 		switch(day_of_week){
 		case 1:
-			get_day_of_week = "일요일";
+			get_day_of_week = "일";
 			break;
 		case 2:
-			get_day_of_week = "월요일";
+			get_day_of_week = "월";
 			break;
 		case 3:
-			get_day_of_week = "화요일";
+			get_day_of_week = "화";
 			break;
 		case 4:
-			get_day_of_week = "수요일";
+			get_day_of_week = "수";
 			break;
 		case 5:
-			get_day_of_week = "목요일";
+			get_day_of_week = "목";
 			break;
 		case 6:
-			get_day_of_week = "금요일";
+			get_day_of_week = "금";
 			break;
 		case 7:
-			get_day_of_week = "토요일";
+			get_day_of_week = "토";
 			break;
 		}
 		
