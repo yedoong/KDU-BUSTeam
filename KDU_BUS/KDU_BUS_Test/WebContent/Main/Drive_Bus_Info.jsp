@@ -4,39 +4,6 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%
-	Date today = new Date();
-	SimpleDateFormat sf = new SimpleDateFormat("MM월 dd일");
-	
-	Calendar cal = Calendar.getInstance();
-	cal.setTime(today);
-	int day_of_week = cal.get(Calendar.DAY_OF_WEEK);
-	String get_day_of_week = "";
-	switch(day_of_week){
-	case 1:
-		get_day_of_week = "일요일";
-		break;
-	case 2:
-		get_day_of_week = "월요일";
-		break;
-	case 3:
-		get_day_of_week = "화요일";
-		break;
-	case 4:
-		get_day_of_week = "수요일";
-		break;
-	case 5:
-		get_day_of_week = "목요일";
-		break;
-	case 6:
-		get_day_of_week = "금요일";
-		break;
-	case 7:
-		get_day_of_week = "토요일";
-		break;
-	}
-	
-%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -54,6 +21,42 @@
 </head>
 <body>
 	<form action="Drive_Bus_Info_Action.jsp" method="post">
+	
+	<%
+		Date today = new Date();
+		SimpleDateFormat sf = new SimpleDateFormat("MM/dd");
+	
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(today);
+		int day_of_week = cal.get(Calendar.DAY_OF_WEEK);
+		String get_day_of_week = "";
+		switch(day_of_week){
+		case 1:
+			get_day_of_week = "일요일";
+			break;
+		case 2:
+			get_day_of_week = "월요일";
+			break;
+		case 3:
+			get_day_of_week = "화요일";
+			break;
+		case 4:
+			get_day_of_week = "수요일";
+			break;
+		case 5:
+			get_day_of_week = "목요일";
+			break;
+		case 6:
+			get_day_of_week = "금요일";
+			break;
+		case 7:
+			get_day_of_week = "토요일";
+			break;
+		}
+		
+		String bus_day = get_day_of_week;
+	%>
+	
 		<div id="wrapper">
      		<header> <!-- s: header -->
         		<div id="header_main">
@@ -103,9 +106,9 @@
         		<div class="sel_bus_num">
             		<ul>
                 		<li><input type="radio" id="select" name="bus_number" value="1호차"><label for="select">1호차</label></li>
-                		<li><input type="radio" id="select2" name="bus_number" value="1호차"><label for="select2">2호차</label></li>
-                		<li><input type="radio" id="select3" name="bus_number" value="1호차"><label for="select3">3호차</label></li>
-                		<li><input type="radio" id="select4" name="bus_number" value="1호차"><label for="select4">4호차</label></li>
+                		<li><input type="radio" id="select2" name="bus_number" value="2호차"><label for="select2">2호차</label></li>
+                		<li><input type="radio" id="select3" name="bus_number" value="3호차"><label for="select3">3호차</label></li>
+                		<li><input type="radio" id="select4" name="bus_number" value="4호차"><label for="select4">4호차</label></li>
             		</ul>      
         		</div>
      		</div> <!-- e: bus_num / 버스 호차 선택 -->
