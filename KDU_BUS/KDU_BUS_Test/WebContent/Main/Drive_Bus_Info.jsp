@@ -81,16 +81,16 @@
          		<div id="sel_time"> <!-- 버스 각각 시간 -->
             		<div id="sel_time_top"> <!-- 버스 시간 선택 첫 라인 -->
                 		<ul>
-                    		<li><input type="radio" id="sel1" name="bus_time_start"><label for="sel1">08:50</label></li>
-                    		<li><input type="radio" id="sel2" name="bus_time_start"><label for="sel2">09:50</label></li>
-                    		<li><input type="radio" id="sel3" name="bus_time_start"><label for="sel3">10:50</label></li>
+                    		<li><input type="radio" id="sel1" name="bus_time_start" value="8:50"><label for="sel1">8:50</label></li>
+                    		<li><input type="radio" id="sel2" name="bus_time_start" value="9:50"><label for="sel2">9:50</label></li>
+                    		<li><input type="radio" id="sel3" name="bus_time_start" value="10:50"><label for="sel3">10:50</label></li>
                 		</ul>
             		</div>
             		<div id="sel_time_bot">
                 		<ul>
-                    		<li><input type="radio" id="sel4" name="bus_time_start"><label for="sel4">16:30</label></li>
-                    		<li><input type="radio" id="sel5" name="bus_time_start"><label for="sel5">17:30</label></li>
-                    		<li><input type="radio" id="sel6" name="bus_time_start"><label for="sel6">18:30</label></li>
+                    		<li><input type="radio" id="sel4" name="bus_time_start" value="16:30"><label for="sel4">16:30</label></li>
+                    		<li><input type="radio" id="sel5" name="bus_time_start" value="17:30"><label for="sel5">17:30</label></li>
+                    		<li><input type="radio" id="sel6" name="bus_time_start" value="18:30"><label for="sel6">18:30</label></li>
                 		</ul>
             		</div>
         		</div>
@@ -102,10 +102,10 @@
         		</div>
         		<div class="sel_bus_num">
             		<ul>
-                		<li><input type="radio" id="select" name="bus_number"><label for="select">1호차</label></li>
-                		<li><input type="radio" id="select2" name="bus_number"><label for="select2">2호차</label></li>
-                		<li><input type="radio" id="select3" name="bus_number"><label for="select3">3호차</label></li>
-                		<li><input type="radio" id="select4" name="bus_number"><label for="select4">4호차</label></li>
+                		<li><input type="radio" id="select" name="bus_number" value="1호차"><label for="select">1호차</label></li>
+                		<li><input type="radio" id="select2" name="bus_number" value="1호차"><label for="select2">2호차</label></li>
+                		<li><input type="radio" id="select3" name="bus_number" value="1호차"><label for="select3">3호차</label></li>
+                		<li><input type="radio" id="select4" name="bus_number" value="1호차"><label for="select4">4호차</label></li>
             		</ul>      
         		</div>
      		</div> <!-- e: bus_num / 버스 호차 선택 -->
