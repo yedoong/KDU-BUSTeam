@@ -27,10 +27,6 @@
    }
  
 /* layout */
-* {
-    text-decoration: none;
-    color: black;
-}
  html, body {
     width: 100%;
     height: 100%;
@@ -52,7 +48,6 @@ header #header_main {
     width:130px;
     height: 6vh;
     margin: 0 auto;
-    
 }
 header #header_main h1 {
     color:white;
@@ -65,7 +60,6 @@ header #header_main h1 {
 nav {
     width: 100%;
     height: 40vh;
-
 }
 nav h2 {
     font-size: 2.5em;
@@ -74,8 +68,7 @@ nav h2 {
 }
 nav #nav_today {
     width: 290px;
-    height: 40px;
-    
+    height: 40px;   
     margin: 0 auto;
     padding-top: 13vh;
 }
@@ -98,17 +91,11 @@ nav #nav_input_data h2{
     background-color: rgb(70, 70, 70);
 }
 
-/* 출발 버튼 */
-/*#bus_btn {
-    width: 100%;
-    height: 10vh;
-}*/
 .bus_btn #start_btn {
     margin: 0 auto;
     margin-top: 10vh;
-    width: 290px;
-    height: 30vh;
-
+    width: 270px;
+    height: 25vh;
     display: block;
     background-color: #0c1477;
     color: white;
@@ -116,4 +103,5 @@ nav #nav_input_data h2{
     padding: 10px 30px;
     font-size: 3em;
     font-family: 'NanumBarunGothic', sans-serif;
+    box-shadow: 0px 5px 0px 0px #060a41;
 }
