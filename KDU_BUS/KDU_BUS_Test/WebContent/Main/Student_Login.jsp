@@ -28,10 +28,10 @@
 	        <nav> <!-- s: nav -->
     	        <div id="login_box"> <!-- s: login_box -->
         	        <div id="login_name" class="main_login" > <!-- main_login -->
-            	        <input id="name" type="text" placeholder="학번을 입력해주세요.">
+            	        <input id="name" name="studentID" type="text" placeholder="학번을 입력해주세요.">
                 	</div>
                 	<div class="main_login"> <!-- main_login -->
-                    	<input id="password" type="password" placeholder="비밀번호를 입력해주세요.">
+                    	<input id="password" name="studentPassword" type="password" placeholder="비밀번호를 입력해주세요.">
                 	</div>
                 	<div id="Sign_Up">
                     	<a href="Student_SignUp.jsp">회원가입</a>
