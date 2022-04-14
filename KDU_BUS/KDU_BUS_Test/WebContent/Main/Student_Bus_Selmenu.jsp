@@ -29,7 +29,7 @@
 
      <nav>
          <div id="free_btn">
-            <button id="btn1"><a href="Student_Bus_SelTime.html">무료 셔틀버스</a></button>
+            <button id="btn1"><a href="Student_Bus_SelTime.jsp">무료 셔틀버스</a></button>
          </div>
          
          <div id="pay_btn">
