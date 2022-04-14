@@ -48,14 +48,23 @@ public class Student_loginDAO {
 	
 	//회원가입하는 사람들의 정보가 들어갈 데이터베이스
 	public int join(Student_login student_login) {
-		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?)"; //학번(ID와 동일) 비밀번호 이름 학과 
+		String SQL = "INSERT INTO student_login_data SELECT ?, ?, ?, ? FROM DUAL WHERE EXISTS (SELECT * FROM student_data WHERE (studentName=? and studentID=? and studentDepartment=?))";
+
 		try {
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, student_login.getStudentName());
-			pstmt.setString(2, student_login.getStudentDepartment());
-			pstmt.setString(3, student_login.getStudentID());
-			pstmt.setString(4, student_login.getStudentPassword());
-			return pstmt.executeUpdate();
+			pstmt.setString(1, student_login.getStudentID());
+			pstmt.setString(2, student_login.getStudentPassword());
+			pstmt.setString(3, student_login.getStudentName());
+			pstmt.setString(4, student_login.getStudentDepartment());
+			pstmt.setString(5, student_login.getStudentName());
+			pstmt.setString(6, student_login.getStudentID());
+			pstmt.setString(7, student_login.getStudentDepartment());
+			//return pstmt.executeUpdate();
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				if(rs.getString(1).equals(studentID)) { //이름이 맞을 경우
+					return 1; //로그인 성공
+				}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
