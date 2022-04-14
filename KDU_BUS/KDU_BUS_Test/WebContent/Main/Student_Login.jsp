@@ -34,7 +34,7 @@
                     	<input id="password" type="password" placeholder="비밀번호를 입력해주세요.">
                 	</div>
                 	<div id="Sign_Up">
-                    	<a href="./Student_Bus_SignUp.html">회원가입</a>
+                    	<a href="Student_SignUp.jsp">회원가입</a>
                 	</div>
                 	<div id="login_sign_up"> <!-- login_sign_up -->
                     	<button id="signUpBtn"> 로그인</button>
