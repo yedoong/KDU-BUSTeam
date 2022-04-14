@@ -73,6 +73,7 @@ input{
     display: block;
     margin: 0 auto;
     padding-left: 1vh;
+    font-family: 'NanumBarunGothic', sans-serif;
 }
 #input_box {
     width: 100%;
@@ -93,6 +94,7 @@ input{
 #department #ex p {
     font-size: small;
     display: inline-block;
+    font-family: 'NanumBarunGothic', sans-serif;
 }
 
 #department #ex p #sec {
@@ -111,6 +113,7 @@ input{
 }
 #Explain p{
     width: 80vw;
+    font-family: 'NanumBarunGothic', sans-serif;
 }
 
 /* button */
