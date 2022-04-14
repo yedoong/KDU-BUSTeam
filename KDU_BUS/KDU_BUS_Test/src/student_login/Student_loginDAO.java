@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import user.User;
-
 public class Student_loginDAO {
 	
 	private Connection conn;
@@ -25,10 +23,10 @@ public class Student_loginDAO {
 		}
 	}
 	
-	//·Î±×ÀÎÇÏ±â
+	//ë¡œê·¸ì¸í•˜ê¸°
 	public int login(String studentID, String studentPassword) {
 		
-		//½ÇÁ¦ SQL¿¡¼­ »ç¿ëÇÒ ¸í·É¾î ÀÛ¼º
+		//ì‹¤ì œ SQLì—ì„œ ì‚¬ìš©í•  ëª…ë ¹ì–´ ì‘ì„±
 		String SQL = "SELECT studentPassword FROM student_login_data WHERE studentID = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
@@ -36,31 +34,31 @@ public class Student_loginDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				if(rs.getString(1).equals(studentPassword)) {
-					return 1; //·Î±×ÀÎ ¼º°ø
+					return 1; //ë¡œê·¸ì¸ ì„±ê³µ
 				}
 				else
-					return 0; //ºñ¹Ğ¹øÈ£ ´Ù¸§
+					return 0; //ë¹„ë°€ë²ˆí˜¸ ë‹¤ë¦„
 			}
-			return -1; //¾ÆÀÌµğ ¾øÀ½
+			return -1; //ì•„ì´ë”” ì—†ìŒ
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -2; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -2; //ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜
 	}
 	
-	//È¸¿ø°¡ÀÔÇÏ´Â »ç¶÷µéÀÇ Á¤º¸°¡ µé¾î°¥ µ¥ÀÌÅÍº£ÀÌ½º
+	//íšŒì›ê°€ì…í•˜ëŠ” ì‚¬ëŒë“¤ì˜ ì •ë³´ê°€ ë“¤ì–´ê°ˆ ë°ì´í„°ë² ì´ìŠ¤
 	public int join(Student_login student_login) {
-		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?)"; //ÇĞ¹ø(ID¿Í µ¿ÀÏ) ºñ¹Ğ¹øÈ£ ÀÌ¸§ ÇĞ°ú 
+		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?)"; //í•™ë²ˆ(IDì™€ ë™ì¼) ë¹„ë°€ë²ˆí˜¸ ì´ë¦„ í•™ê³¼ 
 		try {
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, student_login.getStudentID());
-			pstmt.setString(2, student_login.getStudentPassword());
-			pstmt.setString(3, student_login.getStudentName());
-			pstmt.setString(4, student_login.getStudentDepartment());
+			pstmt.setString(1, student_login.getStudentName());
+			pstmt.setString(2, student_login.getStudentDepartment());
+			pstmt.setString(3, student_login.getStudentID());
+			pstmt.setString(4, student_login.getStudentPassword());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; // ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜
 	}
 }
