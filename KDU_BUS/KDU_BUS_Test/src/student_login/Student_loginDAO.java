@@ -47,27 +47,43 @@ public class Student_loginDAO {
 	}
 	
 	//회원가입하는 사람들의 정보가 들어갈 데이터베이스
-	public int join(Student_login student_login) {
-		String SQL = "INSERT INTO student_login_data SELECT ?, ?, ?, ? FROM DUAL WHERE EXISTS (SELECT * FROM student_data WHERE (studentName=? and studentID=? and studentDepartment=?))";
+	public int join(String studentID, String studentName, String studentDepartment) {
+		String SQL = "SELECT studentName, studentDepartment FROM student_data WHERE studentID=?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, studentID);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				if(rs.getString(1).equals(studentName)) {
+					if(rs.getString(2).equals(studentDepartment)) {
+						return 1; //모두 일치
+					}
+					else
+						return -3; //일치하지 않는 학과
+				}
+				else 
+					return -2; //일치하지 않는 이름
+			}
+			return -1; //아이디(학번) 없음
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -4; //데이터베이스 오류
+	}
+	//회원가입 Action
+	public int join2(String studentID, String studentPassword, String studentName, String studentDepartment) {
+		String SQL = "INSERT INTO student_login_data (studentID, studentPassword, studentName, studentDepartment) VALUES (?, ?, ?, ?)";
 
 		try {
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, student_login.getStudentID());
-			pstmt.setString(2, student_login.getStudentPassword());
-			pstmt.setString(3, student_login.getStudentName());
-			pstmt.setString(4, student_login.getStudentDepartment());
-			pstmt.setString(5, student_login.getStudentName());
-			pstmt.setString(6, student_login.getStudentID());
-			pstmt.setString(7, student_login.getStudentDepartment());
-			//return pstmt.executeUpdate();
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				if(rs.getString(1).equals(studentID)) { //이름이 맞을 경우
-					return 1; //로그인 성공
-				}
-		} catch(Exception e) {
+			pstmt.setString(1, studentID);
+			pstmt.setString(2, studentPassword);
+			pstmt.setString(3, studentName);
+			pstmt.setString(4, studentDepartment);			
+			return pstmt.executeUpdate();
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		return -1; // 데이터베이스 오류
-	}
+		}
 }
