@@ -22,7 +22,7 @@
 		if (result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href = '로그인성공시 이동할 페이지.jsp'"); //로그인성공시 페이지 이동
+			script.println("location.href = 'Student_Bus_SelMenu.jsp'"); //로그인성공시 페이지 이동
 			script.println("</script>");
 		}
 		
