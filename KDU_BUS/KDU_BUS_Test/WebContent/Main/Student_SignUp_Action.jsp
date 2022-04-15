@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="student_login.Student_login" %>
 <%@ page import="student_login.Student_loginDAO" %>
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8"); %>
@@ -25,21 +26,53 @@
 			script.println("alert('입력이 되지 않은 사항이 있습니다.')");
 			script.println("history.back()"); //이전 페이지로 이동
 			script.println("</script>");
-		} else {
+		} 
+		else{
 			Student_loginDAO student_loginDAO = new Student_loginDAO();
-			int result = student_loginDAO.join(student_login);
-			if (result == -1) {
+			int result = student_loginDAO.join(student_login.getStudentID(), student_login.getStudentName(), student_login.getStudentDepartment());
+			if (result == 1) {
+				int result2 = student_loginDAO.join2(student_login.getStudentID(), student_login.getStudentPassword(), student_login.getStudentName(), student_login.getStudentDepartment());
+					if (result2 == -1){
+						PrintWriter script = response.getWriter();
+						script.println("<script>");
+						script.println("alert('이미 가입된 사용자입니다.')");
+						script.println("history.back()"); //이전 페이지로 이동
+						script.println("</script>");
+					}
+					else{
+						PrintWriter script = response.getWriter();
+						script.println("<script>");
+						script.println("alert('회원가입이 정상처리되었습니다.')");
+						script.println("location.href = 'Student_Login.jsp'");
+						script.println("</script>");
+					}
+			}
+			else if (result == -1) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('이미 존재하는 아이디 입니다.')"); //데이터베이스 오류(ID는 프라이멀키)
+				script.println("alert('일치하지 않는 정보입니다.')"); //학번 오류
 				script.println("history.back()"); //이전 페이지로 이동
 				script.println("</script>");
 			}
-			else {
+			else if (result == -2){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('회원가입이 정상처리되었습니다.')");
-				script.println("location.href = 'Student_Login.jsp'"); //이전 페이지로 이동
+				script.println("alert('일치하지 않는 정보입니다.')"); //이름 오류
+				script.println("history.back()"); //이전 페이지로 이동
+				script.println("</script>");
+			}
+			else if (result == -3){
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('일치하지 않는 정보입니다.')"); //학과 오류
+				script.println("history.back()"); //이전 페이지로 이동
+				script.println("</script>");
+			}
+			else if (result == -4){
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('! 데이터베이스 오류 !')"); //데이터베이스 오류
+				script.println("history.back()"); //이전 페이지로 이동
 				script.println("</script>");
 			}
 		}
