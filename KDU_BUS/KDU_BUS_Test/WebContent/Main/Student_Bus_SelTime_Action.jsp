@@ -68,17 +68,42 @@
 	
 	Student_busDAO student_busDAO = new Student_busDAO();
 	int result = student_busDAO.Recall1(bus_day, student_bus.getBus_time_start());
-	if (result == -1) {
+	if (result == 0) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('버스가 없는 날입니다.')");
+		script.println("history.back()");
+		script.println("</script>");
+	}
+	else if (result == 1) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("location.href = '1호차.jsp'");
+		script.println("</script>");
+	}
+	else if (result == 2) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("location.href = '2호차.jsp'");
+		script.println("</script>");
+	}
+	else if (result == 3) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("location.href = '3호차.jsp'");
+		script.println("</script>");
+	}
+	else if (result == 4) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("location.href = '4호차.jsp'");
+		script.println("</script>");
+	}
+	else if (result == -1){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('데이터베이스 오류가 발생했습니다.')");
 		script.println("history.back()");
-		script.println("</script>");
-	}
-	else {
-		PrintWriter script = response.getWriter();
-		script.println("<script>");
-		script.println("location.href = '호차선택.jsp'");
 		script.println("</script>");
 	}
 	%>
