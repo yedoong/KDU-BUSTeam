@@ -1,0 +1,90 @@
+/* layout */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+
+  .container{
+    width:100%;
+  }
+
+/* 그냥 실험 버튼 꾸미기 */
+  .modal-btn-box{
+    width:100%;
+    text-align:center;
+  }
+  .modal-btn-box button{
+    display:inline-block;
+    width:150px;
+    height:50px;
+    background-color:#ffffff;
+    border:1px solid #e1e1e1;
+    cursor:pointer;
+    padding-top:8px;
+  }
+
+/* 팝업 */
+/* 팝업 누를 시, 백그라운드 죽이기 */
+  .popup-wrap{
+    background-color:rgba(0,0,0,.3);
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:none;
+    padding:15px;
+  }
+  /* 실제 팝업 */
+  .popup{
+    width:70vw;
+    
+    border-radius:10px;
+    overflow:hidden;
+    background-color:#0c1476;
+    box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3);
+  }
+
+ /* 팝업 텍스트 들어가는 배경 */
+  .popup-body{
+    width:100%;
+    height:15vh;
+    background-color:#ffffff;
+  }
+  /* 글씨 콘텐츠 감싸는 box */
+  .body-content{
+    width:100%;
+    padding:30px;
+  }
+  /* 글씨 */
+  .body-contentbox p {
+      text-align: center;
+      font-family: 'NanumBarunGothic', sans-serif;
+  }
+  .body-contentbox #p_one {
+    margin-bottom: 1vh;
+    font-size: 2em;
+    font-weight: bold;
+}
+.body-contentbox #p_two {
+    margin-bottom: 1vh;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+  /* footer */
+  .popup-foot{
+    width:100%;
+    height:50px;
+    text-align: center;
+  }
+  .popup-foot span{
+    text-align: center;
+    color: white;
+    line-height: 50px;
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+  }
