@@ -52,7 +52,7 @@ public class Student_busDAO {
 					return 1; //1호차까지 있음(행바꿨는데 2번째인 2호차가 없음)
 			}
 			else
-				return 0; //아무 호차도 없음(ㅈ버그)
+				return 0; //아무 호차도 없음
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -68,7 +68,22 @@ public class Student_busDAO {
 			pstmt.setString(1, bus_day);
 			pstmt.setString(2, bus_time_start);			
 			pstmt.setString(3, bus_number);
-		    pstmt.executeQuery();
+		    rs = pstmt.executeQuery();
+		    
+		    if(rs.next()) {
+		    	if(rs.getString("bus_state").contains("승차시작")){
+		    		return 1;
+		    		//"승차중"으로 출력
+		    	}
+		    	else if(rs.getString("bus_state").contains("출발")) {
+		    		return 2;
+		    		//"승차마감(출발)"로 출력
+		    	}
+		    	else {
+		    		return 0;
+		    		//"승차전"으로 출력
+		    	}
+		    }
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
