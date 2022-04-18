@@ -78,25 +78,25 @@
 	else if (result == 1) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("location.href = '1호차.jsp'");
+		script.println("location.href = 'Student_Bus_Num1.jsp'");
 		script.println("</script>");
 	}
 	else if (result == 2) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("location.href = '2호차.jsp'");
+		script.println("location.href = 'Student_Bus_Num2.jsp'");
 		script.println("</script>");
 	}
 	else if (result == 3) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("location.href = '3호차.jsp'");
+		script.println("location.href = 'Student_Bus_Num3.jsp'");
 		script.println("</script>");
 	}
 	else if (result == 4) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("location.href = '4호차.jsp'");
+		script.println("location.href = 'Student_Bus_Num4.jsp'");
 		script.println("</script>");
 	}
 	else if (result == -1){
