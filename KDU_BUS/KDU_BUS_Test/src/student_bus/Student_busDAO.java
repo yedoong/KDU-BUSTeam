@@ -12,9 +12,9 @@ public class Student_busDAO {
 	
 	public Student_busDAO() {
 		try {
-			String dbURL = "jdbc:mysql://javajo.cbked3d387nj.ap-northeast-2.rds.amazonaws.com:3306/bus_database";
-			String dbID = "admin";
-			String dbPassword = "kdubus1234";
+			String dbURL = "jdbc:mysql://3.39.182.65:3306/bus_database";
+			String dbID = "yijeong";
+			String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
