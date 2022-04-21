@@ -13,9 +13,9 @@ public class Student_loginDAO {
 	
 	public Student_loginDAO() {
 		try {
-			String dbURL = "jdbc:mysql://javajo.cbked3d387nj.ap-northeast-2.rds.amazonaws.com:3306/user_database";
-			String dbID = "admin";
-			String dbPassword = "kdubus1234";
+			String dbURL = "jdbc:mysql://3.39.182.65:3306/user_database";
+			String dbID = "yijeong";
+			String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		}catch (Exception e) {
