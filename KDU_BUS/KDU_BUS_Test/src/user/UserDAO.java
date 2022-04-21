@@ -10,12 +10,12 @@ public class UserDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs; // 정보 담을 수 있는 객체
 	
-	// 데이터베이스 커넥션을 위함
+	// 데이터베이스 커넥션을 위함 - userdatabase의 user_data table
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:mysql://javajo.cbked3d387nj.ap-northeast-2.rds.amazonaws.com:3306/user_database";
-			String dbID = "admin";
-			String dbPassword = "kdubus1234";
+			String dbURL = "jdbc:mysql://3.39.182.65:3306/user_database";
+			String dbID = "yijeong";
+			String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
