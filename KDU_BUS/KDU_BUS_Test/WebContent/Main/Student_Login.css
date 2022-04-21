@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+ 
+/* layout */
+* {
+    text-decoration: none;
+    color: black;
+}
+ html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* wrapper */
+#wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #0c1477;
+}
+
+/* header */
+#wrapper header {
+    margin-bottom: 50px;
+}
+#wrapper header #login_logo h1 {
+    border-top: 1px solid black;    
+}
+#wrapper header #login_logo h1 img {
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+/* nav */
+nav #login_box {
+    width: 70vw;
+    height: 30vh;
+    background-color: rgb(240, 240, 240);
+    margin: 0 auto;
+    border-radius: 2%;
+}
+nav #login_box #login_txt {
+    padding-top: 20px;
+}
+nav #login_box #login_txt p {
+    font-size: small;
+    text-align: center;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+nav #login_box #login_name {
+    padding-top: 20px;
+}
+nav #login_box .main_login input {
+    margin-top: 1vh; 
+    margin-bottom: 10px;
+    display: block;
+    padding: 10px 0;
+    border: 1px solid gray;
+    border-radius: 3px;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+nav #login_box .main_login #password {
+    text-align: center;
+}
+nav #login_box .main_login #name {
+    text-align: center;
+}
+nav #login_box #Sign_Up {
+    height: 10px;
+    margin-left: 50px;
+    margin-bottom: 2.5vh;
+    font-size: small;
+    font-weight: bold;
+    font-family: 'NanumBarunGothic', sans-serif;
+    
+}
+nav #login_box #Sign_Up a {
+    color: #525252;
+}
+nav #login_box #login_sign_up button {
+    margin: 0 auto;
+    display: block;
+    border: 0px;
+    background-color: #0c1477;
+    color: white;
+    border-radius: 50px; 
+    padding: 10px 30px;
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 1em;
+}
+nav #login_box input {
+    width: 45vw;
+    margin: 0 auto;
+}

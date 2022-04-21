@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+ 
+/* layout */
+* {
+    text-decoration: none;
+    color: black;
+}
+ html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* wrapper */
+#wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+/* header */
+header {
+    background-color: #0c1477;
+    width: 100%;
+    height: 6vh;
+}
+header #header_main {
+    width:130px;
+    height: 6vh;
+    margin: 0 auto;
+    
+}
+header #header_main h1 {
+    color:white;
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 1.1em;
+    padding-top: 2vh;
+}
+
+/* nav */
+nav {
+    width: 100%;
+    height: 40vh;
+
+}
+nav h2 {
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+nav #nav_today {
+    width: 290px;
+    height: 40px;
+    
+    margin: 0 auto;
+    padding-top: 13vh;
+}
+nav #nav_input_data {
+    width: 290px;
+    height: 40px;
+    margin: 0 auto;
+    padding-top: 1vh;
+}
+#line {
+    width:100%;
+    height: 1px;
+    background-color: rgb(70, 70, 70);
+}
+
+/* 버스 시간 선택 */
+#bus_time {
+    width: 100%;
+    height: 14vh;
+    font-family: 'NanumBarunGothic', sans-serif;
+    margin-top: 5vh;
+}
+/* 버스 선택 공통 타이틀 부분 */
+.main_title {
+    width : 20%;
+    height : 14vh;
+    float : left; 
+}
+.main_title i {
+    margin: 5vh 20px 5vh 20px;
+    line-height: 65px;
+}
+
+#bus_time #sel_time {
+    float : left;
+    width : 70%;
+    height : 14vh;
+}
+#bus_time #sel_time #sel_time_top ul {
+    display: flex;   
+    justify-content: space-around;
+    line-height: 7vh;
+}
+#bus_time #sel_time #sel_time_bot ul {
+    display: flex;   
+    justify-content: space-around;
+    line-height: 7vh;
+}
+#sel_time {
+    padding: 10px 10px;
+}
+#sel_time input[type=radio]{
+    display: none;
+}
+#sel_time input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 50px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:13px;
+}
+#sel_time input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+#sel_time input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+}
+  
+/* 버스 호차 선택 */
+#bus_num {
+    width: 100%;
+    height: 14vh;
+    font-family: 'NanumBarunGothic', sans-serif;
+    margin-top: 3vh;
+    margin-bottom : 3vh;
+}
+#bus_num .main_title p {
+    font-size: 2em;
+}
+#bus_num .sel_bus_num {
+    width : 70%;
+    height : 14vh;
+    display: block;
+    float: left;
+}
+#bus_num .sel_bus_num ul {
+    display: flex;
+    line-height: 14vh;
+    justify-content: space-between;
+}
+#bus_num .sel_bus_num ul li {
+    font-size: 1.1em;
+}
+.sel_bus_num {
+    padding: 10px 10px;
+}
+.sel_bus_num input[type=radio]{
+    display: none;
+}
+.sel_bus_num input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 50px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:13px;
+}
+.sel_bus_num input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+.sel_bus_num input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+}
+
+/* 버튼 */
+#start_btn {
+    width: 100%;
+    height: 10vh;
+}
+#start_btn #StartBtn {
+    margin: 0 auto;
+    margin-top: 5vh;
+    display: block;
+    border: 0px;
+    background-color: #0c1477;
+    color: white;
+    border-radius: 50px; 
+    padding: 10px 30px;
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
