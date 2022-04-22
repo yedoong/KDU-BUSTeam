@@ -61,10 +61,8 @@
 	request.setCharacterEncoding("UTF-8");
 	
 	String bus_day = get_day_of_week;
-	String bus_state = request.getParameter("bus_state");
-	
-    String bus_number = (String) session.getAttribute("bus_number");
 	String bus_time_start = (String) session.getAttribute("bus_time_start");
+	String bus_number = request.getParameter("bus_number");
 	
 	Student_busDAO student_busDAO = new Student_busDAO();
 	int result = student_busDAO.Recall2(bus_day, bus_time_start, bus_number);
