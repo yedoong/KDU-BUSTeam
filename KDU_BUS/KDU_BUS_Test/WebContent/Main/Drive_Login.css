@@ -84,10 +84,10 @@ nav #login_box .main_login input {
     margin-bottom: 1vh;
 }
 
-nav #login_box .main_login #password {
+nav #login_box .main_login #user_id {
     text-align: center;
 }
-nav #login_box .main_login #name {
+nav #login_box .main_login #user_name {
     text-align: center;
 }
 
