@@ -70,7 +70,6 @@
                 		<div class="popup-body">
                     		<div class="body-content">
 								<p id="p_one">승차마감</p>
-								<p id="p_two">(출발)</p>
                     		</div>
                 		</div>
         				<div class="popup-foot">
