@@ -30,9 +30,9 @@
             	</div>
             	<div id="nav_btn">
                 	<button id="Button1" name="bus_state" value="1호차">1호차</button>
-                	<button id="Button2" name="bus_state" value="2호차">2호차</button>
-                	<button id="Button3" name="bus_state" value="3호차">3호차</button>
-                	<button id="Button4" name="bus_state" value="4호차">4호차</button>
+                	<button id="Button2" name="bus_state" disabled='disabled' value="2호차">2호차</button>
+                	<button id="Button3" name="bus_state" disabled='disabled' value="3호차">3호차</button>
+                	<button id="Button4" name="bus_state" disabled='disabled' value="4호차">4호차</button>
             	</div>
        		</div>
     </form>
