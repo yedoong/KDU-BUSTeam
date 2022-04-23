@@ -13,12 +13,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <% int num=2; %>
 </head>
 <body>
 	<div id="wrapper">
 		<form action="Student_Bus_Num_Action.jsp?num=2" method="post">
         	<header> <!-- s: header -->
+        		<button class="material-icons-round" onclick="history.back();">arrow_back_ios</button>
             	<div id="header_main">
                 	<h1>경동대 셔틀버스</h1> 
             	</div>
@@ -45,7 +47,6 @@
             {
     %>		
             <!-- 팝업 -->
-            <form action="Student_Bus_Num2.jsp" method="post">
 				<div id="bg"></div>
         			<div class="popup"> 
                 		<div class="popup-body">
@@ -54,17 +55,15 @@
                     		</div>
                 		</div>
         				<div class="popup-foot">
-            				<button class="pop-btn close" id="close">닫기</button>
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
         				</div>
             		</div>
-            </form>
 	<%
             }
             else if(msg!=null && msg.equals("2"))
             {
     %>
             <!-- 팝업 -->
-            <form action="Student_Bus_Num2.jsp" method="post">
 				<div id="bg"></div>
         			<div class="popup"> 
                 		<div class="popup-body">
@@ -73,17 +72,15 @@
                     		</div>
                 		</div>
         				<div class="popup-foot">
-            				<button class="pop-btn close" id="close">닫기</button>
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
         				</div>
             		</div>
-            </form>
     <%  
             }
             else if(msg!=null && msg.equals("0"))
             {  
     %>
             <!-- 팝업 -->
-            <form action="Student_Bus_Num2.jsp" method="post">
 				<div id="bg"></div>
         			<div class="popup"> 
                 		<div class="popup-body">
@@ -92,17 +89,15 @@
                     		</div>
                 		</div>
         				<div class="popup-foot">
-            				<button class="pop-btn close" id="close">닫기</button>
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
         				</div>
-            		</div>
-            </form>    
+            		</div> 
 	<%
             }
             else if(msg!=null && msg.equals("-1"))
             {    
 	%>	
 			<!-- 팝업 -->
-            <form action="Student_Bus_Num2.jsp" method="post">
 				<div id="bg"></div>
         			<div class="popup"> 
                 		<div class="popup-body">
@@ -111,10 +106,9 @@
                     		</div>
                 		</div>
         				<div class="popup-foot">
-            				<button class="pop-btn close" id="close">닫기</button>
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
         				</div>
-            		</div>
-            </form>              
+            		</div>            
 	<%
             }
     %>
