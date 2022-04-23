@@ -21,8 +21,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 <body>
-	
-	
    	<div id="wrapper">
         <header> <!-- s: header -->
             <div id="header_main">
