@@ -54,6 +54,15 @@ header #header_main h1 {
     font-family: 'NanumBarunGothic', sans-serif;
     color: white;
 }
+header #header_main .material-icons-round {
+	height: 9vh;
+	color: white;
+	background-color: #0c1476;
+	float : left;
+	line-height: 10vh;
+	padding-left : 3vh;
+	border: 0px;
+}
 
 /* nav_1 등교 */
 #nav_1 {
