@@ -25,6 +25,12 @@
    .nanumbarungothic * {
     font-family: 'NanumBarunGothic', sans-serif;
    }
+   
+   @font-face {
+   	font-family: 'Material Icons';
+  	font-style: normal;
+  	src: url(https://example.com/material-symbols.woff) format('woff');
+	}
  
 /* layout */
  html, body {
@@ -46,13 +52,25 @@ header {
 header #header_main {
     height: 10vh;
     background-color: #0c1476;
-    text-align: center;
     line-height: 10vh;
 }
+
 header #header_main h1 {
     font-size: 1.4em;
     font-family: 'NanumBarunGothic', sans-serif;
     color: white;
+    text-align: center;
+}
+
+header #header_main .material-icons-round {
+	position:absolute;
+	height: 9vh;
+	color: white;
+	background-color: #0c1476;
+	float : left;
+	line-height: 10vh;
+	padding-left : 3vh;
+	border: 0px;
 }
 
 /* nav */
