@@ -20,7 +20,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
-	<form action="Student_Bus_SelTime_Action.jsp" method="post">
+	
+	
+   	<div id="wrapper">
+		<form action="Student_Bus_SelTime_Action.jsp" method="post">
 	<%
 		Date today = new Date();
 		SimpleDateFormat sf = new SimpleDateFormat("MM/dd");
@@ -56,7 +59,6 @@
 		String bus_day = get_day_of_week;
 	%>
 	
-   		<div id="wrapper">
         <header> <!-- s: header -->
             <div id="header_main">
                 <h1>경동대 셔틀버스</h1> 
@@ -84,7 +86,30 @@
                 <button id="Button3" name="bus_time_start" value="18:30">18:30</button>
             </div>
          </div>
-       </div>
    </form>
+   </div>
+   <% 
+            String msg_t = request.getParameter("msg_t");
+    		
+            if(msg_t!=null && msg_t.equals("1")) 
+            {
+    %>		
+            <!-- 팝업 -->
+            <form action="Student_Bus_SelTime.jsp" method="post">
+				<div id="bg"></div>
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">버스가 없는 날입니다.</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close">닫기</button>
+        				</div>
+            		</div>
+            </form>
+	<%
+            }
+    %>   
 </body>
 </html>
