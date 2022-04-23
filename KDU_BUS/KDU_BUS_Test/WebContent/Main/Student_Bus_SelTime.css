@@ -35,7 +35,7 @@
 /* wrapper */
 #wrapper {
     width: 100%;
-    height: 100%;
+    height: 40%;
 }
 
 /* header */
@@ -119,4 +119,71 @@ header #header_main h1 {
 }
 #nav_2 #nav_box_2 #Button1 {
     margin-top: 1vh;
+}
+/* 팝업 */
+  /* 실제 팝업 */
+  .popup{
+  	position:relative;
+  	margin:0 auto;
+  	margin-bottom:10vh;
+    width:60vw;
+    height:23vh;
+    border-radius:10px;
+    background-color:#ffffff;
+    box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3);
+  }
+
+ /* 팝업 텍스트 들어가는 배경 */
+  .popup-body{
+  	margin:0 auto;
+    width:80%;
+    height:16vh;
+    background-color:#ffffff;
+  }
+  /* 글씨 콘텐츠 감싸는 box */
+  .body-content{
+	text-align:center;
+  	width:100%;
+    padding:12.5% 0px;
+  }
+  /* 글씨 */
+  .body-content p {
+  	width:100%;
+    text-align: center;
+    font-family: 'NanumBarunGothic', sans-serif;
+  }
+  .body-content #p_one {
+  	width:100%;
+    margin-bottom: 1vh;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+  /* footer */
+  .popup-foot{
+  	border-radius: 0px 0px 10px 10px;
+  	background-color:#0c1477;
+    width:100%;
+    height:7vh;
+    text-align: center;
+  }
+  .popup-foot button{
+  	border:none;
+  	padding:0;
+    text-align: center;
+    background-color:#0c1477;
+    color: white;
+    height:6.5vh;
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+  }
+  
+  #bg {
+  	background-color:rgba(0,0,0,.3);
+  	position:fixed;
+  	top:0;
+  	left:0;
+    right:0;
+    bottom:0;
+  	
 }
