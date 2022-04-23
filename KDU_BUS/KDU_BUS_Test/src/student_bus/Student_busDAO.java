@@ -13,8 +13,8 @@ public class Student_busDAO {
 	public Student_busDAO() {
 		try {
 			String dbURL = "jdbc:mysql://3.39.182.65:3306/bus_database";
-			String dbID = "yijeong";
-			String dbPassword = "1234";
+            String dbID = "yijeong";
+            String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
@@ -51,13 +51,11 @@ public class Student_busDAO {
 				else
 					return 1; //1호차까지 있음(행바꿨는데 2번째인 2호차가 없음)
 			}
-			else
-				return 0; //아무 호차도 없음
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1;
+		return 0;
 	}
 	
 	//호차선택
