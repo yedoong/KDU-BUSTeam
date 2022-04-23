@@ -17,15 +17,14 @@
     <% int num=4; %>
 </head>
 <body>
-	<div id="wrapper">
+	<div id="wrapper"> 
+        <header> <!-- s: header -->
+            <div id="header_main">
+            	<button class="material-icons-round" onclick="history.back();">arrow_back_ios</button>
+                <h1>경동대 셔틀버스</h1> 
+            </div>
+        </header> <!-- e: header -->
 		<form action="Student_Bus_Num_Action.jsp?num=4" method="post">
-        	<header> <!-- s: header -->
-            	<div id="header_main">
-        		<button class="material-icons-round" onclick="history.back();">arrow_back_ios</button>
-                	<h1>경동대 셔틀버스</h1> 
-            	</div>
-         	</header> <!-- e: header -->
-
          	<div id="nav"> <!--  nav -->
             	<div id="nav_title"> <!-- nav_title -->
                 	<h2>호차를 선택해주세요</h2>
