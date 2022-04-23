@@ -18,11 +18,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 <body>
 	
 	
    	<div id="wrapper">
+        <header> <!-- s: header -->
+            <div id="header_main">
+            	<button class="material-icons-round" onclick="location.href='Student_Bus_SelMenu.jsp'">arrow_back_ios</button>
+                <h1>경동대 셔틀버스</h1> 
+            </div>
+         </header> <!-- e: header -->
 		<form action="Student_Bus_SelTime_Action.jsp" method="post">
 	<%
 		Date today = new Date();
@@ -59,12 +66,6 @@
 		String bus_day = get_day_of_week;
 	%>
 	
-        <header> <!-- s: header -->
-            <div id="header_main">
-                <h1>경동대 셔틀버스</h1> 
-            </div>
-         </header> <!-- e: header -->
-
          <div id="nav_1"> <!-- 등교 nav -->
             <div id="nav_title_1"> <!--  title 2 -->
                 <h2>등교</h2>
