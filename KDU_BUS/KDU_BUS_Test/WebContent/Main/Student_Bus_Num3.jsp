@@ -20,8 +20,8 @@
 	<div id="wrapper">
 		<form action="Student_Bus_Num_Action.jsp?num=3" method="post">
         	<header> <!-- s: header -->
-        		<button class="material-icons-round" onclick="history.back();">arrow_back_ios</button>
             	<div id="header_main">
+        		<button class="material-icons-round" onclick="history.back();">arrow_back_ios</button>			
                 	<h1>경동대 셔틀버스</h1> 
             	</div>
          	</header> <!-- e: header -->
