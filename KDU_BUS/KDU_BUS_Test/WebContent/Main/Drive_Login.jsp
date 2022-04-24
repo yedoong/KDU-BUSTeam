@@ -39,10 +39,6 @@
                 	<div class="main_login"> <!-- main_login -->
                         <input id="user_id" name="user_id" type="password" placeholder="인증번호를 입력해주세요.">
                 	</div>
-                	<div id="saveNum">
-                    	<input id="saveID" type="checkbox">
-                    	<label class="saveIdBtn">인증번호 저장</label>
-                	</div>
                 	<div id="login_sign_up"> <!-- login_sign_up -->
                     	<button id="signUpBtn"> 인증하기</button>
                 	</div>
