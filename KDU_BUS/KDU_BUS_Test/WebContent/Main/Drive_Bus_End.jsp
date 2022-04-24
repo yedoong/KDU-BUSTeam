@@ -53,7 +53,11 @@
         	<button id="start_btn">도착</button>
     	</div>
     </form>
-
+    <form action="Drive_Bus_End_Cancel.jsp" method="post">
+    	<div class="bus_btn2">
+    		<button id="cancel_btn">취소</button>
+    	</div>
+    </form>
  </div>
 </body>
 </html>
