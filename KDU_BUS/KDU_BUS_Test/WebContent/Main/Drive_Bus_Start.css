@@ -105,3 +105,16 @@ nav #nav_input_data h2{
     font-family: 'NanumBarunGothic', sans-serif;
     box-shadow: 0px 5px 0px 0px #060a41;
 }
+.bus_btn2 #cancel_btn {
+	margin: 0 auto;
+	margin-top: 5vh;
+	width: 130px;
+    height: 10vh;
+    display: block;
+	background-color: rgb(120, 120, 120);
+	color: white;
+    border-radius: 20px; 
+    padding: 10px 30px;
+    font-size: 1.5em;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
