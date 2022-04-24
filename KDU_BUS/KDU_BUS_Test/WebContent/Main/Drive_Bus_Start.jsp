@@ -54,7 +54,11 @@
         	<button id="start_btn">출발</button>
     	</div>
     </form>
-
+    <form action="Drive_Bus_Start_Cancel.jsp" method="post">
+    	<div class="bus_btn2">
+    		<button id="cancel_btn">취소</button>
+    	</div>
+    </form>
  </div>
 </body>
 </html>
