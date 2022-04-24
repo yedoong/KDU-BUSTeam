@@ -101,6 +101,7 @@ nav #login_box #saveNum {
 
 nav #login_box #login_sign_up button {
     margin: 0 auto;
+    margin-top: 4vh;
     display: block;
     border: 0px;
     background-color: #0c1477;
