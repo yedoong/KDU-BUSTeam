@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+ 
+/* layout */
+ html, body {
+    width: 100%;
+    height: 100%;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* wrapper */
+#wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+/* header */
+header {
+    height: 10vh;
+    background-color: #0c1476;
+}
+header #header_main {
+    height: 10vh;
+    background-color: #0c1476;
+    text-align: center;
+    line-height: 10vh;
+}
+header #header_main h1 {
+    font-size: 1.4em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    color: white;
+}
+
+/* nav */
+nav {
+    width: 100%;
+    height: 13vh;
+    background-color: rgb(224, 224, 224);
+}
+nav #nav_name {
+    width: 100%;
+    height: 10vh;
+    margin-top: 4vh;
+    margin-left: 4vw;
+    display:inline-block;
+}
+nav #nav_name h2 {
+    font-size: 1.5em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    margin-bottom: 1vh;
+}
+nav #nav_name h3 {
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    float: left;
+    margin-right: 5vw;
+}
+nav #nav_name h4 {
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+/* nav_2 */
+#nav_2 {
+    width: 100%;
+    height: 10vh;
+}
+#nav_2 #ticket {
+    font-size: 1.3em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    border-bottom: 2px solid rgb(224, 224, 224);
+    padding: 15px;
+}
+
+#nav_2 #gift {
+    font-size: 1.3em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    border-bottom: 2px solid rgb(224, 224, 224);
+    padding: 15px;
+}
+
+/* nav_3 */
+#nav_3 {
+    width: 100%;
+    height: 10vh;
+    margin-top: 2.7vh;
+}
+#nav_3 #reservation {
+    font-size: 1.3em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    border-bottom: 2px solid rgb(224, 224, 224);
+    padding: 15px;
+}
+
+#nav_3 #mainpage {
+    font-size: 1.3em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    border-bottom: 2px solid rgb(224, 224, 224);
+    padding: 15px;
+}
+
+/* nav_4 */
+#nav_4 {
+    width: 100%;
+    height: 10vh;
+    margin-top: 2.4vh;
+}
+#nav_4 #logout {
+    font-size: 1.3em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    border-bottom: 2px solid rgb(224, 224, 224);
+    padding: 15px;
+}
