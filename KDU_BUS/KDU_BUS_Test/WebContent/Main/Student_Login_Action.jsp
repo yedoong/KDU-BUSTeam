@@ -16,11 +16,15 @@
 </head>
 <body>
 	<%
+		String studentID = request.getParameter("studentID");
+		String studentPassword = request.getParameter("studentPassword");
+		
 		Student_loginDAO student_loginDAO = new Student_loginDAO();
 		int result = student_loginDAO.login(student_login.getStudentID(), student_login.getStudentPassword());
 		
 		if (result == 1) {
 			PrintWriter script = response.getWriter();
+			session.setAttribute("studentID", studentID);
 			script.println("<script>");
 			script.println("location.href = 'Student_Bus_SelMenu.jsp'"); //로그인성공시 페이지 이동
 			script.println("</script>");
