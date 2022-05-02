@@ -97,7 +97,7 @@
 
         <div id="nav_4"> <!-- nav4 -->
             <div id="logout">
-                <a href="Pay_Mypage.jsp">
+                <a href="Student_Login.jsp">
                 	<%session.invalidate(); %>
                     <p>로그아웃</p>
                 </a>
