@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+ 
+/* layout */
+ html, body {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+body h2, h3 {
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+body h2 {
+    font-size: x-large;
+    margin-bottom: 0.5vh;
+    margin-top: 3vh;
+    margin-left: 8vw;
+}
+body h3 {
+    font-size: large;
+    margin-left: 8vw;
+    margin-bottom: 3vh;
+}
+
+/* wrapper */
+#wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+/* header */
+header {
+height: 10vh;
+background-color: #0c1476;
+}
+header h1 {
+    font-size: 1.4em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    color: white;
+    line-height: 10vh;
+    text-align: center;
+}
+
+/* nav */
+nav #bg {
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    margin:0 auto;
+}
+nav #bg img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* line_title */
+#line_title {
+    height: 23px;
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 0.7em;
+}
+#line_title #line_1 #text_box {
+    float: right;
+    width: 20vw;
+    height: 23px;
+    display: flex;
+    /* margin-right: 1vw; */
+    line-height: 23px;
+}
+#line_title #line_1 #text_box i {
+    line-height: 23px;
+    margin-right: 1vw;
+}
+
+/* footer */
+footer #Explain {
+    margin-top: 5vh; 
+    font-size: 0.8em;
+    margin-left: 10vw;
+}
+footer #Explain h4{
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 1em;
+    width: 80vw;
+}
+/* btn */
+#mypage {
+    width: 80vw;
+    height: 5vh;
+    border-radius: 3px;
+    background-color: #e0e0e0;
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.5vh;
+}
+
+/* Iphone SE */
+@media screen and (max-height: 667px) { 
+    body h2 {
+        font-size: large;
+        margin-bottom: 0.5vh;
+        margin-top: 2vh;
+        margin-left: 8vw;
+    }
+    body h3 {
+        font-size: medium;
+        margin-left: 8vw;
+        margin-bottom: 2vh;
+    }
+    footer #Explain {
+        margin-top: 8vh; 
+        font-size: 0.8em;
+        margin-left: 10vw;
+    }
+    footer #Explain h4{
+        font-family: 'NanumBarunGothic', sans-serif;
+        font-size: 1em;
+        width: 80vw;
+    }
+    /* btn */
+    #mypage {
+        width: 80vw;
+        height: 5vh;
+        border-radius: 3px;
+        background-color: #e0e0e0;
+        font-size: 1em;
+        font-family: 'NanumBarunGothic', sans-serif;
+        border: none;
+        display: block;
+        margin: 0 auto;
+        margin-top: 2vh;
+    }
+}
