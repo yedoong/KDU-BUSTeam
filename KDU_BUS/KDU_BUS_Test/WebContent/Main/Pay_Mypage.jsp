@@ -82,13 +82,13 @@
 
         <div id="nav_3"> <!-- nav3 -->
             <div id="reservation"> 
-                <a href="#">
+                <a href="Pay_SelBus.jsp">
                     <p>예매하기</p>
                 </a>
             </div>
             <div id="line_1" style="width: 100%; height: 1px; background-color: rgb(224, 224, 224);"></div>
             <div id="mainpage">
-                <a href="#">
+                <a href="Student_Bus_SelMenu.jsp">
                     <p>메인페이지</p>
                 </a>
             </div>
@@ -97,8 +97,7 @@
 
         <div id="nav_4"> <!-- nav4 -->
             <div id="logout">
-                <a href="Student_Login.jsp">
-                	<%session.invalidate(); %>
+                <a href="Student_Logout.jsp">
                     <p>로그아웃</p>
                 </a>
             </div>
