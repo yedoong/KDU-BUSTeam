@@ -80,17 +80,33 @@
 				console.log(sort_bus_station[i].name);
 			}			
 			
+			var arr = [];
 			
+			//정렬 그룹화
 			for(i=0 ; i<sort_bus_station.length; i++){
 				if(sort_bus_station[i].name == "하남" | "천호" | "잠실"){
-					console.log("하남, 천호, 잠실");
+					arr[i] = "하남, 천호, 잠실";
 				}else if(sort_bus_station[i].name == "구리" | "남양주"){
-					console.log("구리, 남양주");
+					arr[i] = "구리, 남양주";
 				}else if(sort_bus_station[i].name == "일산" | "일산_경유지"){
-					console.log("일산");
+					arr[i] = "일산";
 				}
 			}
-
+			
+			//arr[] 중복값 제거
+			var sort_arr = arr.filter(function(item,index){
+				return arr.indexOf(item) === index;
+			});
+			
+			//arr[] 출력
+			for(i=0; i<sort_arr.length; i++){
+				console.log(sort_arr[i]);
+			}
+			
+			//console.log(sort_arr[0]);
+			//console.log(sort_arr[1]);
+			//console.log(sort_arr[2]);
+			
 		}
 		
 		//위치 거부
