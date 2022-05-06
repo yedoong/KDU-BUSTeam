@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="java.util.Arrays"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDU 셔틀버스</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
     <link rel="stylesheet" href="Pay_SelBus.css">
     <link rel="stylesheet" href="Reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +16,7 @@
     <script src="https://kit.fontawesome.com/db7203ef58.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-	<script>
+<script>
 		console.dir(navigator)
 		
 		//셔틀 탑승지 리스트
@@ -120,7 +118,7 @@
 		})()
 	
 	</script>
-
+	
     <div id="wrapper">
         <header> <!-- s: header -->   
                 <h1>경동대 셔틀버스</h1> 
@@ -142,21 +140,21 @@
         </div>
 
         <div id="bus_1">
-            <a href="./Pay_SelDate.html">
+            <a href="Pay_SelDate.jsp?ticket_loc=구리, 남양주">
                 <h2>구리,남양주 (왕복권)</h2>
                 <h3>4,400</h3>
             </a>
             <div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
         </div>
         <div id="bus_2">
-            <a href="./Pay_SelDate.html">
+            <a href="#">
                 <h2>하남,천호,잠실 (왕복권)</h2>
                 <h3>5,000</h3>
             </a>
             <div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
         </div>
         <div id="bus_3">
-            <a href="./Pay_SelDate.html">
+            <a href="#">
                 <h2>일산 (왕복권)</h2>
                 <h3>6,000</h3>
             </a>
@@ -167,8 +165,8 @@
             <div id="Explain">
                 <h4>사용자의 현재 위치를 기반으로 가장 가까운 셔틀버스 탑승지를 최상단에 고정하여 추천해드립니다! :) </h4>
             </div>
-            <a href="./Pay_Mypage.jsp"><button id="mypage">마이페이지</button></a>
+            <a href="Pay_Mypage.jsp"><button id="mypage">마이페이지</button></a>
         </footer>
-    </div>
+	</div>
 </body>
 </html>
