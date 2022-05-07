@@ -30,12 +30,6 @@ function getDistance(lat1, lon1, lat2, lon2, unit){
 	if (unit=="N") { dist = dist * 0.8684 }
 	return dist;
 }
-
-//주소 이동
-function go(sort_arr){
-	location.href="Pay_SelDate.jsp?ticket_loc="+sort_arr;
-}
-
 		
 //위치 허용
 function success(position){
@@ -89,8 +83,11 @@ function success(position){
 	
 	//Pay_SelBus.jsp 에 버스, 가격 출력
 	$("#bus_station1").html(sort_arr[0]);
+	$("#bus_station1").val(sort_arr[0]);
 	$("#bus_station2").html(sort_arr[1]);
+	$("#bus_station2").val(sort_arr[1]);
 	$("#bus_station3").html(sort_arr[2]);
+	$("#bus_station3").val(sort_arr[2]);
 	
 	$("#bus_pay1").html(sort_brr[0]);
 	$("#bus_pay2").html(sort_brr[1]);
@@ -98,11 +95,18 @@ function success(position){
 	
 }
 
-//클릭한 텍스트 값 받아오기
-function statusChange(statusItem)
-{
-	var strText = $(statusItem).text();
-	location.href="Pay_SelDate.jsp?ticket_loc="+strText;
+
+function goPage1() {
+	let bus_station1 = document.getElementById("bus_station1").value;
+	location.href="Pay_SelDate.jsp?ticket_loc=" + bus_station1;
+}
+function goPage2() {
+	let bus_station2 = document.getElementById("bus_station2").value;
+	location.href="Pay_SelDate.jsp?ticket_loc=" + bus_station2;
+}
+function goPage3() {
+	let bus_station3 = document.getElementById("bus_station3").value;
+	location.href="Pay_SelDate.jsp?ticket_loc=" + bus_station3;
 }
 
 
