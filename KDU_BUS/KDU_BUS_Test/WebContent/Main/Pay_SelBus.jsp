@@ -14,9 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/db7203ef58.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="Pay_Location.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="Pay_Location.js"></script>
 </head>
+
 <body>
 
     <div id="wrapper">
@@ -40,22 +41,22 @@
         </div>
 
         <div id="bus_1">
-            <a href="Pay_SelDate.jsp">
-                <h2 id = "bus_station1"></h2>
+            <a id = "bus_pick1">
+                <h2 id = "bus_station1" onClick="statusChange(this)"></h2>
                 <h3 id = "bus_pay1"></h3>
             </a>
             <div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
         </div>
         <div id="bus_2">
-            <a href="Pay_SelDate.jsp">
-                <h2 id = "bus_station2"></h2>
+            <a id = "bus_pick2">
+                <h2 id = "bus_station2" onClick="statusChange(this)"></h2>
                 <h3 id = "bus_pay2"></h3>
             </a>
             <div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
         </div>
         <div id="bus_3">
-            <a href="Pay_SelDate.jsp">
-                <h2 id = "bus_station3"></h2>
+            <a id = "bus_pick3">
+                <h2 id = "bus_station3" onClick="statusChange(this)"></h2>
                 <h3 id = "bus_pay3"></h3>
             </a>
             <div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
@@ -64,6 +65,8 @@
         <footer>
             <div id="Explain">
                 <h4>사용자의 현재 위치를 기반으로 가장 가까운 셔틀버스 탑승지를 최상단에 고정하여 추천해드립니다! :) </h4>
+                <br></br>
+                <h4>위치 정보 수집을 동의하지 않을시, 탑승지 목록이 뜨지않습니다.</h4>
             </div>
             <a href="./Pay_Mypage.jsp"><button id="mypage">마이페이지</button></a>
         </footer>
