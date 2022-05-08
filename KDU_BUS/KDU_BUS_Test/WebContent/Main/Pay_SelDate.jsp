@@ -18,8 +18,8 @@
 <body>
 	<%
 		request.setCharacterEncoding("UTF-8");
-		String ticket_loc = request.getParameter("ticket_loc");
-		session.setAttribute("ticket_loc", ticket_loc);
+		String pay_bus_location = request.getParameter("pay_bus_location");
+		session.setAttribute("pay_bus_location", pay_bus_location);
 	%>
 	<form action="Pay_Mypage.jsp" method="post">
     <div id="wrapper">
