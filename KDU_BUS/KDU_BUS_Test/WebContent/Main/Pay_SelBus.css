@@ -91,10 +91,9 @@ nav #bg img{
 }
 #line_title #line_1 #text_box {
     float: right;
-    width: 20vw;
+    margin-right: 5vw;
     height: 23px;
     display: flex;
-    /* margin-right: 1vw; */
     line-height: 23px;
 }
 #line_title #line_1 #text_box i {
@@ -104,7 +103,7 @@ nav #bg img{
 
 /* footer */
 footer #Explain {
-    margin-top: 5vh; 
+    margin-top: 12vh; 
     font-size: 0.8em;
     margin-left: 10vw;
 }
@@ -128,7 +127,7 @@ footer #Explain h4{
 }
 
 /* Iphone SE */
-@media screen and (max-height: 667px) { 
+@media screen and (max-height: 668px) { 
     body h2 {
         font-size: large;
         margin-bottom: 0.5vh;
@@ -163,4 +162,29 @@ footer #Explain h4{
         margin: 0 auto;
         margin-top: 2vh;
     }
+}
+
+/* 갤럭시 S8+ */
+@media screen and (min-height: 740px) and (max-height: 740px) { 
+    footer #Explain {
+        margin-top: 5vh; 
+        font-size: 0.8em;
+        margin-left: 10vw;
+    }
+}
+
+/* 아이패드 */
+@media screen and (min-height: 1030px) and (max-height: 1181px) { 
+    footer #Explain {
+        margin-top: 5vh; 
+        font-size: 0.8em;
+        margin-left: 10vw;
+    }
+    header {
+        height: 8vh;
+        background-color: #0c1476;
+        }
+        header h1 {
+            line-height: 8vh;
+        }
 }
