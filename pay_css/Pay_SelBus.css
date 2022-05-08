@@ -91,10 +91,9 @@ nav #bg img{
 }
 #line_title #line_1 #text_box {
     float: right;
-    width: 20vw;
+    margin-right: 5vw;
     height: 23px;
     display: flex;
-    /* margin-right: 1vw; */
     line-height: 23px;
 }
 #line_title #line_1 #text_box i {
