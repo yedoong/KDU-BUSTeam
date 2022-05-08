@@ -73,18 +73,18 @@ nav  h2 {
 #icon #box #dateicon {
     display: block;
     text-align: center;
-    margin-top: 3vh;
+    margin-top: 5vh;
 }
 
 /* date */
 #input_date {
     text-align: center;
-    margin-top: 3vh;
-    margin-bottom: 50vh;
+    margin-top: 5vh;
+    margin-bottom: 45vh;
 }
 #input_date h1 {
     font-family: 'NanumBarunGothic', sans-serif;
-    margin-bottom: 1vh;
+    margin-bottom: 3vh;
 }
 #input_date input {
     width: 80vw;
@@ -101,4 +101,21 @@ nav  h2 {
     border: none;
     display: block;
     margin: 0 auto;
+}
+
+
+/* Ipad */
+@media screen and (min-height: 920px) and (max-height: 1181px) { 
+    #input_date {
+        text-align: center;
+        margin-top: 5vh;
+        margin-bottom: 25vh;
+    }
+    #input_date h1 {
+        font-family: 'NanumBarunGothic', sans-serif;
+        margin-bottom: 3vh;
+    }
+    #input_date input {
+        width: 80vw;
+    }
 }
