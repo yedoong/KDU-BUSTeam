@@ -176,8 +176,15 @@ footer #Explain h4{
 /* 아이패드 */
 @media screen and (min-height: 1030px) and (max-height: 1181px) { 
     footer #Explain {
-        margin-top: 2.5vh; 
+        margin-top: 5vh; 
         font-size: 0.8em;
         margin-left: 10vw;
     }
+    header {
+        height: 8vh;
+        background-color: #0c1476;
+        }
+        header h1 {
+            line-height: 8vh;
+        }
 }
