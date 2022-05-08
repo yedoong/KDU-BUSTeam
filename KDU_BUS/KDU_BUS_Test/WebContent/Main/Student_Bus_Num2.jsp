@@ -101,7 +101,7 @@
         			<div class="popup"> 
                 		<div class="popup-body">
                     		<div class="body-content">
-								<p id="p_one">데이터베이스 오류</p>
+								<p id="p_one">오류</p>
                     		</div>
                 		</div>
         				<div class="popup-foot">
