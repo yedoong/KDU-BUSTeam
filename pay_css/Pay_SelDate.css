@@ -68,7 +68,7 @@ nav  h2 {
 
 /* icon */
 #icon {
-    height: 10vh;
+    height: 7vh;
 }
 #icon #box #dateicon {
     display: block;
@@ -79,8 +79,8 @@ nav  h2 {
 /* date */
 #input_date {
     text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 45vh;
+    margin-top: 7vh;
+    margin-bottom: 1vh;
 }
 #input_date h1 {
     font-family: 'NanumBarunGothic', sans-serif;
@@ -88,6 +88,23 @@ nav  h2 {
 }
 #input_date input {
     width: 80vw;
+}
+
+#seat {
+    width: 30vw;
+    height: 3vh;
+    margin-left: 70vw;
+    margin-bottom: 40vh;
+    display: flex;
+}
+#seat h1 {
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 0.8em;
+}
+#seat span {
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 0.8em;
+    margin-left: 1vw;
 }
 
 /* btn */
@@ -109,7 +126,6 @@ nav  h2 {
     #input_date {
         text-align: center;
         margin-top: 5vh;
-        margin-bottom: 25vh;
     }
     #input_date h1 {
         font-family: 'NanumBarunGothic', sans-serif;
@@ -117,5 +133,24 @@ nav  h2 {
     }
     #input_date input {
         width: 80vw;
+    }
+    #seat {
+        width: 30vw;
+        height: 3vh;
+        margin-left: 80vw;
+        margin-bottom: 45vh;
+        display: flex;
+    }
+    #seat h1 {
+        font-family: 'NanumBarunGothic', sans-serif;
+        font-size: 0.8em;
+    }
+    #seat span {
+        font-family: 'NanumBarunGothic', sans-serif;
+        font-size: 0.8em;
+        margin-left: 1vw;
+    }
+    #icon {
+        height:7vh;
     }
 }
