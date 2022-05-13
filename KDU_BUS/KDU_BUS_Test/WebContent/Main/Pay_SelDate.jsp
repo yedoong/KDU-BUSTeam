@@ -19,9 +19,13 @@
 	<%
 		request.setCharacterEncoding("UTF-8");
 		String pay_bus_location = request.getParameter("pay_bus_location");
+		String pay_bus_price = request.getParameter("pay_bus_price");
 		session.setAttribute("pay_bus_location", pay_bus_location);
+		session.setAttribute("pay_bus_price", pay_bus_price);
+		out.println(pay_bus_location);
+		out.println(pay_bus_price);
 	%>
-	<form action="Pay_Mypage.jsp" method="post">
+	<form action="Pay_Reservation.jsp" method="post">
     <div id="wrapper">
         <header> <!-- s: header -->   
             <h1>경동대 셔틀버스</h1> 

@@ -90,23 +90,29 @@ function success(position){
 	$("#bus_station3").val(sort_arr[2]);
 	
 	$("#bus_pay1").html(sort_brr[0]);
+	$("#bus_pay1").val(sort_brr[0]);
 	$("#bus_pay2").html(sort_brr[1]);
+	$("#bus_pay2").val(sort_brr[1]);
 	$("#bus_pay3").html(sort_brr[2]);
+	$("#bus_pay3").val(sort_brr[2]);
 	
 }
 
 
 function goPage1() {
 	let bus_station1 = document.getElementById("bus_station1").value;
-	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station1;
+	let bus_pay1 = document.getElementById("bus_pay1").value;
+	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station1 + "& pay_bus_price=" + bus_pay1;
 }
 function goPage2() {
 	let bus_station2 = document.getElementById("bus_station2").value;
-	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station2;
+	let bus_pay2 = document.getElementById("bus_pay2").value;
+	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station2 + "& pay_bus_price=" + bus_pay2;
 }
 function goPage3() {
 	let bus_station3 = document.getElementById("bus_station3").value;
-	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station3;
+	let bus_pay3 = document.getElementById("bus_pay3").value;
+	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station3 + "& pay_bus_price=" + bus_pay3;
 }
 
 

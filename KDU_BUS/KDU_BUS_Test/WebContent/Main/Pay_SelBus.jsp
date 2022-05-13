@@ -42,21 +42,21 @@
         <div id="bus_1">
             <a href="javascript:goPage1()">
                 <h2 id = "bus_station1" value=""></h2>
-                <h3 id = "bus_pay1"></h3>
+                <h3 id = "bus_pay1" value=""></h3>
             </a>
             <div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
         </div>
         <div id="bus_2">
             <a href="javascript:goPage2()">
                 <h2 id = "bus_station2" value=""></h2>
-                <h3 id = "bus_pay2"></h3>
+                <h3 id = "bus_pay2" value=""></h3>
             </a>
             <div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
         </div>
         <div id="bus_3">
             <a href="javascript:goPage3()">
                 <h2 id = "bus_station3" value=""></h2>
-                <h3 id = "bus_pay3"></h3>
+                <h3 id = "bus_pay3" value=""></h3>
             </a>
             <div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
         </div>
