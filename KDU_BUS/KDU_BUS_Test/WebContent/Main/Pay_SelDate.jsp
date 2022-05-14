@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="pay.PayDAO" %>
-<% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="pay" class="pay.Pay" scope="page"/>
 <jsp:setProperty name="pay" property="pay_bus_location"/>
 <jsp:setProperty name="pay" property="date"/>
@@ -28,9 +27,6 @@
 		String pay_bus_price = request.getParameter("pay_bus_price");
 		session.setAttribute("pay_bus_location", pay_bus_location);
 		session.setAttribute("pay_bus_price", pay_bus_price);
-		
-		PayDAO payDAO = new PayDAO();
-		int result = payDAO.Calc_seat(pay.getPay_bus_location(), pay.getDate());
 	%>
 	<form action="Pay_Reservation.jsp" method="post">
     <div id="wrapper">
@@ -60,6 +56,17 @@
         	var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
          	document.getElementById("Date").setAttribute("min", today);
          </script>
+         
+         <%
+ 			String date = request.getParameter("ticket_day");
+ 			session.setAttribute("date", date);
+ 			
+     		out.println(pay_bus_location);
+     		out.println(date);
+     		
+     		PayDAO payDAO = new PayDAO();
+    		int result = payDAO.Calc_seat(pay.getPay_bus_location(), pay.getDate());
+         %>
          
      </div>
      
