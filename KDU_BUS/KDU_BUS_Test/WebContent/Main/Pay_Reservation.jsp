@@ -22,6 +22,7 @@
 
     	String pay_bus_location = (String) session.getAttribute("pay_bus_location");
     	String pay_bus_price = (String) session.getAttribute("pay_bus_price");
+    	
 	%>
     <div id="wrapper">
         <header> <!-- s: header -->
