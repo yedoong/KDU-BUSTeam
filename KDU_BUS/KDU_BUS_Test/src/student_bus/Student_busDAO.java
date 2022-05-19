@@ -12,7 +12,7 @@ public class Student_busDAO {
 	
 	public Student_busDAO() {
 		try {
-			String dbURL = "jdbc:mysql://3.39.182.65:3306/bus_database";
+			String dbURL = "jdbc:mysql://43.200.37.178:3306/bus_database";
             String dbID = "yijeong";
             String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
