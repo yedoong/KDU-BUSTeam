@@ -12,9 +12,9 @@ public class BusDAO {
 	
 	public BusDAO() {
 		try {
-			String dbURL = "jdbc:mysql://3.39.182.65:3306/bus_database";
-			String dbID = "yijeong";
-			String dbPassword = "1234";
+			String dbURL = "jdbc:mysql://43.200.37.178:3306/bus_database";
+            String dbID = "yijeong";
+            String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
