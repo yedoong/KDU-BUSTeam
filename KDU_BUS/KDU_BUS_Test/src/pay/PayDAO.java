@@ -12,7 +12,7 @@ public class PayDAO {
 	
 	public PayDAO() {
 		try {
-			String dbURL = "jdbc:mysql://43.200.37.178:3306/bus_database";
+			String dbURL = "jdbc:mysql://43.200.37.178:3306/user_database";
             String dbID = "yijeong";
             String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
