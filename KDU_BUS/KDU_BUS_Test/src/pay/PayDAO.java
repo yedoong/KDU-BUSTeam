@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 public class PayDAO {
 	private Connection conn;
@@ -13,7 +12,7 @@ public class PayDAO {
 	
 	public PayDAO() {
 		try {
-			String dbURL = "jdbc:mysql://3.39.182.65:3306/bus_database";
+			String dbURL = "jdbc:mysql://43.200.37.178:3306/bus_database";
             String dbID = "yijeong";
             String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
@@ -23,7 +22,7 @@ public class PayDAO {
 		}
 	}
 	
-	//남은 좌석 출력
+	//
 	public int Calc_seat(String pay_bus_location, String date) {
 		String SQL = "SELECT count(*) FROM pay_bus_ticket WHERE pay_bus_location=? AND date =?";
 		try {
@@ -40,28 +39,6 @@ public class PayDAO {
 			e.printStackTrace();
 		}
 		return -1;
-	}
-	
-	//승차권 출력
-	public ArrayList<Pay> getList(String studentID){
-		String SQL = "SELECT pay_bus_location, date FROM bus_database.pay_bus_ticket Where studentID=? ORDER BY date";
-		
-		ArrayList<Pay> list = new ArrayList<Pay>();
-		try {
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, studentID);
-		    rs = pstmt.executeQuery();
-		    
-		    while(rs.next()) {
-		    	Pay pay = new Pay();
-		    	pay.setPay_bus_location(rs.getString(1));
-		    	pay.setDate(rs.getString(2));
-		    	list.add(pay);
-		    }
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
 	}
 	
 }
