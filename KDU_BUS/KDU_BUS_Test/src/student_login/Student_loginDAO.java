@@ -13,9 +13,9 @@ public class Student_loginDAO {
 	
 	public Student_loginDAO() {
 		try {
-			String dbURL = "jdbc:mysql://3.39.182.65:3306/user_database";
-			String dbID = "yijeong";
-			String dbPassword = "1234";
+			String dbURL = "jdbc:mysql://43.200.37.178:3306/bus_database";
+            String dbID = "yijeong";
+            String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		}catch (Exception e) {
@@ -25,7 +25,6 @@ public class Student_loginDAO {
 	
 	//로그인하기
 	public int login(String studentID, String studentPassword) {
-		
 		//실제 SQL에서 사용할 명령어 작성
 		String SQL = "SELECT studentPassword FROM student_login_data WHERE studentID = ?";
 		try {
