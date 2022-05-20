@@ -238,10 +238,7 @@ nav #login_box input {
     }
 }
 /* web */ 
-@media screen and (min-width: 1900px)and (max-width: 1920px) { 
-    body {
-        background-color: #0c1477;
-    }
+@media screen and (min-width: 1900px)and (max-width: 1925px) { 
     #wrapper header #login_logo h1 img {
         width: 20%;
         height: 20%;
@@ -254,12 +251,24 @@ nav #login_box input {
         width: 30vw;
     }
     nav #login_box .main_login input {
-        width: 20vw;
+        width: 22vw;
+    }
+    nav #login_box #login_sign_up button {
+        padding: 10.5px 70px;
+        font-family: 'NanumBarunGothic', sans-serif;
+        font-size: 1.5em;
     }
     nav #login_box #Sign_Up {
-        margin-bottom: 5vh;
-        margin-left: 5vw;
-        font-size: 1em;
+        height: 10px;
+        margin-left: 75px;
+        margin-bottom: 8vh;
+        font-size: medium
+    }
+    input {
+        font-size: large;
+    }
+    nav #login_box .main_login input {
+        margin-top: 2vh; 
     }
 }
 /* 갤럭시 폴드 */
