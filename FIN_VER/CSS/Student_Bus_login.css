@@ -122,7 +122,12 @@ nav #login_box input {
 
 /* 반응형 */
 /* Ipad air*/
-@media screen and (min-height: 920px) and (max-height: 1181px) { 
+@media screen and (min-height: 1026px) and (max-height: 1181px) { 
+    #wrapper header #login_logo h1 img {
+        width: 45%;
+        height: 45%;
+        padding-top: 50px;
+    }
     nav #login_box #Sign_Up {
         margin-bottom: 5vh;
         margin-left: 5vw;
@@ -158,6 +163,11 @@ nav #login_box input {
 }
 /* Ipad mini */
 @media screen and (min-height: 1000px) and (max-height: 1025px) { 
+    #wrapper header #login_logo h1 img {
+        width: 45%;
+        height: 45%;
+        padding-top: 50px;
+    }
     nav #login_box #Sign_Up {
         margin-bottom: 5vh;
         margin-left: 5vw;
