@@ -28,9 +28,9 @@
 		ResultSet rs;
 		
 		try {
-			String dbURL = "jdbc:mysql://3.39.182.65:3306/user_database";
-            String dbID = "yijeong";
-            String dbPassword = "1234";
+			String dbURL = "jdbc:mysql://43.200.37.178:3306/user_database";
+			String dbID = "yijeong";
+           		String dbPassword = "1234";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 			String studentID = (String) session.getAttribute("studentID");
 			
