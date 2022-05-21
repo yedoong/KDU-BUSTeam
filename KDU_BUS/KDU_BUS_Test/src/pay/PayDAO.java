@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class PayDAO {
 	private Connection conn;
@@ -22,7 +23,7 @@ public class PayDAO {
 		}
 	}
 	
-	//
+	//남은좌석 출력
 	public int Calc_seat(String pay_bus_location, String date) {
 		String SQL = "SELECT count(*) FROM pay_bus_ticket WHERE pay_bus_location=? AND date =?";
 		try {
@@ -41,4 +42,26 @@ public class PayDAO {
 		return -1;
 	}
 	
+	//승차권 출력
+	public ArrayList<Pay> getList(String studentID){
+		String SQL = "SELECT pay_bus_location, date FROM user_database.pay_bus_ticket Where studentID=? ORDER BY date";
+
+		ArrayList<Pay> list = new ArrayList<Pay>();
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, studentID);
+		    rs = pstmt.executeQuery();
+
+		    while(rs.next()) {
+		    	Pay pay = new Pay();
+		    	pay.setPay_bus_location(rs.getString(1));
+		    	pay.setDate(rs.getString(2));
+		    	list.add(pay);
+		    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 }
