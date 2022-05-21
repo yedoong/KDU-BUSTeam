@@ -102,17 +102,17 @@ function success(position){
 function goPage1() {
 	let bus_station1 = document.getElementById("bus_station1").value;
 	let bus_pay1 = document.getElementById("bus_pay1").value;
-	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station1 + "&pay_bus_price=" + bus_pay1;
+	location.href="Pay_SelBus_Action.jsp?pay_bus_location=" + bus_station1 + "&pay_bus_price=" + bus_pay1;
 }
 function goPage2() {
 	let bus_station2 = document.getElementById("bus_station2").value;
 	let bus_pay2 = document.getElementById("bus_pay2").value;
-	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station2 + "&pay_bus_price=" + bus_pay2;
+	location.href="Pay_SelBus_Action.jsp?pay_bus_location=" + bus_station2 + "&pay_bus_price=" + bus_pay2;
 }
 function goPage3() {
 	let bus_station3 = document.getElementById("bus_station3").value;
 	let bus_pay3 = document.getElementById("bus_pay3").value;
-	location.href="Pay_SelDate.jsp?pay_bus_location=" + bus_station3 + "&pay_bus_price=" + bus_pay3;
+	location.href="Pay_SelBus_Action.jsp?pay_bus_location=" + bus_station3 + "&pay_bus_price=" + bus_pay3;
 }
 
 

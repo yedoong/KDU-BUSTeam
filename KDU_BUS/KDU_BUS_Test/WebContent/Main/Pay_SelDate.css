@@ -89,6 +89,12 @@ nav  h2 {
 #input_date input {
     width: 80vw;
 }
+#input_date #last_seat {
+	font-family: 'NanumBarunGothic', sans-serif;
+	margin-top: 2vh;
+	margin-bottom: 40vh;
+	margin-left: 27.5vh;
+}
 
 #seat {
     width: 30vw;
@@ -119,7 +125,6 @@ nav  h2 {
     display: block;
     margin: 0 auto;
 }
-
 
 /* Ipad */
 @media screen and (min-height: 920px) and (max-height: 1181px) { 
@@ -153,4 +158,102 @@ nav  h2 {
     #icon {
         height:7vh;
     }
+}
+
+
+/* 팝업 */
+  
+  /* 실제 팝업 */
+  .popup{
+  	position:relative;
+  	/*z-index:10;*/
+  	margin:0 auto;
+  	margin-bottom:10vh;
+    width:60vw;
+    height:23vh;
+    /*line-height:23vh;*/
+    border-radius:10px;
+    background-color:#ffffff;
+    box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3);   
+  }
+  
+  /* 실제 팝업 */
+  .popup{
+  	position:relative;
+  	/*z-index:10;*/
+  	margin:0 auto;
+  	margin-bottom:10vh;
+    width:60vw;
+    height:23vh;
+    /*line-height:23vh;*/
+    border-radius:10px;
+    background-color:#ffffff;
+    box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3);   
+  }
+  .popup-wrap{
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:flex;
+    padding:15px; 
+
+  }
+
+ /* 팝업 텍스트 들어가는 배경 */
+  .popup-body{
+  	margin:0 auto;
+    width:80%;
+    height:16vh;
+    background-color:#ffffff;
+  }
+  /* 글씨 콘텐츠 감싸는 box */
+  .body-content{
+	text-align:center;
+  	width:100%;
+    padding:18% 0px;
+  }
+  /* 글씨 */
+  .body-content p {
+  	width:100%;
+    text-align: center;
+    font-family: 'NanumBarunGothic', sans-serif;
+  }
+  .body-content #p_one {
+  	width:100%;
+    margin-bottom: 1vh;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+  /* footer */
+  .popup-foot{
+  	border-radius: 0px 0px 10px 10px;
+  	background-color:#0c1477;
+    width:100%;
+    height:7vh;
+    text-align: center;
+  }
+  .popup-foot button{
+  	border:none;
+  	padding:0;
+    text-align: center;
+    background-color:#0c1477;
+    color: white;
+    height:6.5vh;
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+  }
+  
+  #bg {
+  	background-color:rgba(0,0,0,.3);
+  	position:fixed;
+  	top:0;
+  	left:0;
+    right:0;
+    bottom:0;
+  	
 }

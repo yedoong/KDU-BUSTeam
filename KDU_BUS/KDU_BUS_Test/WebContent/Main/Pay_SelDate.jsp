@@ -23,12 +23,9 @@
 <body>
 	<%
 		request.setCharacterEncoding("UTF-8");
-		String pay_bus_location = request.getParameter("pay_bus_location");
-		String pay_bus_price = request.getParameter("pay_bus_price");
-		session.setAttribute("pay_bus_location", pay_bus_location);
-		session.setAttribute("pay_bus_price", pay_bus_price);
+		String pay_bus_location = (String) session.getAttribute("pay_bus_location");
+		String date = (String) session.getAttribute("date");
 	%>
-	<form action="Pay_Reservation.jsp" method="post">
     <div id="wrapper">
         <header> <!-- s: header -->   
             <h1>경동대 셔틀버스</h1> 
@@ -45,40 +42,54 @@
             <i class="fa-solid fa-calendar-days" style="color: #0c1476; font-size: 5em;" id="dateicon"></i>
         </div>
      </div>
-
+	 <form action="Pay_Reservation.jsp" method="post">
      <div id="input_date">
          <h1>왕복권만 구매가 가능합니다!</h1>
-         <input type="date" name="ticket_day" id="Date">
+         <input type="date" name="ticket_day" id="Date" value="<%=date%>">
+         <div id="last_seat" onclick="goAction()">남은좌석 보기</div>
          
          <script type="text/javascript">
          	var now_utc = Date.now()
         	var timeOff = new Date().getTimezoneOffset()*60000;
         	var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
          	document.getElementById("Date").setAttribute("min", today);
+         	
+         	function goAction(){
+         		let ticket_day1 = document.getElementById('Date').value;
+         		location.href="Pay_SelDate_Action.jsp?ticket_day=" + ticket_day1;
+         	}
+         	
          </script>
-         
-         <%
- 			String date = request.getParameter("ticket_day");
- 			session.setAttribute("date", date);
- 			
-     		out.println(pay_bus_location);
-     		out.println(date);
-     		
-     		PayDAO payDAO = new PayDAO();
-    		int result = payDAO.Calc_seat(pay.getPay_bus_location(), pay.getDate());
-         %>
-         
-     </div>
-     
-     <div id="seat">
-         <h1>남은좌석:</h1>
-         <span style="color: red;"><% out.println(result); %>석</span> <!--  남은좌석 -->
      </div>
 
      <div id="btn"> 
         <button id="submit">확인</button>
     </div>
+    </form>    
+     <% 
+			String result = request.getParameter("result");
+     		
+    		
+            if(result!=null) 
+            {
+      %>
+            <!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one" style="line-height:normal;"><%=result %>석<br>남았어요!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+	<%
+            }
+    %>
     </div>
-    </form>
 </body>
 </html>
