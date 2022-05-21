@@ -13,15 +13,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
 <body>
 	<%
 		request.setCharacterEncoding("UTF-8");
 		String date = request.getParameter("ticket_day");
 		session.setAttribute("date", date);
-
     	String pay_bus_location = (String) session.getAttribute("pay_bus_location");
     	String pay_bus_price = (String) session.getAttribute("pay_bus_price");
+    	
+    	String studentName = (String) session.getAttribute("studentName");
     	
 	%>
     <div id="wrapper">
@@ -57,10 +60,62 @@
             <p id="p_2" style="color: rgb(231, 76, 60);">본 승차권은 구매 시 선택한 일자에만 사용 가능하며, 유효기간 연장이 불가합니다.</p>
         </div>
     </div>
-
     <footer>
-        <a href="결제하기 api"><button id="pay">결제하기</button></a>
+        <a><button id="pay" type="button">결제하기</button></a>
     </footer>
-
+	<script>
+	let studentName = '<%=studentName%>';
+	let pay_bus_location = '<%=pay_bus_location%>';
+	let pay_bus_price = '<%=pay_bus_price%>';
+	$("#pay").click(function () {
+		var IMP = window.IMP; // 생략가능
+		IMP.init('imp76846838');
+		// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+		// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+		IMP.request_pay({
+			pg: 'kakaopay', // version 1.1.0부터 지원.
+				/*
+				'kakao':카카오페이,
+				html5_inicis':이니시스(웹표준결제)
+				'nice':나이스페이
+				'jtnet':제이티넷
+				'uplus':LG유플러스
+				'danal':다날
+				'payco':페이코
+				'syrup':시럽페이
+				'paypal':페이팔
+				*/
+			pay_method: 'card',
+				/*
+				'samsung':삼성페이,
+				'card':신용카드,
+				'trans':실시간계좌이체,
+				'vbank':가상계좌,
+				'phone':휴대폰소액결제
+				*/
+			merchant_uid: 'merchant_' + new Date().getTime(),
+				/*
+				merchant_uid에 경우
+				https://docs.iamport.kr/implementation/payment
+				위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
+				참고하세요.
+				나중에 포스팅 해볼게요.
+				*/
+			name: pay_bus_location,
+				//결제창에서 보여질 이름
+			amount: pay_bus_price,
+				//가격
+			buyer_name: studentName
+		}, function (rsp) {
+			console.log(rsp);
+			if (rsp.success) {
+				location.href='Pay_CheckTicket.jsp';
+			} else {
+				var msg = '결제에 실패하였습니다.';
+				msg += '에러내용 : ' + rsp.error_msg;
+			}
+		});
+	});
+	</script>
 </body>
 </html>
