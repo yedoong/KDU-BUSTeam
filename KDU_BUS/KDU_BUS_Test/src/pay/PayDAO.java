@@ -63,5 +63,20 @@ public class PayDAO {
 		}
 		return list;
 	}
+	
+	//티켓 DB추가
+	public int Insert_ticket(String studentID, String pay_bus_location, String date) {
+		String SQL = "INSERT INTO pay_bus_ticket (studentID, pay_bus_location, date) VALUES (?, ?, ?)";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, studentID);
+			pstmt.setString(2, pay_bus_location);
+			pstmt.setString(3, date);			
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 
 }
