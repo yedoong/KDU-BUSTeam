@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDU 셔틀버스</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./css/Pay_GiftTicket.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <header> <!-- s: header -->
+            <div id="header_main">
+                <h1>경동대 셔틀버스</h1> 
+            </div>
+         </header> <!-- e: header -->
+
+         <nav> <!--  nav -->
+            <div id="nav_title"> <!-- nav_title -->
+                <h2>선물정보 확인</h2>
+            </div>
+        </nav>
+
+        <div id="bus_info"> <!-- 버스 정보 -->
+            <h2 id="date">4.29 (금)</h2> <!-- 선택한 날짜 받아오기 -->
+            <h2 id="locate">하남,천호,잠실 (왕복권)</h2>
+            <h2 id="price">5,000원</h2>
+        </div>
+
+        <div id="line" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
+
+        <div id="inputWho">
+            <h3>받는 사람 정보 입력</h3>
+        </div>
+
+        <div id="input_box">
+            <div id="name"> <!-- 이름 입력란 -->
+            <input id="name" type="text" placeholder="이름">
+        </div>
+    
+        <div id="department"> <!-- 학과 입력란 -->
+            <input id="department"  type="text" placeholder="학과">
+            <div id="ex">
+                <p id="fir">예) 소프트웨어학과</p>
+                <p id="sec">(띄어쓰기 없이 작성해주세요.)</p>
+            </div>
+        </div>
+
+        <div id="StudentID"> <!-- 학번 입력란 -->
+            <input id="StudentID"  type="text" maxlength = "7" placeholder="학번 (아이디)">
+        </div>
+        </div>
+
+    <footer>
+        <a href="#"><button id="pay">선물하기</button></a>
+    </footer>
+
+</body>
+</html>
