@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes marquee {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+     
+        .marquee .outer {
+            overflow: hidden;
+        }
+     
+        .marquee .outer .inner {
+            position: relative;
+            display: flex;
+            width: 200%;
+            background-color: red;
+            letter-spacing: 5px;
+        }
+     
+        .marquee .outer .inner:nth-child(1) {
+            animation: marquee 5s linear infinite;
+        }
+     
+        .marquee .outer .inner .content {
+            width: 50%;
+        }
+        @font-face {
+        font-family: 'GmarketSansBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+}
+    </style>
+     <body>
+    <div class="marquee">
+        <div class="outer">
+            <div class="inner">
+                <span class="content" style="font-family: 'GmarketSansBold';">캡쳐화면으로는 승차가 불가능합니다</span>
+                <span class="content" style="font-family: 'GmarketSansBold';">캡쳐화면으로는 승차가 불가능합니다</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
