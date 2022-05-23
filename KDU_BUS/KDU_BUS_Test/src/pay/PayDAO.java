@@ -66,7 +66,7 @@ public class PayDAO {
 	
 	//티켓 DB추가
 	public int Insert_ticket(String studentID, String pay_bus_location, String date) {
-		String SQL = "INSERT INTO pay_bus_ticket (studentID, pay_bus_location, date) VALUES (?, ?, ?)";
+		String SQL = "INSERT INTO user_database.pay_bus_ticket (studentID, pay_bus_location, date) VALUES (?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, studentID);
@@ -77,6 +77,52 @@ public class PayDAO {
 			e.printStackTrace();
 		}
 		return -1;
+	}
+	
+	//선물 받는 사람 정보 검색
+	public int giftwho(String gift_studentName, String gift_studentDepartment, String gift_studentID) {
+		String SQL = "SELECT studentName,studentDepartment,studentID FROM user_database.student_login_data where studentName=? and studentDepartment=? and studentID=?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, gift_studentName);
+			pstmt.setString(2, gift_studentDepartment);
+			pstmt.setString(3, gift_studentID);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString(1).equals(gift_studentName)) {
+					if(rs.getString(2).equals(gift_studentDepartment)) {
+						if(rs.getString(3).equals(gift_studentID)) {
+							return 1; //모두 일치
+						}
+						else
+							return -1; //일치하지 않는 학번
+					}else
+						return -2; //일치하지 않는 학과
+				}else
+					return -3; //일치하지 않는 이름
+			}
+			return -4; //일치하는 학생 없음
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -5; //데이터베이스 오류
+	}
+	
+	//선물하기
+	public int sendgift(String gift_studentID, String studentID, String pay_bus_location, String date) {
+		String SQL = "UPDATE pay_bus_ticket SET studentID=? WHERE studentID=? and pay_bus_location=? and date=?";
+		
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, gift_studentID);
+			pstmt.setString(2, studentID);
+			pstmt.setString(3, pay_bus_location);
+			pstmt.setString(4, date);			
+			return pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // 데이터베이스 오류
 	}
 
 }
