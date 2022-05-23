@@ -23,6 +23,8 @@
 		session.setAttribute("date", date);
     	String pay_bus_location = (String) session.getAttribute("pay_bus_location");
     	String pay_bus_price = (String) session.getAttribute("pay_bus_price");
+    	String studentID = (String) session.getAttribute("studentID");
+    	String studentDepartment = (String) session.getAttribute("studentDepartment");
     	
     	String studentName = (String) session.getAttribute("studentName");
     	
@@ -41,17 +43,17 @@
         </nav>
 
         <div id="bus_info"> <!-- 버스 정보 -->
-            <h2 id="date"><% out.println(date); %></h2> <!-- 선택한 날짜 받아오기 -->
-            <h2 id="locate"><% out.println(pay_bus_location); %></h2>
-            <h2 id="price"><% out.println(pay_bus_price); %>원</h2>
+            <h2 id="date"><%= date %></h2> <!-- 선택한 날짜 받아오기 -->
+            <h2 id="locate"><%= pay_bus_location %></h2>
+            <h2 id="price"><%= pay_bus_price %>원</h2>
         </div>
 
         <div id="line" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
 
         <div id="explain">
-            <p id="explain_title">주문정보</h3>
+            <p id="explain_title">주문정보</p>
             <% String pay_bus_location_r = pay_bus_location.replaceFirst("\\(왕복권\\)",""); %>
-            <p id="text"><% out.println(pay_bus_location_r); %> - 양주캠퍼스 왕복권입니다.</h3>
+            <p id="text"><% out.println(pay_bus_location_r); %> - 양주캠퍼스 왕복권입니다.</p>
         </div>
 
         <div id="guide">
@@ -65,8 +67,11 @@
     </footer>
 	<script>
 	let studentName = '<%=studentName%>';
+	let studentDepartment = '<%=studentDepartment%>';
+	let studentID = '<%=studentID%>';
 	let pay_bus_location = '<%=pay_bus_location%>';
 	let pay_bus_price = '<%=pay_bus_price%>';
+	let date = '<%=date%>';
 	$("#pay").click(function () {
 		var IMP = window.IMP; // 생략가능
 		IMP.init('imp76846838');
@@ -101,15 +106,17 @@
 				참고하세요.
 				나중에 포스팅 해볼게요.
 				*/
-			name: pay_bus_location,
+			name: pay_bus_location + date,
 				//결제창에서 보여질 이름
 			amount: pay_bus_price,
 				//가격
-			buyer_name: studentName
+			buyer_name: studentName,
+			buyer_tel: studentID,
+			buyer_addr: studentDepartment
 		}, function (rsp) {
 			console.log(rsp);
 			if (rsp.success) {
-				location.href='Pay_CheckTicket.jsp';
+				location.href='Pay_Reservation_Action.jsp';
 			} else {
 				var msg = '결제에 실패하였습니다.';
 				msg += '에러내용 : ' + rsp.error_msg;
