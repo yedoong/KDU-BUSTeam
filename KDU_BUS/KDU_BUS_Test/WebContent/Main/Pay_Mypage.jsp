@@ -29,8 +29,8 @@
 		
 		try {
 			String dbURL = "jdbc:mysql://43.200.37.178:3306/user_database";
-			String dbID = "yijeong";
-           		String dbPassword = "1234";
+            String dbID = "yijeong";
+            String dbPassword = "1234";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 			String studentID = (String) session.getAttribute("studentID");
 			
@@ -49,7 +49,6 @@
 			e.printStackTrace();
 		}
 	%>
-
     <div id="wrapper">
         <header> <!-- s: header -->
             <div id="header_main">
@@ -67,13 +66,13 @@
 
         <div id="nav_2"> <!-- nav2 -->
             <div id="ticket">
-                <a href="Student_Login.jsp">
+                <a href="Pay_TicketList.jsp">
                     <p>승차권</p>
                 </a>
             </div>
             <div id="line_1" style="width: 100%; height: 1px; background-color: rgb(224, 224, 224);"></div>
             <div id="gift">
-                <a href="#">
+                <a href="Pay_TicketListGift.jsp">
                     <p>선물하기</p>
                 </a>
             </div>
