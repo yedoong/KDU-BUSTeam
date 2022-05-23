@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,6 +22,7 @@
 		String pay_bus_location = request.getParameter("pay_bus_location");
 		session.setAttribute("date", date);
 		session.setAttribute("pay_bus_location", pay_bus_location);
+
 	%>
     <div id="wrapper">
         <header> <!-- s: header -->
@@ -49,11 +51,11 @@
 		<form action="Pay_GiftTicket_Action.jsp" method="post">
 	        <div id="input_box">
 	            <div id="name"> <!-- 이름 입력란 -->
-	            <input id="name" name="studentName" type="text" placeholder="이름">
+	            <input id="name" name="gift_studentName" type="text" placeholder="이름">
 	        </div>
 	    
 	        <div id="department"> <!-- 학과 입력란 -->
-	            <input id="department" name="studentDepartment" type="text" placeholder="학과">
+	            <input id="department" name="gift_studentDepartment" type="text" placeholder="학과">
 	            <div id="ex">
 	                <p id="fir">예) 소프트웨어학과</p>
 	                <p id="sec">(띄어쓰기 없이 작성해주세요.)</p>
@@ -61,7 +63,7 @@
 	        </div>
 	
 	        <div id="StudentID"> <!-- 학번 입력란 -->
-	            <input id="StudentID" name="studentID" type="text" maxlength = "7" placeholder="학번 (아이디)">
+	            <input id="StudentID" name="gift_studentID" type="text" maxlength = "7" placeholder="학번 (아이디)">
 	        </div>
 	        </div>
 	
