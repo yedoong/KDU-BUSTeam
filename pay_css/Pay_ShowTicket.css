@@ -1,0 +1,340 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+
+    @keyframes marquee {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.marquee .outer {
+    overflow: hidden;
+}
+
+.marquee .outer .inner {
+    position: relative;
+    display: flex;
+    width: 200%;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px gray;
+    -webkit-text-stroke: 1px rgb(10, 25, 110);
+    color: white;
+}
+
+.marquee .outer .inner:nth-child(1) {
+    animation: marquee 5s linear infinite;
+}
+
+.marquee .outer .inner .content {
+    width: 50%;
+    margin-top: 8vh;
+}
+@font-face {
+font-family: 'GmarketSansBold';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+/* header */
+header {
+    height: 10vh;
+    background-color: #0c1476;
+    text-align: center;
+    
+} 
+header h1 {
+    font-size: 1.4em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    color: white;
+    line-height: 10vh;
+}
+
+/* bg */
+#bg {
+    width: 100%;
+    height: 50vh;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ticket box */
+#ticket_box {
+    width: 70vw;
+    height: 35vh;
+    background-color: white;
+    position: absolute;
+    top: 155px;
+    left:60px;
+}
+
+/* body 글자 */
+body h2 {
+    font-size: x-large;
+    margin-bottom: 1vh;
+    margin-top: 4vh;
+    margin-left: 6vw;
+    font-family: 'NanumBarunGothic';
+}
+body h3 {
+    font-size: x-large;
+    margin-left: 6vw;
+    margin-bottom: 1vh;
+    font-family: 'NanumBarunGothic';
+}
+body h4 {
+    font-size: x-large;
+    margin-left: 6vw;
+    margin-bottom: 6vh;
+    font-family: 'NanumBarunGothic';
+}
+
+/* ticket explain */
+#ticket_explain h5 {
+    margin-left: 6vw;
+    margin-bottom: 1vh;
+    font-family: 'NanumBarunGothic';
+}
+#ticket_explain p {
+    margin-left: 6vw;
+    margin-bottom: 2.5vh;
+    font-family: 'NanumBarunGothic';
+    width: 55vw;
+    color:rgb(70, 70, 70);
+    font-size: 0.8em;
+    line-height: 20px;
+}
+#btn_box {
+    width: 70vw;
+    display: flex;
+}
+#btn_box #goSchool {
+    width: 35vw;
+    height: 7vh;
+    border: none;
+    background-color: #0c1476;
+    border-right: 1px solid rgb(175, 175, 175);
+    color: white;
+    font-family: 'NanumBarunGothic';
+}
+#btn_box #goHome {
+    width: 35vw;
+    height: 7vh;
+    border: none;
+    background-color: #0c1476;
+    color: white;
+    font-family: 'NanumBarunGothic';
+}
+
+footer h5 {
+    margin-left: 10vw;
+    margin-top: 5vh;
+    font-family: 'NanumBarunGothic';
+}
+#line {
+    margin-left: 10vw;
+    margin-top: 1vh;
+}
+footer #one {
+    margin-left: 10vw;
+    margin-top: 4vh;
+    font-family: 'NanumBarunGothic';
+    font-size: 0.8em;
+}
+footer #two {
+    margin-left: 10vw;
+    margin-top: 1vh;
+    font-family: 'NanumBarunGothic';
+    font-size: 0.8em;
+}
+
+/* 반응형 */
+/* Iphone XR */
+@media screen and (min-height: 670px)and (max-height: 897px) { 
+    .marquee .outer .inner .content {
+        width: 50%;
+        margin-top: 5vh;
+        margin-bottom: 3vh;
+    }
+    #btn_box #goSchool {
+        font-size: 1em;
+    }
+    #btn_box #goHome {
+        font-size: 1em;
+    }
+
+}
+/* 삼성 갤럭시 8+ */
+@media screen and (min-height: 668px) and (max-height: 741px) { 
+    #ticket_box {
+        width: 70vw;
+        height: 35vh;
+        background-color: white;
+        position: absolute;
+        top: 180px;
+        left:60px;
+    }
+    .marquee .outer .inner .content {
+        margin-top: 7.5vh;
+    }
+}
+/* 삼성 갤럭시 S20 ULTRA */
+@media screen and (min-height: 780px) and (max-height: 915px) { 
+    #btn_box #goSchool {
+        font-size: 1em;
+    }
+    #btn_box #goHome {
+        font-size: 1em;
+    }
+}
+/* Ipad air*/
+@media screen and (min-height: 920px) and (max-height: 1181px) { 
+    header {
+        height: 8vh;
+    } 
+    header h1 {
+        line-height: 8vh;
+    }
+    #ticket_box {
+        width: 55vw;
+        height: 35vh;
+        top: 180px;
+        left:190px;
+    }
+    #btn_box {
+        width: 55vw;
+        display: flex;
+    }
+    #ticket_explain p {
+        margin-left: 6vw;
+        margin-bottom: 3vh;
+    }
+    #btn_box #goSchool {
+        font-size: 1.5em;
+    }
+    #btn_box #goHome {
+        font-size: 1.5em;
+    }
+    #bg {
+        width: 100%;
+        height: 30vh;
+        border-bottom-left-radius: 45px;
+        border-bottom-right-radius: 45px;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+    }
+    .marquee .outer .inner .content {
+        margin-top: 13vh;
+        font-size: 2em;
+    }
+    footer #ReadMe {
+        font-size: 1.5em;
+    }
+    footer #one {
+
+        margin-top: 2vh;      
+        font-size: 1em;
+    }
+    footer #two {
+        font-size: 1em;
+    }
+}
+/* Ipad mini */
+@media screen and (min-height: 1000px) and (max-height: 1025px) { 
+    .marquee .outer .inner .content {
+        margin-top: 19vh;
+        font-size: 2em;
+    }
+    #ticket_explain p {
+        margin-left: 6vw;
+        margin-bottom: 3vh;
+    }
+    footer #ReadMe {
+        font-size: 1.5em;
+    }
+}
+/* 갤럭시 폴드 */
+@media screen and (min-height: 600px) and (max-height: 654px) { 
+    #ticket_box {
+        width: 70vw;
+        height: 40vh;
+        background-color: white;
+        position: absolute;
+        top: 90px;
+        left:40px;
+    }
+    .marquee .outer .inner .content {
+        margin-top:5vh;
+        font-size: 1em;
+    }
+    footer #one {
+        margin-top: 2vh;      
+        font-size: 0.8em;
+    }
+    footer #two {
+        font-size: 0.8em;
+    }
+}
+/* web */ 
+@media screen and (min-width: 1900px)and (max-width: 1925px) { 
+    #bg {
+        height: 50vh;
+    }
+    #ticket_box {
+        width: 30vw;
+        height: 30vh;
+        top: 300px;
+        left:680px;
+    }
+    #btn_box {
+        width: 30vw;
+        display: flex;
+    }
+    body h2 {
+        margin-left: 3vw;
+    }
+    body h3 {
+        margin-left: 3vw;
+    }
+    body h4 {
+        margin-left: 3vw;
+    }
+    #ticket_explain h5 {
+        margin-left: 3vw;
+    }
+    #ticket_explain p {
+        margin-left: 3vw;
+    }
+}
