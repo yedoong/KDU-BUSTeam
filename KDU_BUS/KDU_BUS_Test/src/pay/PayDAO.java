@@ -13,9 +13,9 @@ public class PayDAO {
 	
 	public PayDAO() {
 		try {
-			String dbURL = "jdbc:mysql://43.200.37.178:3306/user_database";
-            String dbID = "yijeong";
-            String dbPassword = "1234";
+			String dbURL = "jdbc:mysql://rds-javajo.cbked3d387nj.ap-northeast-2.rds.amazonaws.com/yijeongree";
+			String dbID = "yijeongree";
+            String dbPassword = "kdubus-javajo";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
@@ -44,7 +44,7 @@ public class PayDAO {
 	
 	//승차권 출력
 	public ArrayList<Pay> getList(String studentID){
-		String SQL = "SELECT pay_bus_location, date FROM user_database.pay_bus_ticket Where studentID=? ORDER BY date";
+		String SQL = "SELECT pay_bus_location, date FROM pay_bus_ticket Where studentID=? ORDER BY date";
 
 		ArrayList<Pay> list = new ArrayList<Pay>();
 		try {
@@ -66,7 +66,7 @@ public class PayDAO {
 	
 	//티켓 DB추가
 	public int Insert_ticket(String studentID, String pay_bus_location, String date) {
-		String SQL = "INSERT INTO user_database.pay_bus_ticket (studentID, pay_bus_location, date) VALUES (?, ?, ?)";
+		String SQL = "INSERT INTO pay_bus_ticket (studentID, pay_bus_location, date) VALUES (?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, studentID);
@@ -81,7 +81,7 @@ public class PayDAO {
 	
 	//선물 받는 사람 정보 검색
 	public int giftwho(String gift_studentName, String gift_studentDepartment, String gift_studentID) {
-		String SQL = "SELECT studentName,studentDepartment,studentID FROM user_database.student_login_data where studentName=? and studentDepartment=? and studentID=?";
+		String SQL = "SELECT studentName,studentDepartment,studentID FROM student_login_data where studentName=? and studentDepartment=? and studentID=?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, gift_studentName);
@@ -109,20 +109,51 @@ public class PayDAO {
 	}
 	
 	//선물하기
-	public int sendgift(String gift_studentID, String studentID, String pay_bus_location, String date) {
-		String SQL = "UPDATE pay_bus_ticket SET studentID=? WHERE studentID=? and pay_bus_location=? and date=?";
-		
+	public int sendgift(String studentID, String pay_bus_location, String date) {
+		String SQL = "UPDATE pay_bus_ticket SET studentID='1921039' WHERE studentID=? and pay_bus_location=? and date=?";
 		try {
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, gift_studentID);
-			pstmt.setString(2, studentID);
-			pstmt.setString(3, pay_bus_location);
-			pstmt.setString(4, date);			
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, studentID);
+			pstmt.setString(2, pay_bus_location);
+			pstmt.setString(3, date);		
 			return pstmt.executeUpdate();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // 데이터베이스 오류
+		return -1;
+	}
+	
+	//삭제하기
+	public int delete(String studentID, String pay_bus_location, String date) {
+		String SQL = "DELETE FROM pay_bus_ticket WHERE studentID=? and pay_bus_location=? and date=?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, studentID);
+			pstmt.setString(2, pay_bus_location);
+			pstmt.setString(3, date);		
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+
+	//환불시 가격 알려주기
+	public int howmuch(String pay_bus_location) {
+		String SQL = "SELECT pay_bus_price FROM pay_bus_data WHERE pay_bus_location=?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, pay_bus_location);	
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				int price = rs.getInt(1);
+				
+				return price;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 
 }
