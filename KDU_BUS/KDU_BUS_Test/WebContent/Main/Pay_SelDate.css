@@ -41,15 +41,24 @@
 /* header */
 header {
     height: 10vh;
-    background-color: #0c1476;
-    text-align: center;
-    
+    background-color: #0c1476;   
 } 
 header h1 {
     font-size: 1.4em;
     font-family: 'NanumBarunGothic', sans-serif;
     color: white;
     line-height: 10vh;
+    text-align: center;
+}
+header .material-icons-round {
+	position:absolute;
+	height: 9vh;
+	color: white;
+	background-color: #0c1476;
+	float : left;
+	line-height: 10vh;
+	padding-left : 3vh;
+	border: 0px;
 }
 
 /* nav */
