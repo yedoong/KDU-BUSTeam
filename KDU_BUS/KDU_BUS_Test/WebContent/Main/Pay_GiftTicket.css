@@ -42,13 +42,23 @@
 header {
     height: 10vh;
     background-color: #0c1476;
-    text-align: center;
 } 
 header h1 {
     font-size: 1.4em;
     font-family: 'NanumBarunGothic', sans-serif;
     color: white;
     line-height: 10vh;
+    text-align: center;
+}
+header .material-icons-round {
+	position:absolute;
+	height: 9vh;
+	color: white;
+	background-color: #0c1476;
+	float : left;
+	line-height: 10vh;
+	padding-left : 3vh;
+	border: 0px;
 }
 
 /* nav */
@@ -186,6 +196,10 @@ footer #pay {
     header h1 {
         line-height: 8vh;
     }
+    header .material-icons-round{
+        height:8vh;
+        line-height: 8vh;
+    }
 }
 /* Ipad mini */
 @media screen and (min-height: 1000px) and (max-height: 1025px) { 
@@ -222,6 +236,9 @@ footer #pay {
     }
     header h1 {
         font-size: 1.2em;
+    }
+    header .material-icons-round{
+        line-height: 1.2em;
     }
     nav  h2 {
         font-size:1.5em;
