@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 <body>
 	<%
@@ -27,6 +28,7 @@
     <div id="wrapper">
         <header> <!-- s: header -->
             <div id="header_main">
+            	<button class="material-icons-round" onclick="history.back()">arrow_back_ios</button>
                 <h1>경동대 셔틀버스</h1> 
             </div>
          </header> <!-- e: header -->
