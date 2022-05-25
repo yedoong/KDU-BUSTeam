@@ -59,16 +59,27 @@ body h3 {
 header {
     height: 10vh;
     background-color: #0c1476;
-    text-align: center;
     
-} 
+    
+}
+
 header h1 {
     font-size: 1.4em;
     font-family: 'NanumBarunGothic', sans-serif;
     color: white;
     line-height: 10vh;
+    text-align: center;
 }
-
+header .material-icons-round {
+	position:absolute;
+	height: 9vh;
+	color: white;
+	background-color: #0c1476;
+	float : left;
+	line-height: 10vh;
+	padding-left : 3vh;
+	border: 0px;
+} 
 nav h2 {
     font-family: 'NanumBarunGothic', sans-serif;
 }
@@ -94,13 +105,13 @@ nav h3 {
         font-size: 1.2em;
     }
 }
-/* »ï¼º °¶·°½Ã 8+ */
+/* ï¿½ï¼º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 8+ */
 @media screen and (min-height: 668px) and (max-height: 741px) { 
     #Explain {
         margin-top: 40vh;
     }
 }
-/* °¶·°½Ã Æúµå */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 @media screen and (min-height: 600px) and (max-height: 654px) { 
     #Explain h4{
         font-size: 0.8em;
