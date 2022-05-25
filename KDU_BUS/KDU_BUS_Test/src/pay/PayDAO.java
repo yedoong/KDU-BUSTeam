@@ -109,13 +109,14 @@ public class PayDAO {
 	}
 	
 	//선물하기
-	public int sendgift(String studentID, String pay_bus_location, String date) {
-		String SQL = "UPDATE pay_bus_ticket SET studentID='1921039' WHERE studentID=? and pay_bus_location=? and date=?";
+	public int sendgift(String gift_studentID, String studentID, String pay_bus_location, String date) {
+		String SQL = "UPDATE pay_bus_ticket SET studentID=? WHERE studentID=? and pay_bus_location=? and date=?";
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, studentID);
-			pstmt.setString(2, pay_bus_location);
-			pstmt.setString(3, date);		
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, gift_studentID);
+			pstmt.setString(2, studentID);
+			pstmt.setString(3, pay_bus_location);
+			pstmt.setString(4, date);	
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
