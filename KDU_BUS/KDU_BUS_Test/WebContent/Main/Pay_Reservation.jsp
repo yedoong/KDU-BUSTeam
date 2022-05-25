@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 <body>
 	<%
@@ -32,6 +33,7 @@
     <div id="wrapper">
         <header> <!-- s: header -->
             <div id="header_main">
+            	<button class="material-icons-round" onclick="history.back()">arrow_back_ios</button>
                 <h1>경동대 셔틀버스</h1> 
             </div>
          </header> <!-- e: header -->
