@@ -79,8 +79,8 @@
                 </div>
               </div>
               <div class="popup-foot">
-                  <a href="#"><button class="pop-btn confirm" id="confirm" style="border: none; background-color: rgb(224, 224, 224); color: black;">환불하기</button></a> <!-- 환불 페이지 미연동 -->
-                  <button onclick="location.href='Pay_ShowTicket.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%>'" class="pop-btn close" id="close" style="border: none; background-color: rgb(12, 20, 118);">탑승확인</button> <!-- 탑승확인 기능 추가 부탁드려요 -->
+                  <a href="#"><button onclick="location.href='Pay_Refund.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%>'" class="pop-btn confirm" id="confirm" style="border: none; background-color: rgb(224, 224, 224); color: black;">환불하기</button></a>
+                  <button onclick="location.href='Pay_ShowTicket.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%>'" class="pop-btn close" id="close" style="border: none; background-color: rgb(12, 20, 118);">탑승확인</button>
               </div>
             </div>
            </div>
