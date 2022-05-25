@@ -18,11 +18,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <!-- s: header -->
+        <button class="material-icons-round" onclick="history.back()">arrow_back_ios</button>
         <h1>경동대 셔틀버스</h1>
     </header> <!-- e: header -->
 
@@ -32,10 +34,7 @@
 				PayDAO payDAO = new PayDAO();
 				String studentID = (String) session.getAttribute("studentID");
 				ArrayList<Pay> list = payDAO.getList(studentID);
-				
-				String[] giftarr_date = new String[100];
-				String[] giftarr_location = new String[100];
-				
+
 				for (int i = 0; i <list.size(); i++){
 			%>
 					<div onclick="location.href='Pay_GiftTicket.jsp?date=<%=list.get(i).getDate()%> &pay_bus_location=<%=list.get(i).getPay_bus_location()%>'">
