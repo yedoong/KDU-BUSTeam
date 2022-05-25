@@ -5,6 +5,7 @@
 <%@ page import="pay.PayDAO" %>
 <%@ page import="pay.Pay" %>
 <%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,30 +19,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <!-- s: header -->
+        <button class="material-icons-round" onclick="history.back()">arrow_back_ios</button>
         <h1>경동대 셔틀버스</h1>
     </header> <!-- e: header -->
     
     <nav>
 	    <div id="bus">
-	
+
 			<%
 				PayDAO payDAO = new PayDAO();
 				String studentID = (String) session.getAttribute("studentID");
 				ArrayList<Pay> list = payDAO.getList(studentID);
+
 				for (int i = 0; i <list.size(); i++){
 			%>
-					<h2><%= list.get(i).getDate() %></h2>
-					<h3><%= list.get(i).getPay_bus_location() %></h3>
+					<div onclick="location.href='Pay_TicketListPop.jsp?date=<%=list.get(i).getDate()%> &pay_bus_location=<%=list.get(i).getPay_bus_location()%>'">
+						<h2><%= list.get(i).getDate() %></h2>
+						<h3><%= list.get(i).getPay_bus_location() %></h3>
+					</div>
 					<div id="line_1" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
-			<%		
+			<%
 				}
-			
-			%>
+			%>	    
 		</div>
     </nav>
 
