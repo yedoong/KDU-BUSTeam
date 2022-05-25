@@ -37,7 +37,7 @@
 
 				for (int i = 0; i <list.size(); i++){
 			%>
-					<div onclick="location.href='Pay_GiftTicket.jsp?date=<%=list.get(i).getDate()%> &pay_bus_location=<%=list.get(i).getPay_bus_location()%>'">
+					<div onclick="location.href='Pay_GiftTicket.jsp?date=<%=list.get(i).getDate()%>&pay_bus_location=<%=list.get(i).getPay_bus_location()%>'">
 						<h2><%= list.get(i).getDate() %></h2>
 						<h3><%= list.get(i).getPay_bus_location() %></h3>
 					</div>
