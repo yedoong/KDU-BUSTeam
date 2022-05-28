@@ -115,7 +115,8 @@
 				//가격
 			buyer_name: studentName,
 			buyer_tel: studentID,
-			buyer_addr: studentDepartment
+			buyer_addr: studentDepartment,
+			m_redirect_url: "https://yijeongree.cafe24.com/KDU-BUS/Pay_Reservation_Action.jsp?merchant_uid="+merchant
 		}, function (rsp) {
 			console.log(rsp);
 			if (rsp.success) {
