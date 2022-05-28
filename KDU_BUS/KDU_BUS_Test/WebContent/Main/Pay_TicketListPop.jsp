@@ -79,8 +79,8 @@
                 </div>
               </div>
               <div class="popup-foot">
-                  <a><button onclick="location.href='Pay_Refund.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%> &merchant_uid=<%=merchant_uid%>'" class="pop-btn confirm" id="confirm" style="border: none; background-color: rgb(224, 224, 224); color: black;">환불하기</button></a>
-                  <button onclick="location.href='Pay_ShowTicket.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%> &merchant_uid=<%=merchant_uid%>'" class="pop-btn close" id="close" style="border: none; background-color: rgb(12, 20, 118);">탑승확인</button>
+                  <a><button onclick="location.href='Pay_Refund.jsp?date=<%=date%>&pay_bus_location=<%=pay_bus_location%>&merchant_uid=<%=merchant_uid%>'" class="pop-btn confirm" id="confirm" style="border: none; background-color: rgb(224, 224, 224); color: black;">환불하기</button></a>
+                  <button onclick="location.href='Pay_ShowTicket_Action.jsp?date=<%=date%>&pay_bus_location=<%=pay_bus_location%>&merchant_uid=<%=merchant_uid%>'" class="pop-btn close" id="close" style="border: none; background-color: rgb(12, 20, 118);">탑승확인</button>
               </div>
             </div>
            </div>

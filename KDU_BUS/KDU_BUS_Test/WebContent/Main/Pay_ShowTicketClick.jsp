@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDU 셔틀버스</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="Pay_ShowTicket.css">
+    <link rel="stylesheet" href="Pay_ShowTicketClick.css">
     <link rel="stylesheet" href="Reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +56,7 @@
             <p>본 승차권은 왕복권이므로  탑승 확인이 두 번(등교/하교)
                 가능합니다. </p>
             <div id="btn_box">
-                <button id="goSchool" onclick="location.href = 'Pay_ShowTicket_S.jsp'">등교확인</button>
+                <button id="goSchool">등교확인</button>
                 <button id="goHome" onclick="location.href = 'Pay_ShowTicket_H.jsp'">하교확인</button>
             </div>
         </div>

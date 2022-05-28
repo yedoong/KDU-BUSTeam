@@ -25,7 +25,7 @@
 <body>
     <header>
         <!-- s: header -->
-        <button class="material-icons-round" onclick="history.back()">arrow_back_ios</button>
+        <button class="material-icons-round" onclick="location.href='Pay_Mypage.jsp'">arrow_back_ios</button>
         <h1>경동대 셔틀버스</h1>
     </header> <!-- e: header -->
     
