@@ -13,8 +13,8 @@ public class PayDAO {
 	
 	public PayDAO() {
 		try {
-			String dbURL = "jdbc:mysql://rds-javajo.cbked3d387nj.ap-northeast-2.rds.amazonaws.com/yijeongree";
-            String dbID = "yijeongree";
+			String dbURL = "jdbc:mysql://localhost/yijeongree";
+			String dbID = "yijeongree";
             String dbPassword = "kdubus-javajo";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
@@ -111,14 +111,12 @@ public class PayDAO {
 	}
 	
 	//선물하기
-	public int sendgift(String gift_studentID, String studentID, String pay_bus_location, String date) {
-		String SQL = "UPDATE pay_bus_ticket SET studentID=? WHERE studentID=? and pay_bus_location=? and date=?";
+	public int sendgift(String gift_studentID, String merchant_uid) {
+		String SQL = "UPDATE pay_bus_ticket SET studentID=? WHERE merchant_uid=?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, gift_studentID);
-			pstmt.setString(2, studentID);
-			pstmt.setString(3, pay_bus_location);
-			pstmt.setString(4, date);	
+			pstmt.setString(2, merchant_uid);	
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
