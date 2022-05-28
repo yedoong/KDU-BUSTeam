@@ -31,9 +31,10 @@
 		request.setCharacterEncoding("UTF-8");
 		String date = request.getParameter("date");
 		String pay_bus_location = request.getParameter("pay_bus_location");
+		String merchant_uid = request.getParameter("merchant_uid");
 		session.setAttribute("date", date);
 		session.setAttribute("pay_bus_location", pay_bus_location);
-
+		session.setAttribute("merchant_uid", merchant_uid);
 	%>
     <nav>
 	    <div id="bus">
@@ -42,7 +43,6 @@
 				PayDAO payDAO = new PayDAO();
 				String studentID = (String) session.getAttribute("studentID");
 				ArrayList<Pay> list = payDAO.getList(studentID);
-
 				for (int i = 0; i <list.size(); i++){
 			%>
 					<h2><%= list.get(i).getDate() %></h2>
@@ -79,8 +79,8 @@
                 </div>
               </div>
               <div class="popup-foot">
-                  <a href="#"><button onclick="location.href='Pay_Refund.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%>'" class="pop-btn confirm" id="confirm" style="border: none; background-color: rgb(224, 224, 224); color: black;">환불하기</button></a>
-                  <button onclick="location.href='Pay_ShowTicket.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%>'" class="pop-btn close" id="close" style="border: none; background-color: rgb(12, 20, 118);">탑승확인</button>
+                  <a><button onclick="location.href='Pay_Refund.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%> &merchant_uid=<%=merchant_uid%>'" class="pop-btn confirm" id="confirm" style="border: none; background-color: rgb(224, 224, 224); color: black;">환불하기</button></a>
+                  <button onclick="location.href='Pay_ShowTicket.jsp?date=<%=date%> &pay_bus_location=<%=pay_bus_location%> &merchant_uid=<%=merchant_uid%>'" class="pop-btn close" id="close" style="border: none; background-color: rgb(12, 20, 118);">탑승확인</button>
               </div>
             </div>
            </div>

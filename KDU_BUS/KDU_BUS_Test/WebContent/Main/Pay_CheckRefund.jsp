@@ -36,7 +36,7 @@
         </nav>
 
         <footer>
-            <button id="btn">확인</button>
+            <button id="btn" onclick="location.href='Pay_Mypage.jsp'">확인</button>
         </footer>
     </div>
 </body>

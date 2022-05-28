@@ -36,10 +36,9 @@
 				PayDAO payDAO = new PayDAO();
 				String studentID = (String) session.getAttribute("studentID");
 				ArrayList<Pay> list = payDAO.getList(studentID);
-
 				for (int i = 0; i <list.size(); i++){
 			%>
-					<div onclick="location.href='Pay_TicketListPop.jsp?date=<%=list.get(i).getDate()%> &pay_bus_location=<%=list.get(i).getPay_bus_location()%>'">
+					<div onclick="location.href='Pay_TicketListPop.jsp?date=<%=list.get(i).getDate()%>&pay_bus_location=<%=list.get(i).getPay_bus_location()%>&merchant_uid=<%=list.get(i).getMerchant_uid()%>'">
 						<h2><%= list.get(i).getDate() %></h2>
 						<h3><%= list.get(i).getPay_bus_location() %></h3>
 					</div>

@@ -25,12 +25,12 @@
 		request.setCharacterEncoding("UTF-8");
 		String date = request.getParameter("date");
 		String pay_bus_location = request.getParameter("pay_bus_location");
+		String merchant_uid = request.getParameter("merchant_uid");
 		session.setAttribute("date", date);
 		session.setAttribute("pay_bus_location", pay_bus_location);
-		
+		session.setAttribute("merchant_uid", merchant_uid);
 		PayDAO payDAO = new PayDAO();
 		int pay_bus_price = payDAO.howmuch(pay_bus_location);
-
 	%>
 	
     <div id="wrapper">
@@ -69,8 +69,7 @@
     </div>
 
     <footer>
-        <a href="#"><button id="pay">환불하기</button></a>
+        <a href="Pay_Refund_Action.jsp"><button id="pay">환불하기</button></a>
     </footer>
-
 </body>
 </html>
