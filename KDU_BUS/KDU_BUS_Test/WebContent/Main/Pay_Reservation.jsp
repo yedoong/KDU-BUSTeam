@@ -74,6 +74,7 @@
 	let pay_bus_location = '<%=pay_bus_location%>';
 	let pay_bus_price = '<%=pay_bus_price%>';
 	let date = '<%=date%>';
+	let merchant = 'merchant_' + new Date().getTime();
 	$("#pay").click(function () {
 		var IMP = window.IMP; // 생략가능
 		IMP.init('imp76846838');
@@ -100,7 +101,7 @@
 				'vbank':가상계좌,
 				'phone':휴대폰소액결제
 				*/
-			merchant_uid: 'merchant_' + new Date().getTime(),
+			merchant_uid: merchant,
 				/*
 				merchant_uid에 경우
 				https://docs.iamport.kr/implementation/payment
@@ -118,7 +119,7 @@
 		}, function (rsp) {
 			console.log(rsp);
 			if (rsp.success) {
-				location.href='Pay_Reservation_Action.jsp';
+				location.href="Pay_Reservation_Action.jsp?merchant_uid="+merchant;
 			} else {
 				var msg = '결제에 실패하였습니다.';
 				msg += '에러내용 : ' + rsp.error_msg;
