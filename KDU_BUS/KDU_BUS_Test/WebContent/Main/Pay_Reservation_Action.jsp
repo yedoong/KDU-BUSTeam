@@ -9,16 +9,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<%request.setCharacterEncoding("UTF-8"); %>
 <title>Insert title here</title>
 </head>
 <body>
 	<%
+
+		String merchant_uid = request.getParameter("merchant_uid");
 		String studentID = (String) session.getAttribute("studentID");
 		String pay_bus_location = (String) session.getAttribute("pay_bus_location");
 		String date = (String) session.getAttribute("date");
   		
   		PayDAO payDAO = new PayDAO();
-	  	int result1 = payDAO.Insert_ticket(studentID, pay_bus_location, date);
+	  	int result1 = payDAO.Insert_ticket(studentID, pay_bus_location, date, merchant_uid);
 	  	if (result1 == -1){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
