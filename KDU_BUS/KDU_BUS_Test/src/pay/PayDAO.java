@@ -156,5 +156,33 @@ public class PayDAO {
 		}
 		return -1;
 	}
-
+	//탑승여부 확인하기
+    public int check_count(String merchant_uid) {
+        String SQL = "SELECT ride_count FROM pay_bus_ticket WHERE merchant_uid=?";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, merchant_uid);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+				int count = rs.getInt(1);
+				
+				return count;
+			}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+	//탑승횟수 증가
+    public int up_count(String merchant_uid) {
+        String SQL = "UPDATE pay_bus_ticket SET ride_count=1  WHERE merchant_uid=?";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, merchant_uid);
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
 }
