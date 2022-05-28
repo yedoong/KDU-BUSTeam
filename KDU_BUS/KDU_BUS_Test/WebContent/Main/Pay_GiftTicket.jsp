@@ -21,8 +21,11 @@
 		request.setCharacterEncoding("UTF-8");
 		String date = request.getParameter("date");
 		String pay_bus_location = request.getParameter("pay_bus_location");
+		String merchant_uid = request.getParameter("merchant_uid");
+		
 		session.setAttribute("date", date);
 		session.setAttribute("pay_bus_location", pay_bus_location);
+		session.setAttribute("merchant_uid", merchant_uid);
 
 	%>
     <div id="wrapper">
