@@ -4,6 +4,7 @@ public class Pay {
 	private String studentID;
 	private String pay_bus_location;
 	private String date;
+	private String merchant_uid;
 	public String getStudentID() {
 		return studentID;
 	}
@@ -21,6 +22,12 @@ public class Pay {
 	}
 	public void setDate(String date) {
 		this.date = date;
+	}
+	public String getMerchant_uid() {
+		return merchant_uid;
+	}
+	public void setMerchant_uid(String merchant_uid) {
+		this.merchant_uid = merchant_uid;
 	}
 
 }

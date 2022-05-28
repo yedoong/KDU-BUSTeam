@@ -14,7 +14,7 @@ public class PayDAO {
 	public PayDAO() {
 		try {
 			String dbURL = "jdbc:mysql://rds-javajo.cbked3d387nj.ap-northeast-2.rds.amazonaws.com/yijeongree";
-			String dbID = "yijeongree";
+            String dbID = "yijeongree";
             String dbPassword = "kdubus-javajo";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
@@ -44,7 +44,7 @@ public class PayDAO {
 	
 	//승차권 출력
 	public ArrayList<Pay> getList(String studentID){
-		String SQL = "SELECT pay_bus_location, date FROM pay_bus_ticket Where studentID=? ORDER BY date";
+		String SQL = "SELECT pay_bus_location, date, merchant_uid FROM pay_bus_ticket Where studentID=? ORDER BY date";
 
 		ArrayList<Pay> list = new ArrayList<Pay>();
 		try {
@@ -56,6 +56,7 @@ public class PayDAO {
 		    	Pay pay = new Pay();
 		    	pay.setPay_bus_location(rs.getString(1));
 		    	pay.setDate(rs.getString(2));
+		    	pay.setMerchant_uid(rs.getString(3));
 		    	list.add(pay);
 		    }
 		} catch (Exception e) {
@@ -65,13 +66,14 @@ public class PayDAO {
 	}
 	
 	//티켓 DB추가
-	public int Insert_ticket(String studentID, String pay_bus_location, String date) {
-		String SQL = "INSERT INTO pay_bus_ticket (studentID, pay_bus_location, date) VALUES (?, ?, ?)";
+	public int Insert_ticket(String studentID, String pay_bus_location, String date, String merchant_uid) {
+		String SQL = "INSERT INTO pay_bus_ticket (studentID, pay_bus_location, date, merchant_uid) VALUES (?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, studentID);
 			pstmt.setString(2, pay_bus_location);
-			pstmt.setString(3, date);			
+			pstmt.setString(3, date);	
+			pstmt.setString(4, merchant_uid);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,14 +126,12 @@ public class PayDAO {
 		return -1;
 	}
 	
-	//삭제하기
-	public int delete(String studentID, String pay_bus_location, String date) {
-		String SQL = "DELETE FROM pay_bus_ticket WHERE studentID=? and pay_bus_location=? and date=?";
+	//삭제하기(환불)
+	public int delete(String merchant_uid) {
+		String SQL = "DELETE FROM pay_bus_ticket WHERE merchant_uid=?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, studentID);
-			pstmt.setString(2, pay_bus_location);
-			pstmt.setString(3, date);		
+			pstmt.setString(1, merchant_uid);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
