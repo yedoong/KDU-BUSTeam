@@ -21,6 +21,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 <body>
+	
+	
    	<div id="wrapper">
         <header> <!-- s: header -->
             <div id="header_main">
@@ -99,7 +101,7 @@
         			<div class="popup"> 
                 		<div class="popup-body">
                     		<div class="body-content">
-								<p id="p_one">버스가 없는 날입니다.</p>
+								<p id="p_zero">버스가 없는<br> 날입니다.</p>
                     		</div>
                 		</div>
         				<div class="popup-foot">
