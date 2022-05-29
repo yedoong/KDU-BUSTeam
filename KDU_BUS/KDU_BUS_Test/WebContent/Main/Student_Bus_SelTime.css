@@ -169,6 +169,13 @@ header #header_main .material-icons-round {
     font-weight: bold;
 }
 
+  .body-content #p_zero {
+  	width:100%;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top:2vh;
+}
+
   /* footer */
   .popup-foot{
   	border-radius: 0px 0px 10px 10px;
@@ -195,5 +202,60 @@ header #header_main .material-icons-round {
   	left:0;
     right:0;
     bottom:0;
+    width:100%;
+    height:100%;
   	
+}
+
+/* Iphone SE */
+@media screen and (max-height: 668px) { 
+  .body-content #p_zero {
+    margin-top:0.5vh;
+}
+}
+
+/* S8+ */
+@media screen and (min-height: 668px) and (max-height: 741px) { 
+  .body-content #p_zero {
+    margin-top:1.5vh;
+}
+}
+
+/* Ipad air*/
+@media screen and (min-height: 920px) and (max-height: 1181px) { 
+  .body-content #p_zero {
+    font-size: 3em;
+    margin-top:0.5vh;
+}
+}
+
+/* Ipad mini */
+@media screen and (min-height: 1000px) and (max-height: 1025px) { 
+  .body-content #p_zero {
+    font-size: 2.5em;
+    margin-top:0.3vh;
+}
+}
+/* 갤럭시 폴드 */
+@media screen and (min-height: 600px) and (max-height: 654px) { 
+  .body-content #p_zero {
+    font-size: 1.5em;
+    margin-top:2vh;
+}
+}
+/* web */ 
+@media screen and (min-width: 1900px)and (max-width: 1925px) { 
+  .body-content #p_zero {
+	font-size: 2.5em;
+    margin-top:1px;
+    margin-bottom:70px;
+}
+
+.popup{
+	width:500px;
+}
+  .body-content{
+    padding:10% 0px;
+  }
+
 }
