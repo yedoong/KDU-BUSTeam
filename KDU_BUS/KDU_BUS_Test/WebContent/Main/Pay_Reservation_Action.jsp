@@ -26,14 +26,17 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('오류.')");
-			script.println("history.back()"); //이전 페이지로 이동
+			script.println("location.href = 'Pay_CheckPayment.jsp'"); //이전 페이지로 이동
 			script.println("</script>");
 		}
-		else{
+		else if (result1 == 1){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("location.href = 'Pay_CheckTicket.jsp'");
 			script.println("</script>");
+		}else{
+			PrintWriter script = response.getWriter();
+			script.println("location.href = 'Pay_CheckPayment.jsp'");
 		}
      %>
 </body>
