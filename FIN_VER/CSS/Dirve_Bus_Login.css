@@ -53,6 +53,7 @@
     margin: 0 auto;
     padding-top: 100px;
     max-width: 10%;
+    min-width: 200px;
     height: auto;
 }
 
