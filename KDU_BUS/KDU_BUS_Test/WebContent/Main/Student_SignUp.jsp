@@ -123,7 +123,7 @@
         			<div class="popup"> 
                 		<div class="popup-body">
                     		<div class="body-content">
-								<p id="p_one">입력되지 않은 <br> 정보 존재</p>
+								<p id="p_one">입력하지 않은 <br> 사항 존재</p>
                     		</div>
                 		</div>
         				<div class="popup-foot">
