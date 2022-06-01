@@ -22,7 +22,9 @@
 		Student_loginDAO student_loginDAO = new Student_loginDAO();
 		int result = student_loginDAO.login(student_login.getStudentID(), student_login.getStudentPassword());
 		
-		if (result == 1) {
+		String slog_msg = "";
+		
+		if (result == 1) {	
 			PrintWriter script = response.getWriter();
 			session.setAttribute("studentID", studentID);
 			script.println("<script>");
@@ -34,8 +36,9 @@
 		else if (result == 0) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('비밀번호가 일치하지 않습니다.')");
-			script.println("history.back()"); //이전 페이지로 이동
+			slog_msg = "Student_Login.jsp?slog_msg=0"; //비밀번호 불일치
+			response.sendRedirect(slog_msg);
+			script.println("history.back()");
 			script.println("</script>");
 		}
 		
@@ -43,7 +46,8 @@
 		else if (result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('존재하지 않는 아이디입니다.')");
+			slog_msg = "Student_Login.jsp?slog_msg=-1"; //아이디 불일치
+			response.sendRedirect(slog_msg);
 			script.println("history.back()");
 			script.println("</script>");
 		}
@@ -52,7 +56,8 @@
 		else if (result == -2) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('데이터베이스 오류가 발생했습니다.')");
+			slog_msg = "Student_Login.jsp?slog_msg=-2"; //데이터베이스 오류
+			response.sendRedirect(slog_msg);
 			script.println("history.back()");
 			script.println("</script>");
 		}

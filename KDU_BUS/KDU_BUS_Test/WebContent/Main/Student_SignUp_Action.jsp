@@ -19,12 +19,15 @@
 </head>
 <body>
 	<%
+		String signup_msg = "";
+	
 		if (student_login.getStudentName() == null || student_login.getStudentDepartment() == null 
 			|| student_login.getStudentID() == null || student_login.getStudentPassword() == null) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('입력이 되지 않은 사항이 있습니다.')");
-			script.println("history.back()"); //이전 페이지로 이동
+			signup_msg = "Student_SignUp.jsp?signup_msg=-3"; //입력되지 않은 사항 존재
+			response.sendRedirect(signup_msg);
+			script.println("history.back()");
 			script.println("</script>");
 		} 
 		else{
@@ -35,44 +38,51 @@
 					if (result2 == -1){
 						PrintWriter script = response.getWriter();
 						script.println("<script>");
-						script.println("alert('이미 가입된 사용자입니다.')");
-						script.println("history.back()"); //이전 페이지로 이동
+						signup_msg = "Student_SignUp.jsp?signup_msg=0"; //이미 가입된 재학생
+						response.sendRedirect(signup_msg);
+						script.println("history.back()");
 						script.println("</script>");
 					}
 					else{
 						PrintWriter script = response.getWriter();
 						script.println("<script>");
-						script.println("alert('회원가입이 정상처리되었습니다.')");
-						script.println("location.href = 'Student_Login.jsp'");
+						signup_msg = "Student_Login.jsp?slog_msg=1"; //회원가입 정상처리
+						response.sendRedirect(signup_msg);
+						script.println("history.back()");
 						script.println("</script>");
+
 					}
 			}
 			else if (result == -1) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('일치하지 않는 정보입니다.')"); //학번 오류
-				script.println("history.back()"); //이전 페이지로 이동
+				signup_msg = "Student_SignUp.jsp?signup_msg=-1"; //학번 오류
+				response.sendRedirect(signup_msg);
+				script.println("history.back()");
 				script.println("</script>");
 			}
 			else if (result == -2){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('일치하지 않는 정보입니다.')"); //이름 오류
-				script.println("history.back()"); //이전 페이지로 이동
+				signup_msg = "Student_SignUp.jsp?signup_msg=-1"; //이름 오류
+				response.sendRedirect(signup_msg);
+				script.println("history.back()");
 				script.println("</script>");
 			}
 			else if (result == -3){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('일치하지 않는 정보입니다.')"); //학과 오류
-				script.println("history.back()"); //이전 페이지로 이동
+				signup_msg = "Student_SignUp.jsp?signup_msg=-1"; //학과 오류
+				response.sendRedirect(signup_msg);
+				script.println("history.back()");
 				script.println("</script>");
 			}
 			else if (result == -4){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('! 데이터베이스 오류 !')"); //데이터베이스 오류
-				script.println("history.back()"); //이전 페이지로 이동
+				signup_msg = "Student_SignUp.jsp?signup_msg=-2"; //데이터베이스 오류
+				response.sendRedirect(signup_msg);
+				script.println("history.back()");
 				script.println("</script>");
 			}
 		}

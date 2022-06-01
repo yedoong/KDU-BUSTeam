@@ -9,7 +9,7 @@
     <title>KDU 셔틀버스</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="Student_Login.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="Reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -42,6 +42,87 @@
             	</div> <!-- e: login_box -->
         	</nav> <!-- e: nav -->
         </form>
+    <% 
+            // 아이디, 비밀번호가 틀릴경우 화면에 메시지 표시
+			String slog_msg = request.getParameter("slog_msg");
+    		
+            if(slog_msg!=null && slog_msg.equals("0")) 
+            {
+    %>		
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup"> 
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">비밀번호 <br> 불일치</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>
+            	</div>
+    <%
+            }
+            else if(slog_msg!=null && slog_msg.equals("1"))
+            {
+    %>
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">회원가입 <br> 성공!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="location.href='Student_Login.jsp'">닫기</button>
+        				</div>
+            		</div>
+            	</div>
+	<%
+            }
+            else if(slog_msg!=null && slog_msg.equals("-1"))
+            {
+    %>
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">존재하지 않는 <br> 아이디</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>
+            	</div>
+    <%  
+            }
+            else if(slog_msg!=null && slog_msg.equals("-2"))
+            {  
+    %>
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">데이터베이스 <br> 오류</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>  
+            	</div>       
+	<%
+            }
+    %>
     </div><!-- e: wrapper -->
 </body>
 </html>

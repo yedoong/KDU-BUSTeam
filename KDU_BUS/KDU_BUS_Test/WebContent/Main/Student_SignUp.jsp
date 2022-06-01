@@ -53,5 +53,86 @@
         	</div>
     	</div>
     </form>
+    <% 
+            // 아이디, 비밀번호가 틀릴경우 화면에 메시지 표시
+			String signup_msg = request.getParameter("signup_msg");
+    		
+            if(signup_msg!=null && signup_msg.equals("0")) 
+            {
+    %>		
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup"> 
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">이미 가입된 <br> 재학생</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>
+            	</div>
+	<%
+            }
+            else if(signup_msg!=null && signup_msg.equals("-1"))
+            {  
+    %>
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">잘못된 <br> 학생 정보</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>  
+            	</div>       
+	<%
+            }
+            else if(signup_msg!=null && signup_msg.equals("-2"))
+            {  
+    %>
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">데이터베이스 <br> 오류</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>  
+            	</div>       
+	<%
+            }
+            else if(signup_msg!=null && signup_msg.equals("-3"))
+            {  
+    %>
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">입력되지 않은 <br> 정보 존재</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>  
+            	</div>       
+	<%
+            }
+    %>
 </body>
 </html>

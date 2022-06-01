@@ -45,6 +45,68 @@
             	</div> <!-- e: login_box -->
         	</nav> <!-- e: nav -->
         </form>
+    <% 
+            // 아이디, 비밀번호가 틀릴경우 화면에 메시지 표시
+			String blog_msg = request.getParameter("blog_msg");
+    		
+            if(blog_msg!=null && blog_msg.equals("0")) 
+            {
+    %>		
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup"> 
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">존재하지 않는 <br> 이름</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>
+            	</div>
+	<%
+            }
+            else if(blog_msg!=null && blog_msg.equals("-1"))
+            {
+    %>
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">인증번호 <br> 불일치</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>
+            	</div>
+    <%  
+            }
+            else if(blog_msg!=null && blog_msg.equals("-2"))
+            {  
+    %>
+            <!-- 팝업 -->
+				<div id="bg"></div>
+				<div class="popup-wrap" id="popup">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">데이터베이스 <br> 오류</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+            		</div>  
+            	</div>       
+	<%
+            }
+    %>
     </div><!-- e: wrapper -->
 </body>
 </html>
