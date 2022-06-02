@@ -30,13 +30,14 @@
  html, body {
     width: 100%;
     height: 100%;
+    background-color: #0c1477;
 }
 
 /* wrapper */
 #wrapper {
     width: 100%;
     height: 100%;
-    background-color: #0c1477;
+    
 }
 
 /* header */
@@ -48,15 +49,17 @@
 }
 #wrapper header #login_logo h1 img {
     width: 50%;
-    height: 50%;
     display: block;
     margin: 0 auto;
     padding-top: 100px;
+    max-width: 10%;
+    min-width: 200px;
+    height: auto;
 }
 
 /* nav */
 nav #login_box {
-    width: 75vw;
+    width: 300px;
     height: 32vh;
     background-color: rgb(240, 240, 240);
     margin: 60px auto;
@@ -86,14 +89,17 @@ nav #login_box .main_login input {
 
 nav #login_box .main_login #user_id {
     text-align: center;
+    width: 25vh;
 }
 nav #login_box .main_login #user_name {
     text-align: center;
+    width: 25vh;
 }
 
 nav #login_box #saveNum {
-    height: 10px;
-    margin-left: 40px;
+    height: 1vh;
+    width: 120px;
+    margin-left: 40vw;
     margin-bottom: 40px;
     font-size: small;
     font-family: 'NanumBarunGothic', sans-serif;
@@ -205,15 +211,20 @@ nav #login_box #login_sign_up button {
         padding-top: 60px;
     }
     nav #login_box #saveNum {
-        margin-left: 50px;
+        margin-left: 60px;
         margin-bottom: 45px;
     }
-
 	.body-content{
 		padding:15% 0px;
 	}
 }
-/* 갤럭시 s20 ultra */
+/* Iphone XR */
+@media screen and (min-height: 670px)and (max-height: 897px) { 
+    nav #login_box #saveNum {
+        margin-left: 40px;
+    }
+}
+/* 갤럭시 s8+ */
 @media screen and (min-height: 720px) and (max-height: 741px) { 
     nav #login_box {
         width: 75vw;
@@ -227,6 +238,15 @@ nav #login_box #login_sign_up button {
         display: block;
         margin: 0 auto;
         padding-top: 70px;
+    }
+    .body-content #p_one {
+	    font-size: 1.7em;
+	}
+}
+/* 갤럭시 s20 ultra */
+@media screen and (min-height: 720px) and (max-height: 741px) { 
+    nav #login_box #saveNum {
+        margin-left: 40px;
     }
 }
 /* Ipad air*/
@@ -244,10 +264,10 @@ nav #login_box #login_sign_up button {
     nav #login_box #saveNum {
         margin-left: 65px;
     }
-    nav #login_box .main_login #password {
+    nav #login_box .main_login #user_id {
         width: 30vh;
     }
-    nav #login_box .main_login #name {
+    nav #login_box .main_login #user_name {
         width: 30vh;
     }
     .body-content{
@@ -269,21 +289,15 @@ nav #login_box #login_sign_up button {
     nav #login_box #saveNum {
         margin-left: 35px;
     }
-    nav #login_box .main_login #password {
+    nav #login_box .main_login #user_id {
         width: 30vh;
     }
-    nav #login_box .main_login #name {
+    nav #login_box .main_login #user_name {
         width: 30vh;
     }
     .body-content{
 	    padding:15% 0px;
   	}
-} 
-/* 삼성 갤럭시 8+ */
-@media screen and (min-height: 668px) and (max-height: 741px) { 
-    .body-content #p_one {
-	    font-size: 1.7em;
-	}
 }
 /* 갤럭시 폴드 */
 @media screen and (min-height: 650px) and (max-height: 654px) { 
@@ -307,12 +321,10 @@ nav #login_box #login_sign_up button {
 }
 /* web */ 
 @media screen and (min-width: 1900px)and (max-width: 1925px) { 
+    /* header */
     #wrapper header #login_logo h1 img {
-        width: 20%;
-        height: 20%;
-        display: block;
-        margin: 0 auto;
-        padding-top: 50px;
+        padding-top: 120px;
+        min-width: 300px;
     }
     nav #login_box {
         height: 35vh;
@@ -333,10 +345,10 @@ nav #login_box #login_sign_up button {
     body {
         background-color: #0c1477;
     }
-    nav #login_box .main_login #password {
+    nav #login_box .main_login #user_id {
         width: 35vh;
     }
-    nav #login_box .main_login #name {
+    nav #login_box .main_login #user_name {
         width: 35vh;
     }
 }
