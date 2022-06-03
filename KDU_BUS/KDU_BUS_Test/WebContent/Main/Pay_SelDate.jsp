@@ -47,10 +47,11 @@
 	 <form action="Pay_Reservation.jsp" method="post">
      <div id="input_date">
          <h1>왕복권만 구매가 가능합니다!</h1>
-         <input type="date" name="ticket_day" id="Date" value="<%=date%>">
+         <input type="date" name="ticket_day" id="Date">
          <div id="last_seat" onclick="goAction()">남은좌석 보기</div>
          
          <script type="text/javascript">
+      		document.getElementById('Date').value = new Date().toISOString().substring(0, 10);
          	var now_utc = Date.now()
         	var timeOff = new Date().getTimezoneOffset()*60000;
         	var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
