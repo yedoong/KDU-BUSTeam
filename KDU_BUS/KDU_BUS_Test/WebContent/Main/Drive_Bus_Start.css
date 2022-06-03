@@ -40,20 +40,15 @@
 
 /* header */
 header {
-    background-color: #0c1477;
-    width: 100%;
-    height: 6vh;
-}
-header #header_main {
-    width:130px;
-    height: 6vh;
-    margin: 0 auto;
-}
-header #header_main h1 {
-    color:white;
+    height: 10vh;
+    background-color: #0c1476;
+    text-align: center;
+} 
+header h1 {
+    font-size: 1.4em;
     font-family: 'NanumBarunGothic', sans-serif;
-    font-size: 1.1em;
-    padding-top: 2vh;
+    color: white;
+    line-height: 10vh;
 }
 
 /* nav */
