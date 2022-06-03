@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -29,6 +30,16 @@
     	
     	String studentName = (String) session.getAttribute("studentName");
     	
+    	if (date == "")
+    	{
+    		String result1 = "";
+    		PrintWriter script = response.getWriter();
+     		script.println("<script>");
+     		result1 = "Pay_SelDate.jsp?result1=-1";
+    		response.sendRedirect(result1);
+     		script.println("history.back()");
+     		script.println("</script>");
+    	}
 	%>
     <div id="wrapper">
         <header> <!-- s: header -->

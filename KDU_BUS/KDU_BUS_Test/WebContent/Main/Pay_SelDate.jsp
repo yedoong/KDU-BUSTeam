@@ -47,11 +47,10 @@
 	 <form action="Pay_Reservation.jsp" method="post">
      <div id="input_date">
          <h1>왕복권만 구매가 가능합니다!</h1>
-         <input type="date" name="ticket_day" id="Date">
+         <input type="date" name="ticket_day" id="Date" value="<%=date%>">
          <div id="last_seat" onclick="goAction()">남은좌석 보기</div>
          
          <script type="text/javascript">
-      		document.getElementById('Date').value = new Date().toISOString().substring(0, 10);
          	var now_utc = Date.now()
         	var timeOff = new Date().getTimezoneOffset()*60000;
         	var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
@@ -71,7 +70,7 @@
     </form>    
      <% 
 			String result = request.getParameter("result");
-     		
+     		String result1 = request.getParameter("result1");
     		
             if(result!=null) 
             {
@@ -92,6 +91,25 @@
         		</div>
 	<%
             }
+            else if(result1!=null && result1.equals("-1"))
+            {
+    %>
+    			<!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one" style="line-height:normal;">날짜를<br>입력하세요!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+    <%
+    		}
     %>
     </div>
 </body>
