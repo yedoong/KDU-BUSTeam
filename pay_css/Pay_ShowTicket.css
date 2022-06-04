@@ -305,10 +305,6 @@ footer #two {
     #bg {
         height: 50vh;
     }
-    #btn_box {
-        width: 30vw;
-        display: flex;
-    }
     body h2 {
         margin-left: 3vw;
     }
@@ -323,5 +319,18 @@ footer #two {
     }
     #ticket_explain p {
         margin-left: 3vw;
+    }
+    #ticket_box {
+        width: 70vw;
+        height: 35vh;
+        background-color: white;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform:translate(-50%, -40%);
+    }
+    .marquee .outer .inner .content {
+        margin-top: 10vh;
+        margin-bottom: 3vh;
     }
 }
