@@ -91,12 +91,13 @@ header h1 {
 
 /* ticket box */
 #ticket_box {
-    width: 70vw;
+    width:70vw;
     height: 35vh;
     background-color: white;
     position: absolute;
-    top: 155px;
-    left:60px;
+    top: 35%;
+    left: 50%;
+    transform:translate(-50%, -35%);
 }
 
 /* body 글자 */
@@ -141,7 +142,7 @@ body h4 {
 }
 #btn_box #goSchool {
     width: 35vw;
-    height: 7vh;
+    height: 7.5vh;
     border: none;
     background-color: #505050;
     border-right: 1px solid rgb(175, 175, 175);
@@ -150,7 +151,7 @@ body h4 {
 }
 #btn_box #goHome {
     width: 35vw;
-    height: 7vh;
+    height: 7.5vh;
     border: none;
     background-color: #0c1476;
     color: white;
@@ -197,14 +198,6 @@ footer #two {
 }
 /* 삼성 갤럭시 8+ */
 @media screen and (min-height: 668px) and (max-height: 741px) { 
-    #ticket_box {
-        width: 70vw;
-        height: 35vh;
-        background-color: white;
-        position: absolute;
-        top: 180px;
-        left:60px;
-    }
     .marquee .outer .inner .content {
         margin-top: 7.5vh;
     }
@@ -217,24 +210,26 @@ footer #two {
     #btn_box #goHome {
         font-size: 1em;
     }
+    .marquee .outer .inner .content {
+        margin-top: 5vh;
+    }
 }
 /* Ipad air*/
 @media screen and (min-height: 920px) and (max-height: 1181px) { 
+    #ticket_box {
+        width: 70vw;
+        height: 35vh;
+        background-color: white;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform:translate(-50%, -35%);
+    }
     header {
         height: 8vh;
     } 
     header h1 {
         line-height: 8vh;
-    }
-    #ticket_box {
-        width: 55vw;
-        height: 35vh;
-        top: 180px;
-        left:190px;
-    }
-    #btn_box {
-        width: 55vw;
-        display: flex;
     }
     #ticket_explain p {
         margin-left: 6vw;
@@ -263,7 +258,6 @@ footer #two {
         font-size: 1.5em;
     }
     footer #one {
-
         margin-top: 2vh;      
         font-size: 1em;
     }
@@ -274,7 +268,8 @@ footer #two {
 /* Ipad mini */
 @media screen and (min-height: 1000px) and (max-height: 1025px) { 
     .marquee .outer .inner .content {
-        margin-top: 19vh;
+        margin-top: 15vh;
+        margin-bottom: 5vh;
         font-size: 2em;
     }
     #ticket_explain p {
@@ -287,14 +282,6 @@ footer #two {
 }
 /* 갤럭시 폴드 */
 @media screen and (min-height: 600px) and (max-height: 654px) { 
-    #ticket_box {
-        width: 70vw;
-        height: 40vh;
-        background-color: white;
-        position: absolute;
-        top: 90px;
-        left:40px;
-    }
     .marquee .outer .inner .content {
         margin-top:5vh;
         font-size: 1em;
@@ -306,21 +293,17 @@ footer #two {
     footer #two {
         font-size: 0.8em;
     }
+    #ticket_explain p {
+        line-height: 13px;
+    }
+    body h4 {
+        margin-bottom: 3vh;
+    }
 }
 /* web */ 
 @media screen and (min-width: 1900px)and (max-width: 1925px) { 
     #bg {
         height: 50vh;
-    }
-    #ticket_box {
-        width: 30vw;
-        height: 30vh;
-        top: 300px;
-        left:680px;
-    }
-    #btn_box {
-        width: 30vw;
-        display: flex;
     }
     body h2 {
         margin-left: 3vw;
@@ -336,5 +319,18 @@ footer #two {
     }
     #ticket_explain p {
         margin-left: 3vw;
+    }
+    #ticket_box {
+        width: 70vw;
+        height: 35vh;
+        background-color: white;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform:translate(-50%, -40%);
+    }
+    .marquee .outer .inner .content {
+        margin-top: 10vh;
+        margin-bottom: 3vh;
     }
 }
