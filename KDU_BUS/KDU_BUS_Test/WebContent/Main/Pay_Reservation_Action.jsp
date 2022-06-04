@@ -14,7 +14,6 @@
 </head>
 <body>
 	<%
-
 		String merchant_uid = request.getParameter("merchant_uid");
 		String studentID = (String) session.getAttribute("studentID");
 		String pay_bus_location = (String) session.getAttribute("pay_bus_location");

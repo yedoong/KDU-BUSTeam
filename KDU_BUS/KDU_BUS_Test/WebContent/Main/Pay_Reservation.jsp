@@ -17,6 +17,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+	<script src="https://cdn.bootpay.co.kr/js/bootpay-3.3.3.min.js" type="application/javascript"></script>
+    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 	<%
@@ -29,6 +31,8 @@
     	String studentDepartment = (String) session.getAttribute("studentDepartment");
     	
     	String studentName = (String) session.getAttribute("studentName");
+    	
+    	String pay_bus_price_r = pay_bus_price.replaceAll(",",""); 
     	
     	if (date == "")
     	{
@@ -80,59 +84,47 @@
 	let studentDepartment = '<%=studentDepartment%>';
 	let studentID = '<%=studentID%>';
 	let pay_bus_location = '<%=pay_bus_location%>';
-	let pay_bus_price = '<%=pay_bus_price%>';
+	let pay_bus_price = '<%=pay_bus_price_r%>';
 	let date = '<%=date%>';
 	let merchant = 'merchant_' + new Date().getTime();
+	//실제 복사하여 사용시에는 모든 주석을 지운 후 사용하세요
 	$("#pay").click(function () {
-		var IMP = window.IMP; // 생략가능
-		IMP.init('imp76846838');
-		// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
-		// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
-		IMP.request_pay({
-			pg: 'html5_inicis', // version 1.1.0부터 지원.
-				/*
-				'kakao':카카오페이,
-				'html5_inicis':이니시스(웹표준결제)
-				'nice':나이스페이
-				'jtnet':제이티넷
-				'uplus':LG유플러스
-				'danal':다날
-				'payco':페이코
-				'syrup':시럽페이
-				'paypal':페이팔
-				*/
-			pay_method: 'card',
-				/*
-				'samsung':삼성페이,
-				'card':신용카드,
-				'trans':실시간계좌이체,
-				'vbank':가상계좌,
-				'phone':휴대폰소액결제
-				*/
-			merchant_uid: merchant,
-				/*
-				merchant_uid에 경우
-				https://docs.iamport.kr/implementation/payment
-				위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
-				참고하세요.
-				나중에 포스팅 해볼게요.
-				*/
-			name: pay_bus_location + date,
-				//결제창에서 보여질 이름
-			amount: pay_bus_price,
-				//가격
-			buyer_name: studentName,
-			buyer_tel: studentID,
-			buyer_addr: studentDepartment,
-			m_redirect_url: "https://yijeongree.cafe24.com/KDU-BUS/Pay_Reservation_Action.jsp?merchant_uid="+merchant
-		}, function (rsp) {
-			console.log(rsp);
-			if (rsp.success) {
-				location.href="Pay_Reservation_Action.jsp?merchant_uid="+merchant;
-			} else {
-				location.href="Pay_CheckPayment.jsp";
+	BootPay.request({
+		price: pay_bus_price,
+		application_id: "629b8248e38c3000245ade53",
+		name: studentName, //결제창에서 보여질 이름
+		pg: 'danal',
+		method: 'card', //결제수단, 입력하지 않으면 결제수단 선택부터 화면이 시작합니다.
+		show_agree_window: 0, // 부트페이 정보 동의 창 보이기 여부
+		items: [
+			{
+				item_name: pay_bus_location, //상품명
+				qty: 1, //수량
+				unique: merchant, //해당 상품을 구분짓는 primary key
+				price: pay_bus_price, //상품 단가
 			}
-		});
+		],
+		user_info: {
+			username: studentName,
+			addr: studentDepartment,
+			phone: studentID
+		},
+		order_id: merchant, //고유 주문번호로, 생성하신 값을 보내주셔야 합니다.
+		params: {callback1: '그대로 콜백받을 변수 1', callback2: '그대로 콜백받을 변수 2', customvar1234: '변수명도 마음대로'},
+	}).error(function (data) {
+		//결제 진행시 에러가 발생하면 수행됩니다.
+		location.href="Pay_CheckPayment.jsp";
+		console.log(data);
+	}).cancel(function (data) {
+		//결제가 취소되면 수행됩니다.
+		location.href="Pay_CheckPayment.jsp";
+		console.log(data);
+	}).done(function (data) {
+		//결제가 정상적으로 완료되면 수행됩니다
+		//비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
+		location.href="Pay_Reservation_Action.jsp?merchant_uid="+merchant;
+		console.log(data);
+	});
 	});
 	</script>
 </body>
