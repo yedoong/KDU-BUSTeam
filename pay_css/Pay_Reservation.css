@@ -111,7 +111,7 @@ nav  h2 {
 #guide {
     height: 20vh;
     padding-top: 3vh;
-    margin-bottom: 20vh;
+    margin-bottom: 15vh;
 }
 #guide #guide_title {
     font-size: 1em;
@@ -153,14 +153,14 @@ footer #pay {
 @media screen and (min-height: 920px) and (max-height: 1181px) { 
     #guide {
         height: 15vh;
-        margin-bottom: 1vh;
+        margin-bottom: 10px;
     }
 }
 /* Ipad mini */
 @media screen and (min-height: 1000px) and (max-height: 1025px) { 
     #guide {
         height: 15vh;
-        margin-bottom: 10vh;
+        margin-bottom: 100px;
     }
 }
 /* Iphone SE */
@@ -180,7 +180,7 @@ footer #pay {
     }
     #guide {
         height: 10vh;
-        margin-bottom: 25vh;
+        margin-bottom: 23vh;
     }
     header h1 {
         font-size: 1.2em;
@@ -206,7 +206,7 @@ footer #pay {
     }
     #guide {
         height: 10vh;
-        margin-bottom: 25vh;
+        margin-bottom: 20vh;
     }
     nav  h2 {
         font-size:1.5em;
@@ -222,5 +222,13 @@ footer #pay {
     }
     #guide #p_2 {
         font-size: 0.5em;
+    }
+}
+/* web */ 
+@media screen and (min-width: 1900px)and (max-width: 1925px) { 
+   #guide {
+    height: 20vh;
+    padding-top: 3vh;
+    margin-bottom: 150px;
     }
 }
