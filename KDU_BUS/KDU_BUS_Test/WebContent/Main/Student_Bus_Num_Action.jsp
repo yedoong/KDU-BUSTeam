@@ -67,39 +67,30 @@
 	Student_busDAO student_busDAO = new Student_busDAO();
 	int result = student_busDAO.Recall2(bus_day, bus_time_start, bus_number);
 	
-	String msg = "";
 	String num = request.getParameter("num");
 	
 	if(result == 1){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		msg = "Student_Bus_Num" + num + ".jsp?msg=1"; //승차중
-		response.sendRedirect(msg);
-		script.println("history.back()");
+		script.println("location.href='Student_Bus_Num"+num+".jsp?msg=1'");//승차중
 		script.println("</script>");
 	}
 	else if(result == 2){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		msg = "Student_Bus_Num" + num + ".jsp?msg=2"; //승차마감(출발)
-		response.sendRedirect(msg);
-		script.println("history.back()");
+		script.println("location.href='Student_Bus_Num"+num+".jsp?msg=2'");//승차마감(출발)
 		script.println("</script>");
 	}
-	else if(result == 0){//승차전
+	else if(result == 0){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		msg = "Student_Bus_Num" + num + ".jsp?msg=0"; //승차전
-		response.sendRedirect(msg);
-		script.println("history.back()");
+		script.println("location.href='Student_Bus_Num"+num+".jsp?msg=0'");//승차전
 		script.println("</script>");
 	}
 	else if (result == -1){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		msg = "Student_Bus_Num" + num + ".jsp?msg=-1"; //데이터베이스 오류
-		response.sendRedirect(msg);
-		script.println("history.back()");
+		script.println("location.href='Student_Bus_Num"+num+".jsp?msg=-1'");//데이터베이스 오류
 		script.println("</script>");
 	}
 	%>

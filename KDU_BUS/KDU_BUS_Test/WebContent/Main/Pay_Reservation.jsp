@@ -32,12 +32,9 @@
     	
     	if (date == "")
     	{
-    		String result1 = "";
     		PrintWriter script = response.getWriter();
      		script.println("<script>");
-     		result1 = "Pay_SelDate.jsp?result1=-1";
-    		response.sendRedirect(result1);
-     		script.println("history.back()");
+    		script.println("location.href = 'Pay_SelDate.jsp?result1=1'");
      		script.println("</script>");
     	}
 	%>

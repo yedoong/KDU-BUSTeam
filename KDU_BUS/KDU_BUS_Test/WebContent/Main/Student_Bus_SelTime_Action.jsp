@@ -68,14 +68,11 @@
 	
 	Student_busDAO student_busDAO = new Student_busDAO();
 	int result = student_busDAO.Recall1(bus_day, student_bus.getBus_time_start());
-	String msg_t = "";
 	
 	if (result == 0) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		msg_t = "Student_Bus_SelTime.jsp?msg_t=1"; //데이터베이스 오류 - 버스 없는 날
-		response.sendRedirect(msg_t);
-		script.println("history.back()");
+		script.println("location.href = 'Student_Bus_SelTime.jsp?msg_t=1'");
 		script.println("</script>");
 	}
 	else if (result == 1) {
