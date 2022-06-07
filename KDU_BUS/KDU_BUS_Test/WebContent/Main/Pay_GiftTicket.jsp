@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ page import="java.util.*" %>
+<%@ page import="java.sql.*"%>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="pay.PayDAO" %>
+<%@ page import="pay.Pay" %>    
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -26,6 +30,9 @@
 		session.setAttribute("date", date);
 		session.setAttribute("pay_bus_location", pay_bus_location);
 		session.setAttribute("merchant_uid", merchant_uid);
+		
+		PayDAO payDAO = new PayDAO();
+		int pay_bus_price = payDAO.howmuch(pay_bus_location);
 
 	%>
     <div id="wrapper">
@@ -45,6 +52,7 @@
         <div id="bus_info"> <!-- 버스 정보 -->
             <h2 id="date"><%=date %></h2> <!-- 선택한 날짜 받아오기 -->
             <h2 id="locate"><%=pay_bus_location %></h2>
+            <h2 id="price"><%=pay_bus_price %>원</h2>
         </div>
 
         <div id="line" style="width: 100%; height: 2px; background-color: rgb(224, 224, 224);"></div>
