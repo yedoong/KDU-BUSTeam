@@ -16,18 +16,27 @@
 		String date = request.getParameter("ticket_day");
 		session.setAttribute("date", date);
 		String pay_bus_location = (String) session.getAttribute("pay_bus_location");
-		
-   		PayDAO payDAO = new PayDAO();
-  		int result1 = payDAO.Calc_seat(pay_bus_location, date);
-  		
-  		String result = "";
-  		
- 		PrintWriter script = response.getWriter();
- 		script.println("<script>");
- 		result = "Pay_SelDate.jsp?result=" + result1;
-		response.sendRedirect(result);
- 		script.println("history.back()");
- 		script.println("</script>");
+		if (date == "")
+    	{
+    		PrintWriter script = response.getWriter();
+     		script.println("<script>");
+    		script.println("location.href = 'Pay_SelDate.jsp?result1=1'");
+     		script.println("</script>");
+    	}
+		else 
+		{
+			String result = "";
+			
+	  		PayDAO payDAO = new PayDAO();
+		  	int result1 = payDAO.Calc_seat(pay_bus_location, date);
+		  		
+	 		PrintWriter script = response.getWriter();
+	 		script.println("<script>");
+	 		result = "Pay_SelDate.jsp?result=" + result1;
+			response.sendRedirect(result);
+	 		script.println("history.back()");
+	 		script.println("</script>");
+		}
      %>
 </body>
 </html>
