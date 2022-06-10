@@ -1,0 +1,371 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+ 
+/* layout */
+* {
+    text-decoration: none;
+    color: black;
+}
+ html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* wrapper */
+#wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+/* header */
+header {
+    height: 10vh;
+    background-color: #0c1476;
+    text-align: center;
+} 
+header h1 {
+    font-size: 1.4em;
+    font-family: 'NanumBarunGothic', sans-serif;
+    color: white;
+    line-height: 10vh;
+}
+
+/* nav */
+nav {
+    width: 100%;
+    height: 40vh;
+
+}
+nav h2 {
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+nav #nav_today {
+    width: 290px;
+    height: 40px;
+    
+    margin: 0 auto;
+    padding-top: 13vh;
+}
+nav #nav_input_data {
+    width: 290px;
+    height: 40px;
+    margin: 0 auto;
+    padding-top: 1vh;
+}
+#line {
+    width:100%;
+    height: 1px;
+    background-color: rgb(70, 70, 70);
+}
+
+/* 버스 시간 선택 */
+#bus_time {
+    width: 100%;
+    height: 14vh;
+    font-family: 'NanumBarunGothic', sans-serif;
+    margin-top: 5vh;
+}
+/* 버스 선택 공통 타이틀 부분 */
+.main_title {
+    width : 20%;
+    height : 14vh;
+    float : left; 
+}
+.main_title i {
+    margin: 5vh 20px 5vh 20px;
+    line-height: 65px;
+}
+
+#bus_time #sel_time {
+    float : left;
+    width : 70%;
+    height : 14vh;
+}
+#bus_time #sel_time #sel_time_top ul {
+    display: flex;   
+    justify-content: space-around;
+    line-height: 7vh;
+}
+#bus_time #sel_time #sel_time_bot ul {
+    display: flex;   
+    justify-content: space-around;
+    line-height: 7vh;
+}
+#sel_time {
+    padding: 10px 10px;
+}
+#sel_time input[type=radio]{
+    display: none;
+}
+#sel_time input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 50px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:13px;
+}
+#sel_time input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+#sel_time input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+}
+  
+/* 버스 호차 선택 */
+#bus_num {
+    width: 100%;
+    height: 14vh;
+    font-family: 'NanumBarunGothic', sans-serif;
+    margin-top: 3vh;
+    margin-bottom : 3vh;
+}
+#bus_num .main_title p {
+    font-size: 2em;
+}
+#bus_num .sel_bus_num {
+    width : 70%;
+    height : 14vh;
+    display: block;
+    float: left;
+}
+#bus_num .sel_bus_num ul {
+    display: flex;
+    line-height: 14vh;
+    justify-content: space-between;
+}
+#bus_num .sel_bus_num ul li {
+    font-size: 1.1em;
+}
+.sel_bus_num {
+    padding: 10px 10px;
+}
+.sel_bus_num input[type=radio]{
+    display: none;
+}
+.sel_bus_num input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 50px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:13px;
+}
+.sel_bus_num input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+.sel_bus_num input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+}
+
+/* 버튼 */
+#start_btn {
+    width: 100%;
+    height: 10vh;
+}
+#start_btn #StartBtn {
+    margin: 0 auto;
+    margin-top: 5vh;
+    display: block;
+    border: 0px;
+    background-color: #0c1477;
+    color: white;
+    border-radius: 50px; 
+    padding: 10px 30px;
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+/* 팝업 */
+  
+  /* 실제 팝업 */
+  .popup{
+  	position:relative;
+  	/*z-index:10;*/
+  	margin:0 auto;
+  	margin-bottom:10vh;
+    width:60vw;
+    height:23vh;
+    /*line-height:23vh;*/
+    border-radius:10px;
+    background-color:#ffffff;
+    box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3);   
+  }
+  .popup-wrap{
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:flex;
+    padding:15px; 
+
+  }
+
+ /* 팝업 텍스트 들어가는 배경 */
+  .popup-body{
+  	margin:0 auto;
+    width:80%;
+    height:16vh;
+    background-color:#ffffff;
+  }
+  /* 글씨 콘텐츠 감싸는 box */
+  .body-content{
+	text-align:center;
+  	width:100%;
+    padding:25% 0px;
+  }
+  /* 글씨 */
+  .body-content p {
+  	width:100%;
+    text-align: center;
+    font-family: 'NanumBarunGothic', sans-serif;
+  }
+  .body-content #p_one {
+  	width:100%;
+    margin-bottom: 1vh;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+  /* footer */
+  .popup-foot{
+  	border-radius: 0px 0px 10px 10px;
+  	background-color:#0c1477;
+    width:100%;
+    height:7vh;
+    text-align: center;
+  }
+  .popup-foot button{
+  	border:none;
+  	padding:0;
+    text-align: center;
+    background-color:#0c1477;
+    color: white;
+    height:6.5vh;
+    font-size: 1em;
+    font-family: 'NanumBarunGothic', sans-serif;
+  }
+  
+  #bg {
+  	background-color:rgba(0,0,0,.3);
+  	position:fixed;
+  	top:0;
+  	left:0;
+    right:0;
+    bottom:0;
+  	
+}
+
+/* Iphone SE */
+@media screen and (max-height: 668px) {
+  .popup-foot{
+  	margin-top:2.5vh;
+  }
+  #input_date #last_seat {
+	margin-left: 32vh;
+}
+}
+
+/* S8+ */
+@media screen and (min-height: 668px) and (max-height: 741px) { 
+  .popup-foot{
+  	margin-top:2vh;
+  }
+  .body-content{
+	text-align:center;
+  	width:100%;
+    padding:30% 0px;
+  }
+}
+
+/* Ipad air*/
+@media screen and (min-height: 920px) and (max-height: 1181px) { 
+  .body-content #p_one {
+    font-size: 3em;
+  }
+  .popup-foot{
+  	margin-top:5vh;
+  }
+  .popup-foot button{
+  	margin-top:2px;  
+  	font-size: 1.3em;
+  }
+}
+
+/* Ipad mini */
+@media screen and (min-height: 1000px) and (max-height: 1025px) { 
+  .popup-foot{
+  	margin-top:4vh;
+  }
+  .body-content{
+    padding:15% 0px 18% 0px;
+  }
+  .body-content{
+	text-align:center;
+  	width:100%;
+    padding:20% 0px;
+  }
+}
+/* 갤럭시 폴드 */
+@media screen and (min-height: 600px) and (max-height: 654px) { 
+  .body-content #p_one {
+    font-size: 1.5em;
+    margin-top:2vh;
+  }
+}
+/* web */ 
+@media screen and (min-width: 1900px)and (max-width: 1925px) { 
+  .body-content #p_one {
+	font-size: 2.5em;
+    margin-top:1px;
+    margin-bottom:70px;
+}
+  .popup{
+	width:500px;
+}
+  .body-content{
+    padding:10% 0px;
+  }
+  .popup-foot{
+  	margin-top:2vh;
+}
+}
