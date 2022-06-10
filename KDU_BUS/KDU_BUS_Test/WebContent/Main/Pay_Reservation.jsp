@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="pay.PayDAO" %>
 <%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -40,6 +41,18 @@
      		script.println("<script>");
     		script.println("location.href = 'Pay_SelDate.jsp?result1=1'");
      		script.println("</script>");
+    	}
+    	else
+    	{
+    		PayDAO payDAO = new PayDAO();
+		  	int result1 = payDAO.Calc_seat(pay_bus_location, date);
+		  		
+		  	if (result1 < 1){
+		 		PrintWriter script = response.getWriter();
+	     		script.println("<script>");
+	    		script.println("location.href = 'Pay_SelDate.jsp?result2=2'");
+	     		script.println("</script>");
+		  	}
     	}
 	%>
     <div id="wrapper">
@@ -87,14 +100,13 @@
 	let pay_bus_price = '<%=pay_bus_price_r%>';
 	let date = '<%=date%>';
 	let merchant = 'merchant_' + new Date().getTime();
-	//실제 복사하여 사용시에는 모든 주석을 지운 후 사용하세요
 	$("#pay").click(function () {
 	BootPay.request({
 		price: pay_bus_price,
 		application_id: "629b8248e38c3000245ade53",
 		name: studentName, //결제창에서 보여질 이름
 		pg: 'danal',
-		method: 'card', //결제수단, 입력하지 않으면 결제수단 선택부터 화면이 시작합니다.
+		method: 'card', //결제수단
 		show_agree_window: 0, // 부트페이 정보 동의 창 보이기 여부
 		items: [
 			{
@@ -109,22 +121,18 @@
 			addr: studentDepartment,
 			phone: studentID
 		},
-		order_id: merchant, //고유 주문번호로, 생성하신 값을 보내주셔야 합니다.
-		params: {callback1: '그대로 콜백받을 변수 1', callback2: '그대로 콜백받을 변수 2', customvar1234: '변수명도 마음대로'},
-	}).error(function (data) {
-		//결제 진행시 에러가 발생하면 수행됩니다.
-		location.href="Pay_CheckPayment.jsp";
-		console.log(data);
-	}).cancel(function (data) {
-		//결제가 취소되면 수행됩니다.
-		location.href="Pay_CheckPayment.jsp";
-		console.log(data);
-	}).done(function (data) {
-		//결제가 정상적으로 완료되면 수행됩니다
-		//비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
-		location.href="Pay_Reservation_Action.jsp?merchant_uid="+merchant;
-		console.log(data);
-	});
+		order_id: merchant, //고유 주문번호
+		params: {callback1: '1', callback2: '2', customvar1234: '1234'},
+		}).error(function (data) {
+			//결제 진행시 에러가 발생하면 수행
+			location.href="Pay_CheckPayment.jsp";
+		}).cancel(function (data) {
+			//결제가 취소되면 수행
+			location.href="Pay_CheckPayment.jsp";
+		}).done(function (data) {
+			//결제가 정상적으로 완료되면 수행
+			location.href="Pay_Reservation_Action.jsp?merchant_uid="+merchant;
+		});
 	});
 	</script>
 </body>

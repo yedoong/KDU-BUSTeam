@@ -71,6 +71,7 @@
      <% 
 			String result = request.getParameter("result");
      		String result1 = request.getParameter("result1");
+     		String result2 = request.getParameter("result2");
     		
             if(result!=null) 
             {
@@ -91,7 +92,7 @@
         		</div>
 	<%
             }
-            else if(result1!=null && result1.equals("-1"))
+            else if(result1!=null && result1.equals("1"))
             {
     %>
     			<!-- 팝업 -->
@@ -101,6 +102,25 @@
                 		<div class="popup-body">
                     		<div class="body-content">
 								<p id="p_one" style="line-height:normal;">날짜를<br>입력하세요!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+    <%
+    		}
+            else if(result2!=null && result2.equals("2"))
+            {
+    %>
+    			<!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one" style="line-height:normal;">좌석이<br>없어요!</p>
                     		</div>
                 		</div>
         				<div class="popup-foot">
