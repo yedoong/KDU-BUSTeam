@@ -47,24 +47,6 @@
 		    		}
 		    	}
 	    	//학생 정보 불일치
-		    	else if(result == -1){
-		    		PrintWriter script = response.getWriter();
-		     		script.println("<script>");
-		    		script.println("location.href = 'Pay_GiftTicket.jsp?result1=1'");//학번 오류
-		     		script.println("</script>");
-		    	}
-		    	else if(result == -2){
-		    		PrintWriter script = response.getWriter();
-		     		script.println("<script>");
-		    		script.println("location.href = 'Pay_GiftTicket.jsp?result1=2'");//학과 오류
-		     		script.println("</script>");
-		    	}
-		    	else if(result == -3){
-		    		PrintWriter script = response.getWriter();
-		     		script.println("<script>");
-		    		script.println("location.href = 'Pay_GiftTicket.jsp?result1=3'");//이름 오류
-		     		script.println("</script>");
-		    	}
 		    	else if(result == -4){
 		    		PrintWriter script = response.getWriter();
 		     		script.println("<script>");

@@ -102,63 +102,6 @@
         		</div>
 		<%
             }
-            else if(result1!=null && result1.equals("1"))
-            {
-    	%>
-    			<!-- 팝업 -->
-            	<div id="bg"></div>
-            	<div class="popup-wrap">
-        			<div class="popup"> 
-                		<div class="popup-body">
-                    		<div class="body-content">
-								<p id="p_one">학번이<br>틀렸어요!</p>
-                    		</div>
-                		</div>
-        				<div class="popup-foot">
-            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
-        				</div>
-        			</div>
-        		</div>
-    	<%
-    		}
-            else if(result1!=null && result1.equals("2"))
-            {
-    	%>
-    			<!-- 팝업 -->
-            	<div id="bg"></div>
-            	<div class="popup-wrap">
-        			<div class="popup"> 
-                		<div class="popup-body">
-                    		<div class="body-content">
-								<p id="p_one">학과가<br>틀렸어요!</p>
-                    		</div>
-                		</div>
-        				<div class="popup-foot">
-            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
-        				</div>
-        			</div>
-        		</div>
-    	<%
-            }
-            else if(result1!=null && result1.equals("3"))
-            {
-    	%>
-    			<!-- 팝업 -->
-            	<div id="bg"></div>
-            	<div class="popup-wrap">
-        			<div class="popup"> 
-                		<div class="popup-body">
-                    		<div class="body-content">
-								<p id="p_one">이름이<br>틀렸어요!</p>
-                    		</div>
-                		</div>
-        				<div class="popup-foot">
-            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
-        				</div>
-        			</div>
-        		</div>
-    	<%
-            }
             else if(result1!=null && result1.equals("4"))
             {
     	%>
