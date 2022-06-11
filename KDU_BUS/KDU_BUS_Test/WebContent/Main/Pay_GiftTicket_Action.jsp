@@ -18,19 +18,17 @@
 		String pay_bus_location = (String) session.getAttribute("pay_bus_location"); 
 		String studentID = (String) session.getAttribute("studentID");
 		String merchant_uid = (String) session.getAttribute("merchant_uid");
-
 		String gift_studentName = request.getParameter("gift_studentName");
 		String gift_studentDepartment = request.getParameter("gift_studentDepartment");
 		String gift_studentID = request.getParameter("gift_studentID");
 		
 		PayDAO payDAO = new PayDAO();
 		
-		if(gift_studentName==null || gift_studentDepartment==null || gift_studentID==null){
-	    	 PrintWriter script = response.getWriter();
-	    	 script.println("<script>");
-			 script.println("alert('입력이 되지 않은 사항이 있습니다.')");
-			 script.println("history.back()"); //이전 페이지로 이동
-			 script.println("</script>");
+		if(gift_studentName=="" || gift_studentDepartment=="" || gift_studentID==""){
+	    	PrintWriter script = response.getWriter();
+     		script.println("<script>");
+    		script.println("location.href = 'Pay_GiftTicket.jsp?result1=6'");//입려되지 않은 사항 존재
+     		script.println("</script>");
 	    }
 	    else{
 	    	int result = payDAO.giftwho(gift_studentName, gift_studentDepartment, gift_studentID);
@@ -38,10 +36,9 @@
 		    		int result1 = payDAO.sendgift(gift_studentID, merchant_uid);
 		    		if(result1 == -1){
 		    			PrintWriter script = response.getWriter();
-		    			script.println("<script>");
-		    			script.println("alert('데이터베이스오류.')");
-		    			script.println("history.back()"); //이전 페이지로 이동
-		    			script.println("</script>");
+		         		script.println("<script>");
+		        		script.println("location.href = 'Pay_GiftTicket.jsp?result1=5'");//데이터베이스 오류
+		         		script.println("</script>");
 		    		}else{
 		    			PrintWriter script = response.getWriter();
 		    			script.println("<script>");
@@ -52,31 +49,27 @@
 	    	//학생 정보 불일치
 		    	else if(result == -1){
 		    		PrintWriter script = response.getWriter();
-					script.println("<script>");
-					script.println("alert('학번 오류')"); //학번 오류
-					script.println("history.back()"); //이전 페이지로 이동
-					script.println("</script>");
+		     		script.println("<script>");
+		    		script.println("location.href = 'Pay_GiftTicket.jsp?result1=1'");//학번 오류
+		     		script.println("</script>");
 		    	}
 		    	else if(result == -2){
 		    		PrintWriter script = response.getWriter();
-					script.println("<script>");
-					script.println("alert('학과 오류')"); //학과 오류
-					script.println("history.back()"); //이전 페이지로 이동
-					script.println("</script>");
+		     		script.println("<script>");
+		    		script.println("location.href = 'Pay_GiftTicket.jsp?result1=2'");//학과 오류
+		     		script.println("</script>");
 		    	}
 		    	else if(result == -3){
 		    		PrintWriter script = response.getWriter();
-					script.println("<script>");
-					script.println("alert('이름 오류')"); //이름 오류
-					script.println("history.back()"); //이전 페이지로 이동
-					script.println("</script>");
+		     		script.println("<script>");
+		    		script.println("location.href = 'Pay_GiftTicket.jsp?result1=3'");//이름 오류
+		     		script.println("</script>");
 		    	}
 		    	else if(result == -4){
 		    		PrintWriter script = response.getWriter();
-					script.println("<script>");
-					script.println("alert('일치하는 학생 없음')"); //일치하는 학생 없음
-					script.println("history.back()"); //이전 페이지로 이동
-					script.println("</script>");
+		     		script.println("<script>");
+		    		script.println("location.href = 'Pay_GiftTicket.jsp?result1=4'");//일치하는 학생 없음
+		     		script.println("</script>");
 		    	}
 	    	}
      %>

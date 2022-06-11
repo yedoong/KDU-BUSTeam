@@ -23,17 +23,13 @@
 <body>
 	<%
 		request.setCharacterEncoding("UTF-8");
-		String date = request.getParameter("date");
-		String pay_bus_location = request.getParameter("pay_bus_location");
-		String merchant_uid = request.getParameter("merchant_uid");
-		
-		session.setAttribute("date", date);
-		session.setAttribute("pay_bus_location", pay_bus_location);
-		session.setAttribute("merchant_uid", merchant_uid);
-		
-		PayDAO payDAO = new PayDAO();
-		int pay_bus_price = payDAO.howmuch(pay_bus_location);
 
+		String date = (String) session.getAttribute("date");
+		String pay_bus_location = (String) session.getAttribute("pay_bus_location");
+		String merchant_uid = (String) session.getAttribute("merchant_uid");
+		PayDAO payDAO = new PayDAO();
+		
+		int pay_bus_price = payDAO.howmuch(pay_bus_location);
 	%>
     <div id="wrapper">
         <header> <!-- s: header -->
@@ -84,6 +80,124 @@
 	        <a><button id="pay">선물하기</button></a>
 	    </footer>
 		</form>
+		<% 
+     		String result1 = request.getParameter("result1");
+    		
+            if(result1!=null && result1.equals("6")) 
+            {
+      	%>
+            <!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">빈칸이<br>있어요!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+		<%
+            }
+            else if(result1!=null && result1.equals("1"))
+            {
+    	%>
+    			<!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">학번이<br>틀렸어요!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+    	<%
+    		}
+            else if(result1!=null && result1.equals("2"))
+            {
+    	%>
+    			<!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">학과가<br>틀렸어요!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+    	<%
+            }
+            else if(result1!=null && result1.equals("3"))
+            {
+    	%>
+    			<!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">이름이<br>틀렸어요!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+    	<%
+            }
+            else if(result1!=null && result1.equals("4"))
+            {
+    	%>
+    			<!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">존재하지 않는<br>학생입니다!</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+    	<%
+            }
+            else if(result1!=null && result1.equals("5"))
+            {
+    	%>
+    			<!-- 팝업 -->
+            	<div id="bg"></div>
+            	<div class="popup-wrap">
+        			<div class="popup"> 
+                		<div class="popup-body">
+                    		<div class="body-content">
+								<p id="p_one">데이터베이스<br>오류</p>
+                    		</div>
+                		</div>
+        				<div class="popup-foot">
+            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+        				</div>
+        			</div>
+        		</div>
+    	<%
+    		}
+    	%>
 	</div>
 </body>
 </html>
