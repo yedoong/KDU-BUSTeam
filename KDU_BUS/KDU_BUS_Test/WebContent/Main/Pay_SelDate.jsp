@@ -29,7 +29,7 @@
 	%>
     <div id="wrapper">
         <header> <!-- s: header -->
-        	<button class="material-icons-round" onclick="history.back()">arrow_back_ios</button>
+        	<button class="material-icons-round" onclick="location.href = 'Pay_SelBus.jsp'">arrow_back_ios</button>
             <h1>경동대 셔틀버스</h1> 
      </header> <!-- e: header -->
 
@@ -86,7 +86,7 @@
                     		</div>
                 		</div>
         				<div class="popup-foot">
-            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+            				<button class="pop-btn close" id="close" onclick="location.href = 'Pay_SelDate.jsp'">닫기</button>
         				</div>
         			</div>
         		</div>
@@ -105,7 +105,7 @@
                     		</div>
                 		</div>
         				<div class="popup-foot">
-            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+            				<button class="pop-btn close" id="close" onclick="location.href = 'Pay_SelDate.jsp'">닫기</button>
         				</div>
         			</div>
         		</div>
@@ -124,7 +124,7 @@
                     		</div>
                 		</div>
         				<div class="popup-foot">
-            				<button class="pop-btn close" id="close" onclick="history.back();">닫기</button>
+            				<button class="pop-btn close" id="close" onclick="location.href = 'Pay_SelDate.jsp'">닫기</button>
         				</div>
         			</div>
         		</div>
